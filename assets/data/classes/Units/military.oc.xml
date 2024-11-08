@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="unit" type="cpp_noclass" class_name="military">
+	<attributes>
+	</attributes>
+	<methods>
+		<method name="attack" scriptID="unit_attack" />
+		<method name="conquer" scriptID="unit_conquer" />
+	</methods>
+	<sounds>
+	</sounds>
+	<commands>
+		<command id="attack" associatedMethod="attack" bottombarPriority="1">
+            <params>
+            </params>
+			<displayedName>Attack</displayedName>
+			<description>Attack</description>
+			<hotKey>A</hotKey>
+			<bottomBarIcon>game/match/bottombar/icons/attack</bottomBarIcon>
+		</command>
+        <command id="conquer" associatedMethod="conquer" bottombarPriority="2">
+            <params>
+            </params>
+			<displayedName>Conquista</displayedName>
+			<description>Cattura l'insediamento</description>
+			<hotKey>C</hotKey>
+			<bottomBarIcon>game/match/bottombar/icons/capture</bottomBarIcon>
+		</command>
+	</commands>
+	 <defaultCommands>
+        <defaultCommand target="unit">
+            <cmd name="attack" />
+        </defaultCommand>
+    </defaultCommands>
+	<values>
+		<value name="attack" />
+		<value name="defence" />
+	</values>
+</object>

@@ -1,0 +1,18 @@
+centurion
+rattlesmake [2019] - [2020]
+
+the files "pass.xml" contain the information about the object collision (pass ~ passable).
+they provide x and y values, that indicate the number of rows and columns of the pass matrix they occupy.
+
+the pass matrix is a grid of 0/1 values. each cell covers 32x32 pixels of the game map.
+
+if the map is 30720x20480 pixels, the pass matrix is 920x640 (because there is a margin of 2*640 on each side of the map.)
+
+to activate/deactivate the pass matrix, simply write "Editor.ToggleGrid()" to Hector (the Lua interpreter), 
+using the console (activable with F1 in the editor).
+
+the object pass grid is stored in the XML with hexadecimal characters, in order to represent 4 binary values
+with just one character and save bytes. 
+
+for this, to get an optimal result, the pass.png images should have height and width multiples of 128
+because 128 = 32 (cell grid size) * 4 (number of binary characters).

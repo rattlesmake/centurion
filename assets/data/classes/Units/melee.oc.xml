@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="soldier" type="cpp_noclass" class_name="melee">
+    <attributes>
+    </attributes>
+    <methods>
+    </methods>
+    <sounds>
+    </sounds>
+</object>

@@ -1,0 +1,7 @@
+<object parent="Decoration" type="cpp_decorationclass" class_name="cave">
+	<attributes>
+		<attribute name="editor_tree" value="decorations/interactable"/>
+		<attribute name="ent_path" value="decorations/interactable/cave.oe.xml"/>
+		<attribute name="grid_path" value=""/>
+	</attributes>
+</object>

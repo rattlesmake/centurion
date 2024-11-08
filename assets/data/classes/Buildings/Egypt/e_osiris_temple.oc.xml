@@ -1,0 +1,15 @@
+<object parent="base_temple" type="cpp_buildingclass" class_name="e_osiris_temple">
+	<attributes>
+		<attribute name="singularName" value="osiris temple"/>
+		<attribute name="race" value="egypt"/>
+		<attribute name="selectionRadius" value="165"/>
+		<attribute name="editor_tree" value="buildings/egyptian_stronghold"/>
+		<attribute name="ent_path" value="buildings/egypt/osiristemple/eosiristemple.oe.xml"/>
+		<attribute name="grid_path" value="buildings/egypt/osiristemple/eosiristemple_grid.xml"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/eOsiristempleSelect.ogg"/>
+	</sounds>
+</object>

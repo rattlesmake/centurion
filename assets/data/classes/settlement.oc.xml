@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="object" type="cpp_settlementclass" class_name="settlement">
+  <attributes>
+    <attribute name="gold" value="10000"/>
+    <attribute name="food" value="10000"/>
+    <attribute name="population" value="50"/>
+    <attribute name="maxPopulation" value="100"/>
+  </attributes>
+</object>

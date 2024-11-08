@@ -1,0 +1,38 @@
+<terrainTextures>
+    <terrainTexture id="0" name="empty_texture" path="textures/empty_texture.png" category="none" passable="true">
+		<color r="0" g="0" b="0"/>
+    </terrainTexture>
+    <terrainTexture id="1" name="grass_1" path="textures/grass_1.png" category="grass" passable="true">
+		<color r="0" g="255" b="0"/>
+	</terrainTexture>
+	<terrainTexture id="2" name="grass_2" path="textures/grass_2.png" category="grass" passable="true">
+		<color r="24" g="255" b="24"/>
+	</terrainTexture>
+	<terrainTexture id="3" name="grass_3" path="textures/grass_3.png" category="grass" passable="true"> 
+		<color r="16" g="255" b="16"/>
+	</terrainTexture>
+	<terrainTexture id="4" name="ground_1" path="textures/ground_1.png" category="ground" passable="true">
+		<color r="185" g="122" b="87"/>
+	</terrainTexture>
+	<terrainTexture id="5" name="ground_2" path="textures/ground_2.png" category="ground" passable="true">
+		<color r="170" g="106" b="70"/>
+	</terrainTexture>
+	<terrainTexture id="6" name="road_1" path="textures/road_1.png" category="road" passable="true">
+		<color r="158" g="158" b="158"/>
+	</terrainTexture>
+	<terrainTexture id="7" name="road_2" path="textures/road_2.png" category="road" passable="true">
+		<color r="158" g="158" b="160"/>
+	</terrainTexture>
+	<terrainTexture id="8" name="road_3" path="textures/road_3.png" category="road" passable="true">
+		<color r="158" g="158" b="156"/>
+	</terrainTexture>
+	<terrainTexture id="9" name="rock_1" path="textures/rock_1.png" category="rock" passable="false">
+		<color r="140" g="114" b="68"/>
+	</terrainTexture>
+    <terrainTexture id="10" name="rock_2" path="textures/rock_2.png" category="rock" passable="false">
+		<color r="122" g="98" b="60"/>
+	</terrainTexture>
+	<terrainTexture id="11" name="sand_1" path="textures/sand_1.png" category="sand" passable="true">
+		<color r="220" g="200" b="136"/>
+	</terrainTexture>
+</terrainTextures>

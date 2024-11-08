@@ -1,0 +1,16 @@
+<object parent="base_temple" type="cpp_buildingclass" class_name="r_temple">
+	<attributes>
+		<attribute name="singularName" value="roman temple"/>
+		<attribute name="race" value="rome"/>
+		<attribute name="selectionRadius" value="165"/>
+		<attribute name="editor_tree" value="buildings/roman_stronghold"/>
+		<attribute name="ent_path" value="buildings/rome/temple/rtemple.oe.xml"/>
+		<attribute name="grid_path" value="buildings/rome/temple/rtemple_grid.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/rtemple"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/rTempleSelect.ogg"/>
+	</sounds>
+</object>

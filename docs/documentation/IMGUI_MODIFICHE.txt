@@ -1,0 +1,237 @@
+IMGUI.CPP
+-----------------------------------------
+4207
+io.WantCaptureMouse = (mouse_avail && (g.HoveredWindow != NULL || mouse_any_down) && ((g.HoveredWindow != NULL) && !(g.HoveredWindow->Flags & ImGuiWindowFlags_EmptyBackground))) || has_open_popup;
+
+6386
+window->InnerRect.Min.y = flags & ImGuiWindowFlags_HideTitleBar ? window->Pos.y : window->Pos.y + decoration_up_height;
+-----------------------------------------
+
+
+IMGUI.H
+-----------------------------------------
+609
+    // Widgets: Loading items
+    // - A useful bar that can be used during loading progress, like the progress bar, but more dynamic. This can be useful in networking environment.
+    // - Modern loading spinner with the classic rounding animation. It can be used between menu loadings.
+    IMGUI_API bool          BufferingBar(const char* label, float value, const ImVec2& size_arg);
+    IMGUI_API bool          Spinner(const char* label, float radius, int thickness);
+
+983
+    // [Centurion]
+    ImGuiWindowFlags_EmptyBackground        = 1 << 29,  // Used to draw empty background into iframes
+    ImGuiWindowFlags_HideTitleBar           = 1 << 30   // Used to check if the window should hide clipping titlebar
+
+1013
+    // [Centurion]
+    ImGuiInputTextFlags_BlockSpecials = 1 << 20,  // Block \ / * ? " > < |  characters to avoid windows files/folders name issues
+    ImGuiInputTextFlags_Trim = 1 << 21,  // Remove all blank characters to obtain a raw char
+    ImGuiInputTextFlags_AnyInputReturnsTrue = 1 << 22   // Return 'true' either when Enter is pressed or every time the value was modified.
+
+2798
+IMGUI_API const ImWchar*    GetGlyphRangesIcon();                   // Default + Font Awesome Icons
+-----------------------------------------
+
+
+IMGUI_DRAW.CPP
+-----------------------------------------
+2850
+const ImWchar* ImFontAtlas::GetGlyphRangesIcon()
+{
+    static const ImWchar ranges[] =
+    {
+        0x0020, 0x00FF, // Basic Latin + Latin Supplement
+        0xF000, 0xF2E0, // Font awesome icons
+        0,
+    };
+    return &ranges[0];
+}
+-----------------------------------------
+
+
+IMGUI_INTERNAL.H
+-----------------------------------------
+831
+    // [Centurion]
+    ImGuiSliderFlags_Rectangle = 1 << 22,
+    ImGuiSliderFlags_DisplayText = 1 << 23
+-----------------------------------------
+
+
+IMGUI_WIDGETS.CPP
+-----------------------------------------
+42
+#include <services/sqlservice.h>
+
+1102
+    if (pressed)
+    {
+        if (ImGuiItemFlags_Disabled)
+        {
+            *v = !(*v);
+            MarkItemEdited(id);
+        }
+    }
+
+1222
+window->DrawList->AddCircleFilled(center, radius - pad * style.FramePadding.y, GetColorU32(ImGuiCol_CheckMark), 16);
+
+2943
+    const ImRect frame_bb(window->DC.CursorPos, window->DC.CursorPos + ImVec2(w, style.FramePadding.y));
+
+2995
+    {
+        if (flags & ImGuiSliderFlags_Rectangle)
+            window->DrawList->AddRectFilled(grab_bb.Min / 1.01f, grab_bb.Max * 1.01f, GetColorU32(g.ActiveId == id ? ImGuiCol_SliderGrabActive : ImGuiCol_SliderGrab), style.GrabRounding);
+        else
+            window->DrawList->AddCircleFilled(ImVec2(IM_ROUND(grab_bb.GetCenter().x), IM_ROUND(grab_bb.GetCenter().y)), frame_bb.GetHeight() - 2, GetColorU32(g.ActiveId == id ? ImGuiCol_SliderGrabActive : ImGuiCol_SliderGrab));
+    }
+
+3007
+    if (flags & ImGuiSliderFlags_DisplayText)
+        RenderTextClipped(frame_bb.Min, frame_bb.Max, value_buf, value_buf_end, NULL, ImVec2(0.5f, 0.5f));
+		
+3886
+| ImGuiInputTextFlags_BlockSpecials
+
+3921
+        // Allow 0-9 a-z A-Z _
+        if (flags & ImGuiInputTextFlags_BlockSpecials)
+            if (!(c >= '0' && c <= '9') && !(c >= 'a' && c <= 'z') && !(c >= 'A' && c <= 'Z') && (c != '_'))
+                return false;
+
+4035
+if (flags & ~ImGuiItemFlags_Disabled) g.MouseCursor = ImGuiMouseCursor_TextInput;
+
+4043
+    const bool user_clicked = hovered && io.MouseClicked[0] && (flags & ~ImGuiItemFlags_Disabled);
+
+4549
+    if (flags & ImGuiInputTextFlags_Trim)	
+    {	
+        ImStrTrimBlanks(buf);	
+        for (int i = 0; i < strlen(buf); i++)	
+        {	
+            char c = buf[i];	
+            if (c >= 'A' && c <= 'Z')	
+                buf[i] = tolower(c);	
+        }	
+    }	
+
+4839
+    else if ((flags & ImGuiInputTextFlags_AnyInputReturnsTrue) != 0)
+        return enter_pressed || value_changed;
+
+5320
+            Text(SqlService::GetInstance().GetTranslation("w_current", false).c_str());
+
+5326
+            Text(SqlService::GetInstance().GetTranslation("w_original", false).c_str());
+
+6353
+//-------------------------------------------------------------------------
+// [SECTION] Widgets: Loading items
+//-------------------------------------------------------------------------
+// - BufferingBar()
+// - Spinner()
+//-------------------------------------------------------------------------
+bool ImGui::BufferingBar(const char* label, float value, const ImVec2& size_arg)
+{
+    ImGuiWindow* window = GetCurrentWindow();
+    if (window->SkipItems)
+        return false;
+
+    ImGuiContext& g = *GImGui;
+    const ImGuiStyle& style = g.Style;
+    const ImGuiID id = window->GetID(label);
+
+    ImVec2 pos = window->DC.CursorPos;
+    ImVec2 size = size_arg;
+    size.x -= style.FramePadding.x * 2;
+
+    const ImRect bb(pos, ImVec2(pos.x + size.x, pos.y + size.y));
+    ItemSize(bb, style.FramePadding.y);
+    if (!ItemAdd(bb, id))
+        return false;
+
+    // Render
+    const float circleStart = size.x * 0.7f;
+    const float circleEnd = size.x;
+    const float circleWidth = circleEnd - circleStart;
+
+    window->DrawList->AddRectFilled(bb.Min, ImVec2(pos.x + circleStart, bb.Max.y), ImGui::GetColorU32(ImGuiCol_Button));
+    window->DrawList->AddRectFilled(bb.Min, ImVec2(pos.x + circleStart * value, bb.Max.y), ImGui::GetColorU32(ImGuiCol_ButtonHovered));
+
+    const float t = g.Time;
+    const float r = size.y / 2;
+    const float speed = 1.5f;
+
+    const float a = speed * 0;
+    const float b = speed * 0.333f;
+    const float c = speed * 0.666f;
+
+    const float o1 = (circleWidth + r) * (t + a - speed * (int)((t + a) / speed)) / speed;
+    const float o2 = (circleWidth + r) * (t + b - speed * (int)((t + b) / speed)) / speed;
+    const float o3 = (circleWidth + r) * (t + c - speed * (int)((t + c) / speed)) / speed;
+
+    window->DrawList->AddCircleFilled(ImVec2(pos.x + circleEnd - o1, bb.Min.y + r), r, ImGui::GetColorU32(ImGuiCol_Button));
+    window->DrawList->AddCircleFilled(ImVec2(pos.x + circleEnd - o2, bb.Min.y + r), r, ImGui::GetColorU32(ImGuiCol_Button));
+    window->DrawList->AddCircleFilled(ImVec2(pos.x + circleEnd - o3, bb.Min.y + r), r, ImGui::GetColorU32(ImGuiCol_Button));
+    return true;
+}
+
+bool ImGui::Spinner(const char* label, float radius, int thickness)
+{
+    ImGuiWindow* window = GetCurrentWindow();
+    if (window->SkipItems)
+        return false;
+
+    ImGuiContext& g = *GImGui;
+    const ImGuiStyle& style = g.Style;
+    const ImGuiID id = window->GetID(label);
+
+    ImVec2 pos = window->DC.CursorPos;
+    ImVec2 size((radius + style.FramePadding.y) * 2, (radius + style.FramePadding.y) * 2);
+
+    const ImRect bb(pos, ImVec2(pos.x + size.x, pos.y + size.y));
+    ItemSize(bb, style.FramePadding.y);
+    if (!ItemAdd(bb, id))
+        return false;
+
+    // Render
+    window->DrawList->PathClear();
+
+    int num_segments = 30;
+    int start = abs(ImSin(g.Time * 1.8f) * (num_segments - 5));
+
+    const float a_min = IM_PI * 2.0f * ((float)start) / (float)num_segments;
+    const float a_max = IM_PI * 2.0f * ((float)num_segments - 3) / (float)num_segments;
+
+    const ImVec2 centre = ImVec2(pos.x + radius, pos.y + radius + style.FramePadding.y);
+
+    for (int i = 0; i < num_segments; i++)
+    {
+        const float a = a_min + ((float)i / (float)num_segments) * (a_max - a_min);
+        window->DrawList->PathLineTo(ImVec2(centre.x + ImCos(a + g.Time * 8) * radius,
+            centre.y + ImSin(a + g.Time * 8) * radius));
+    }
+
+    window->DrawList->PathStroke(ImGui::GetColorU32(ImGuiCol_Button), false, thickness);
+    return true;
+}
+
+7569
+float tab_padding = 1.f;
+
+7575
+if (tab->ID == tab_bar->SelectedTabId)
+{
+	found_selected_tab_id = true;
+	tab_padding = 1.2f;
+}
+
+7588
+tab->ContentWidth = TabItemCalcSize(tab_name, has_close_button).x * tab_padding;
+
+8268
+if (!(tab_bar->Flags & ImGuiTabBarFlags_NoTooltip | ImGuiTabItemFlags_NoTooltip))

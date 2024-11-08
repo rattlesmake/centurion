@@ -1,0 +1,27 @@
+<terrainZones>
+    <terrainZone name="mediterranean" isDefault="true">
+        <terrainTextures>
+            <terrainTexture name="GRASS_1" frequency="10" />
+            <terrainTexture name="GRASS_2" frequency="5" />
+            <terrainTexture name="GRASS_3" frequency="2" />
+            <terrainTexture name="GROUND_1" frequency="2" />
+        </terrainTextures>
+        <decorationAreas>
+            <area className="DecorationsAreaMediterranean_1" frequency="2" />
+            <area className="DecorationsAreaMediterranean_2" frequency="2" />
+            <area className="DecorationsAreaMediterranean_3" frequency="2" />
+            <area className="DecorationsAreaMediterranean_4" frequency="1" />
+            <area className="DecorationsAreaMediterranean_5" frequency="1" />
+            <area className="DecorationsAreaMediterranean_6" frequency="1" />
+        </decorationAreas>
+    </terrainZone>
+    <terrainZone name="desertic">
+        <terrainTextures>
+            <terrainTexture name="SAND_1" frequency="1" />
+        </terrainTextures>
+        <decorationAreas>
+            <area className="DecorationsAreaDesertic_1" frequency="1" />
+            <area className="DecorationsAreaDesertic_2" frequency="1" />
+        </decorationAreas>
+    </terrainZone>
+</terrainZones>

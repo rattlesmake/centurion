@@ -1,0 +1,329 @@
+<mapObjects>
+	<players>
+		<player id="0">
+			<Decorations>
+				<decoration class="broadleaf_1" id="13" xPos="15619" yPos="14516">
+				</decoration>
+				<decoration class="broadleaf_1" id="14" xPos="15927" yPos="14666">
+				</decoration>
+				<decoration class="broadleaf_1" id="15" xPos="15671" yPos="13878">
+				</decoration>
+				<decoration class="broadleaf_1" id="16" xPos="15976" yPos="13661">
+				</decoration>
+				<decoration class="broadleaf_1" id="17" xPos="16893" yPos="14413">
+				</decoration>
+				<decoration class="broadleaf_2" id="18" xPos="16291" yPos="14263">
+				</decoration>
+				<decoration class="broadleaf_2" id="19" xPos="16676" yPos="13974">
+				</decoration>
+				<decoration class="broadleaf_1" id="20" xPos="15588" yPos="12810">
+				</decoration>
+				<decoration class="broadleaf_1" id="21" xPos="15542" yPos="12301">
+				</decoration>
+				<decoration class="broadleaf_1" id="22" xPos="16209" yPos="18278">
+				</decoration>
+				<decoration class="broadleaf_1" id="23" xPos="16630" yPos="18157">
+				</decoration>
+				<decoration class="broadleaf_1" id="24" xPos="17012" yPos="18317">
+				</decoration>
+				<decoration class="broadleaf_1" id="25" xPos="16042" yPos="16095">
+				</decoration>
+				<decoration class="broadleaf_2" id="26" xPos="16528" yPos="16018">
+				</decoration>
+				<decoration class="jasmim_manga" id="27" xPos="18537" yPos="16000">
+				</decoration>
+				<decoration class="jasmim_manga" id="28" xPos="18867" yPos="15881">
+				</decoration>
+				<decoration class="jasmim_manga" id="29" xPos="18545" yPos="15659">
+				</decoration>
+				<decoration class="palm_1" id="30" xPos="18656" yPos="17955">
+				</decoration>
+				<decoration class="palm_1" id="31" xPos="19038" yPos="17815">
+				</decoration>
+				<decoration class="broadleaf_1" id="32" xPos="16572" yPos="12621">
+				</decoration>
+				<decoration class="broadleaf_1" id="33" xPos="16779" yPos="12347">
+				</decoration>
+				<decoration class="broadleaf_2" id="34" xPos="16061" yPos="12151">
+				</decoration>
+				<decoration class="broadleaf_1" id="35" xPos="15754" yPos="10773">
+				</decoration>
+				<decoration class="broadleaf_1" id="36" xPos="16053" yPos="10936">
+				</decoration>
+				<decoration class="broadleaf_1" id="37" xPos="16864" yPos="10796">
+				</decoration>
+				<decoration class="broadleaf_1" id="38" xPos="16557" yPos="10197">
+				</decoration>
+				<decoration class="broadleaf_2" id="39" xPos="16064" yPos="10388">
+				</decoration>
+				<decoration class="fence_1" id="40" xPos="15733" yPos="9081">
+				</decoration>
+				<decoration class="fence_2" id="41" xPos="15817" yPos="8910">
+				</decoration>
+				<decoration class="fence_2" id="43" xPos="15985" yPos="8793">
+				</decoration>
+				<decoration class="fence_3" id="44" xPos="16553" yPos="8725">
+				</decoration>
+				<decoration class="fence_4" id="46" xPos="16769" yPos="8797">
+				</decoration>
+				<decoration class="fence_4" id="47" xPos="15822" yPos="9257">
+				</decoration>
+				<decoration class="fence_3" id="50" xPos="16325" yPos="9420">
+				</decoration>
+				<decoration class="fence_3" id="51" xPos="16571" yPos="9425">
+				</decoration>
+				<decoration class="fence_2" id="53" xPos="16782" yPos="9381">
+				</decoration>
+				<decoration class="fence_1" id="55" xPos="16868" yPos="8942">
+				</decoration>
+				<decoration class="camp_tent" id="56" xPos="16427" yPos="9278">
+				</decoration>
+				<decoration class="camp_tent" id="57" xPos="16657" yPos="9140">
+				</decoration>
+				<decoration class="campfire" id="58" xPos="16279" yPos="9047">
+				</decoration>
+				<decoration class="hay_bale" id="59" xPos="15972" yPos="9119">
+				</decoration>
+				<decoration class="wooden_tower" id="60" xPos="16140" yPos="9335">
+				</decoration>
+				<decoration class="wooden_tower" id="61" xPos="16165" yPos="8887">
+				</decoration>
+				<decoration class="camp_tent" id="62" xPos="16599" yPos="8900">
+				</decoration>
+				<decoration class="fence_1" id="63" xPos="16866" yPos="9228">
+				</decoration>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="1">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+				<building class="r_townhall" id="1" settlementID="1" xPos="2549" yPos="17670">
+					<displayedName>roman townhall</displayedName>
+					<idName></idName>
+					<settlement>
+						<idName>Stronghold1_Rome</idName>
+						<gold>10000</gold>
+						<food>10000</food>
+						<population>50</population>
+						<maxPopulation>100</maxPopulation>
+						<loyalty>0</loyalty>
+					</settlement>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="r_academy" id="2" settlementID="1" xPos="3239" yPos="17987">
+					<displayedName>roman academy</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="r_barracks" id="3" settlementID="1" xPos="1779" yPos="17941">
+					<displayedName>roman barracks</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="r_blacksmith" id="4" settlementID="1" xPos="3119" yPos="17283">
+					<displayedName>roman blacksmith</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="r_market" id="5" settlementID="1" xPos="1967" yPos="17231">
+					<displayedName>roman market</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="r_temple" id="6" settlementID="1" xPos="2560" yPos="18331">
+					<displayedName>roman temple</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="e_townhall" id="7" settlementID="7" xPos="2797" yPos="14015">
+					<displayedName>egyptian townhall</displayedName>
+					<idName></idName>
+					<settlement>
+						<idName>Stronghold1_Egypt</idName>
+						<gold>10000</gold>
+						<food>10000</food>
+						<population>50</population>
+						<maxPopulation>100</maxPopulation>
+						<loyalty>0</loyalty>
+					</settlement>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="e_blacksmith" id="8" settlementID="7" xPos="3594" yPos="13865">
+					<displayedName>egyptian blacksmith</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="e_osiris_temple" id="9" settlementID="7" xPos="3277" yPos="14459">
+					<displayedName>osiris temple</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="e_barracks" id="10" settlementID="7" xPos="2044" yPos="13861">
+					<displayedName>egyptian barracks</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="e_temple_of_horus_and_anubis" id="11" settlementID="7" xPos="2348" yPos="14531">
+					<displayedName>temple of Horus and Anubis</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="e_tavern" id="12" settlementID="7" xPos="2822" yPos="13369">
+					<displayedName>Egyptian tavern</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="r_village" id="65" settlementID="65" xPos="8004" yPos="17489">
+					<displayedName>roman village hall</displayedName>
+					<idName></idName>
+					<settlement>
+						<idName>Village1_Rome</idName>
+						<gold>136</gold>
+						<food>232</food>
+						<population>60</population>
+						<maxPopulation>100</maxPopulation>
+						<loyalty>100</loyalty>
+					</settlement>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="r_house1" id="67" settlementID="65" xPos="7138" yPos="17609">
+					<displayedName>roman house</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+				<building class="r_house2" id="68" settlementID="65" xPos="8242" yPos="18030">
+					<displayedName>roman house</displayedName>
+					<idName></idName>
+					<percentHealth>100</percentHealth>
+				</building>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="2">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="3">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="4">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="5">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="6">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="7">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="8">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="9">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="10">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="11">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="12">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="13">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="14">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="15">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+		<player id="16">
+			<Decorations>
+			</Decorations>
+			<Buildings>
+			</Buildings>
+			<Units>
+			</Units>
+		</player>
+	</players>
+</mapObjects>

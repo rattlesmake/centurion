@@ -1,0 +1,7 @@
+<gObjectScript id="barracks_train" autoExecute="0" associableToCmd="1" needTarget="0">
+    <!-- Parameters that a command must provide -->
+    <!-- Only makes sense if associableToCmd is equal to 1 -->
+    <requiredCommandParameters>
+        <param name="className" type="string"/>
+    </requiredCommandParameters>
+</gObjectScript>

@@ -1,0 +1,51 @@
+﻿<iframe name="editorWindow">
+	<close_button image_name="common/iframe/editorWindow/buttons/button_x" repeat="none"/>
+	<top_left image_name="common/iframe/editorWindow/topleft" repeat="none"/>
+	<top_right image_name="common/iframe/editorWindow/topright" repeat="none"/>
+	<bottom_right image_name="common/iframe/editorWindow/bottomright" repeat="none"/>
+	<bottom_left image_name="common/iframe/editorWindow/bottomleft" repeat="none"/>
+	<top image_name="common/iframe/editorWindow/top" repeat="x"/>
+	<right image_name="common/iframe/editorWindow/right" repeat="y"/>
+	<bottom image_name="common/iframe/editorWindow/bottom" repeat="x"/>
+	<left image_name="common/iframe/editorWindow/left" repeat="y"/>
+	<background image_name="common/iframe/editorWindow/back" repeat="none"/>
+	<title>
+		<font name="tahoma_15"/>
+		<textColor r="255" g="255" b="255" a="255"/>
+	</title>
+	<text>
+		<font name="tahoma_15" />
+		<textColor r="255" g="255" b="255" a="255"/>
+	</text>
+  	<button>
+		<textColor r="255" g="255" b="255" a="255"/>
+		<font name="tahoma_13" />
+		<image name="common/iframe/editorWindow/buttons/button" hover="common/iframe/editorWindow/buttons/button" pressed="common/iframe/editorWindow/buttons/button"/>
+	</button>
+	<textList>
+		<textColor r="255" g="255" b="255" a="255"/>
+		<font name="tahoma_15" />
+		<background r="56" g="82" b="124" a="255"/>
+		<hoverBackground r="64" g="136" b="225" a="255"/>
+		<selectedBackground r="59" g="103" b="163" a="255"/>
+		<pressedBackground r="66" g="150" b="250" a="255"/>
+		<sliderBackground r="47" g="62" b="90" a="255"/>
+		<slider r="212" g="212" b="212" a="255"/>
+		<sliderHover r="255" g="255" b="255" a="255"/>
+		<sliderPressed r="224" g="224" b="224" a="255"/>
+	</textList>
+	<textInput>
+		<font name="tahoma_13_bold"/>
+		<textColor r="255" g="255" b="255" a="255"/>
+		<background r="56" g="82" b="124" a="255"/>
+		<border r="47" g="62" b="90" a="255"/>
+	</textInput>
+	<inputInt>
+		<textColor r="255" g="255" b="255" a="255"/>
+		<font name="tahoma_13" />
+		<background r="56" g="82" b="124" a="255"/>
+		<buttonBackground r="47" g="62" b="90" a="255"/>
+		<buttonSelectedBackground r="57" g="72" b="100" a="255"/>
+		<buttonHoverBackground r="88" g="95" b="115" a="255"/>
+	</inputInt>
+</iframe>

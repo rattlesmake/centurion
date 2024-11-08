@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="peaceful" type="cpp_abstractclass" class_name="wagon">
+	<attributes>
+		<attribute name="singularName" value="wagon"/>
+		<attribute name="pluralName" value="wagons"/>
+        
+        <attribute name="freedom" value="true"/>
+        <attribute name="maxFood" value="0"/>
+        
+        <attribute name="foodCarried" value="0"/>
+		<attribute name="goldCarried" value="0"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+	</sounds>
+	<commands>
+	</commands>
+	<values>
+	</values>
+</object>

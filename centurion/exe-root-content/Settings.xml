@@ -1,0 +1,76 @@
+<Settings>
+	<GlobalPreferences>
+		<CameraMaxZoom>20</CameraMaxZoom>
+		<CameraMovespeed>10</CameraMovespeed>
+		<IsDebugActive>true</IsDebugActive>
+		<IsFullscreenActive>false</IsFullscreenActive>
+		<Language>english</Language>
+		<LastAdventure>unsaved</LastAdventure>
+		<WindowSize>
+			<Width>1280</Width>
+			<Height>720</Height>
+		</WindowSize>
+	</GlobalPreferences>
+	<EditorPreferences>
+		<RandomMapSettings>
+			<ScenarioSize>medium</ScenarioSize>
+			<ScenarioType>continental</ScenarioType>
+		</RandomMapSettings>
+	</EditorPreferences>
+	<MatchPreferences>
+		<PlayersSettings>
+			<PlayerSettings>
+				<Id>1</Id>
+				<Name>Lezzo</Name>
+				<Race>rome</Race>
+				<Active>true</Active>
+			</PlayerSettings>
+			<PlayerSettings>
+				<Id>2</Id>
+				<Name>Mds</Name>
+				<Race>rome</Race>
+				<Active>true</Active>
+			</PlayerSettings>
+			<PlayerSettings>
+				<Id>3</Id>
+				<Name>Mona</Name>
+				<Race>rome</Race>
+				<Active>false</Active>
+			</PlayerSettings>
+			<PlayerSettings>
+				<Id>4</Id>
+				<Name>Pongo</Name>
+				<Race>rome</Race>
+				<Active>false</Active>
+			</PlayerSettings>
+			<PlayerSettings>
+				<Id>5</Id>
+				<Name>Player 5</Name>
+				<Race>rome</Race>
+				<Active>false</Active>
+			</PlayerSettings>
+			<PlayerSettings>
+				<Id>6</Id>
+				<Name>Player 6</Name>
+				<Race>rome</Race>
+				<Active>false</Active>
+			</PlayerSettings>
+			<PlayerSettings>
+				<Id>7</Id>
+				<Name>Player 7</Name>
+				<Race>rome</Race>
+				<Active>false</Active>
+			</PlayerSettings>
+			<PlayerSettings>
+				<Id>8</Id>
+				<Name>Player 8</Name>
+				<Race>rome</Race>
+				<Active>false</Active>
+			</PlayerSettings>
+		</PlayersSettings>
+		<RandomMapSettings>
+			<ScenarioSize>medium</ScenarioSize>
+			<ScenarioType>continental</ScenarioType>
+		</RandomMapSettings>
+	</MatchPreferences>
+</Settings>

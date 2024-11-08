@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="military" type="cpp_abstractclass" class_name="hero">
+	<attributes>
+		<attribute name="singularName" value="hero"/>
+		<attribute name="pluralName" value="heroes"/>
+              
+		<attribute name="armorSlash" value="20"/>
+        <attribute name="armorPierce" value="20"/>
+        <attribute name="freedom" value="true"/>
+		<attribute name="minAttack" value="20"/>
+		<attribute name="maxAttack" value="40"/>
+		<attribute name="maxHealth" value="1000"/>
+        <attribute name="speed" value="120"/>
+        
+        <attribute name="maxArmySize" value="50"/>	
+        <attribute name="troupExpPercGain" value="40"/> <!-- Ogni truppa fornisce una percentuale dell'esperienza che ottiene da una kill all'eroe a cui è assegnata -->
+		<attribute name="skills" value='{"Healing", "Ceasefire", "Team defense", "Epic endurance", "Euphoria"}'/>
+	</attributes>
+	<methods>
+		<method name="move" scriptID="hero_move" />
+		<method name="enter" scriptID="hero_enter" />
+	</methods>
+	<sounds>
+	</sounds>
+</object>

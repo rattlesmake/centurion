@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="stronghold" type="cpp_noclass" class_name="base_tower">
+  <attributes>
+    <attribute name="singularName" value="Tower"/>
+  </attributes>
+  <methods>
+  </methods>
+  <sounds>
+  </sounds>
+</object>

@@ -1,0 +1,14 @@
+<formations>
+	<formation name="line">
+		<description>Fabio è un culo di pongo</description>
+		<unitPerRow>5</unitPerRow>
+		<distBetweenUnits>50</distBetweenUnits> 		<!-- Valore espresso in pixel -->
+		<heroOffsetX>0</heroOffsetX>					<!-- Distanza orizzontale tra l'eroe e la prima fila -->
+		<heroOffsetY>80</heroOffsetY> 					<!-- Distanza verticale tra l'eroe e la prima fila -->
+		<rowOffsetX>0</rowOffsetX> 						<!-- Distanza orizzontale tra ogni riga -->
+		<rowOffsetY>50</rowOffsetY> 					<!-- Distanza verticale tra ogni riga -->
+		<bonusLevel>4</bonusLevel>		
+		<bonusAttack>5</bonusAttack> 					<!-- Il bonus riguarda sia l'attacco minimo sia l'attacco massimo indipendentemente dal tipo (sia che sia tagliente, sia perforante riceve comunque il bonus) -->
+		<bonusDefence>6</bonusDefence>					<!-- Il bonus riguarda sia la difesa massima sia la difesa massima indipendentemente dal tipo (sia che sia tagliente, sia perforante riceve comunque il bonus) -->
+	</formation>
+</formations>

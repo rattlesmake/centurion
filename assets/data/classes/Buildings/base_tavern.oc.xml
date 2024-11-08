@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="stronghold" type="cpp_noclass" class_name="base_tavern">
+  <attributes>
+    <attribute name="singularName" value="tavern"/>
+  </attributes>
+  <methods>
+  </methods>
+  <sounds>
+  </sounds>
+</object>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="unit" type="cpp_noclass" class_name="peaceful">
+    <attributes>
+        <attribute name="minAttack" value="0"/>
+        <attribute name="maxAttack" value="0"/>
+    </attributes>
+    <methods>
+    </methods>
+    <sounds>
+    </sounds>
+</object>

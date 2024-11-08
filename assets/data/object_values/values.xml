@@ -1,0 +1,24 @@
+<!-- 
+ CENTURION
+ [2019] - [2022] Rattlesmake
+ All Rights Reserved.
+-->
+
+<!-- Scripts are stored in values.py -->
+
+<values>
+    <value name="level" icon="level" scriptFun="value_level" />
+    <value name="health" icon="health" scriptFun="value_health" />
+    <value name="stamina" icon="stamina" scriptFun="value_stamina" />
+    <value name="speed" icon="speed" scriptFun="value_speed" />
+    <value name="food" icon="food" scriptFun="value_food" />
+	<value name="attack" icon="attack" scriptFun="value_attack" /> <!-- Engine distinguishes automatically between pierce and slash attack -->
+	<value name="defence" icon="defence" scriptFun="value_defence" />
+	<value name="range" icon="range" scriptFun="value_range" />
+    <value name="sight" icon="sight" scriptFun="value_sight" />
+    
+	<value name="gold_building" icon="gold" scriptFun="value_gold_building" />
+    <value name="food_building" icon="food" scriptFun="value_food_building" />
+	<value name="population" icon="population" scriptFun="value_population" />
+	<value name="loyalty" icon="loyalty" scriptFun="value_loyalty" />
+</values>

@@ -1,0 +1,136 @@
+﻿<iframe name="egyptianSand">
+	<close_button image_name="common/iframe/egyptianSand/buttons/button_x" repeat="none"/>
+	<top_left image_name="common/iframe/egyptianSand/topleft" repeat="none"/>
+	<top_right image_name="common/iframe/egyptianSand/topright" repeat="none"/>
+	<bottom_right image_name="common/iframe/egyptianSand/bottomright" repeat="none"/>
+	<bottom_left image_name="common/iframe/egyptianSand/bottomleft" repeat="none"/>
+	<top image_name="common/iframe/egyptianSand/top" repeat="x"/>
+	<right image_name="common/iframe/egyptianSand/right" repeat="y"/>
+	<bottom image_name="common/iframe/egyptianSand/bottom" repeat="x"/>
+	<left image_name="common/iframe/egyptianSand/left" repeat="y"/>
+	<background image_name="common/iframe/egyptianSand/back" repeat="none"/>
+	<title>
+		<font name="tahoma_15"/>
+		<textColor r="24" g="24" b="24" a="255"/>
+	</title>
+	<text>
+		<font name="tahoma_15"/>
+		<textColor r="24" g="24" b="24" a="255"/>
+	</text>
+	<tab>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15" active_name="tahoma_15_bold"/>
+		<background r="214" g="198" b="148" a="255"/>
+		<hoverBackground r="255" g="231" b="173" a="255"/>
+		<selectedBackground r="224" g="208" b="158" a="255"/> 
+	</tab>
+  	<button>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15"/>
+		<image name="common/iframe/egyptianSand/buttons/button" hover="common/iframe/egyptianSand/buttons/button_hover"
+		pressed="common/iframe/egyptianSand/buttons/button_pressed" disabled="common/iframe/egyptianSand/buttons/button_disabled"/>
+	</button>
+	<textList>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15"/>
+		<background r="214" g="198" b="148" a="255"/>
+		<hoverBackground r="255" g="231" b="173" a="255"/>
+		<selectedBackground r="164" g="138" b="98" a="255"/>
+		<pressedBackground r="255" g="243" b="217" a="255"/>
+		<sliderBackground r="255" g="198" b="33" a="255"/>
+		<slider r="206" g="198" b="156" a="255"/>
+		<sliderHover r="216" g="208" b="166" a="255"/>
+		<sliderPressed r="164" g="138" b="98" a="255"/>
+		<border r="107" g="99" b="74" a="255"/>
+	</textList>
+	<textInput>
+		<font name="inconsolata_16"/>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<background r="255" g="247" b="214" a="255"/>
+		<border r="47" g="62" b="90" a="255"/>
+	</textInput>
+	<textInputMultiline>
+		<font name="inconsolata_16"/>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<background r="255" g="247" b="214" a="255"/>
+		<sliderBackground r="255" g="198" b="33" a="255"/>
+		<slider r="206" g="198" b="156" a="255"/>
+		<sliderHover r="216" g="208" b="166" a="255"/>
+		<sliderPressed r="164" g="138" b="98" a="255"/>
+		<border r="47" g="62" b="90" a="255"/>
+	</textInputMultiline>
+	<comboBox>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15"/>
+		<background r="255" g="247" b="214" a="255"/>
+		<hoverBackground r="255" g="247" b="214" a="255"/>
+		<arrowBackground r="255" g="198" b="33" a="255"/>
+		<arrowHoverBackground r="255" g="231" b="173" a="255"/>
+		<selectableHoverBackground r="66" g="150" b="250" a="89"/>
+		<selectablePressedBackground r="66" g="150" b="250" a="89"/>
+	</comboBox>
+	<checkBox>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15"/>
+		<background r="255" g="247" b="214" a="255"/>
+		<hoverBackground r="255" g="247" b="214" a="255"/>
+		<selectedBackground r="255" g="247" b="214" a="255"/>
+		<markColor r="24" g="24" b="24" a="255"/>
+	</checkBox>
+	<inputInt>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15"/>
+		<background r="255" g="247" b="214" a="255"/>
+		<buttonBackground r="214" g="198" b="148" a="255"/>
+		<buttonSelectedBackground r="164" g="138" b="98" a="255"/>
+		<buttonHoverBackground r="255" g="231" b="173" a="255"/>
+	</inputInt>
+	<slider>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15"/>
+		<type name="circle"/>
+		<background r="255" g="231" b="173" a="255"/>
+		<pressedBackground r="255" g="247" b="214" a="255"/>
+		<barBackground r="255" g="198" b="33" a="255"/>
+		<barHoverBackground r="255" g="231" b="173" a="255"/>
+		<barPressedBackground r="238" g="178" b="0" a="255"/>
+		<border r="107" g="99" b="74" a="255"/>
+	</slider>
+	<progressBar>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15"/>
+		<barColor r="255" g="247" b="214" a="255"/>
+		<background r="255" g="198" b="33" a="255"/>
+	</progressBar>
+	<bufferingBar>
+		<barColor r="24" g="24" b="24" a="255"/>
+		<background r="255" g="247" b="214" a="255"/>
+	</bufferingBar>
+	<spinner>
+		<color r="255" g="247" b="214" a="255"/>
+	</spinner>
+	<tree>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15"/>
+		<fontBig name="tahoma_16_bold"/>
+		<nodeBackground r="255" g="198" b="33" a="255"/>
+		<nodeHoverBackground r="255" g="231" b="173" a="255"/>
+		<nodePressedBackground r="238" g="178" b="0" a="255"/>
+		<resizeGrip r="216" g="208" b="166" a="255"/>
+		<resizeGripHover r="226" g="218" b="176" a="255"/>
+		<resizeGripPressed r="164" g="138" b="98" a="255"/>
+		<sliderBackground r="255" g="198" b="33" a="255"/>
+		<slider r="206" g="198" b="156" a="255"/>
+		<sliderHover r="216" g="208" b="166" a="255"/>
+		<sliderPressed r="164" g="138" b="98" a="255"/>
+	</tree>
+	<multipleChoice>
+		<textColor r="24" g="24" b="24" a="255"/>
+		<font name="tahoma_15"/>
+		<background r="255" g="247" b="214" a="255"/>
+		<pressedBackground r="255" g="231" b="173" a="255"/>
+		<hoverBackground r="255" g="231" b="173" a="255"/>
+		<optionBackground r="24" g="24" b="24" a="255"/>
+		<border r="107" g="99" b="74" a="255"/>
+	</multipleChoice>
+</iframe>

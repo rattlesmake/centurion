@@ -1,0 +1,13 @@
+<mds>
+	<iframeArray>
+		<iframe id="0" skin="emptyIframeMenu" title="w_mds" position="x=0; y=Engine.GetWindowHeight();" size="w=Engine.GetWindowWidth(); h=Engine.GetWindowHeight();" isOpened="true" canBeClosed="false" isEmpty="true">
+            <textArray>
+                <text id="0" stringName="TMP1" align="right" xOffset="w - 80" yOffset="50"/> <!-- Loading element string -->
+                <text id="1" stringName="TMP2" align="center" xOffset="w / 2" yOffset="30"/> <!-- Random game advice string-->
+            </textArray>
+			<spinnerArray>
+                <spinner id="0" radius="15" thickness="4" xOffset="w - 60" yOffset="60"/>
+            </spinnerArray>
+		</iframe>
+	</iframeArray>
+</mds>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="object" type="cpp_abstractclass" class_name="playable">
+	<attributes>
+        <attribute name="iconName" value="game/match/topbar/icons/classes/no_icon"/>
+        <attribute name="sight" value="600"/>
+		<attribute name="singularName" value="object"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+	</sounds>
+</object>

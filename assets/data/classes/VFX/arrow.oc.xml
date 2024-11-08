@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="Parabola" type="cpp_vfxclass" class_name="arrow">
+	<attributes>
+		<attribute name="ent_path" value="vfx/arrow/arrow.oe.xml"/>
+	</attributes>
+</object>

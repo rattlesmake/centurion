@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="building" type="cpp_noclass" class_name="habitable">
+  <attributes>
+    <attribute name="canProduceGold" value="true"/>
+    <attribute name="canProduceFood" value="false"/>
+  </attributes>
+  <methods>
+  </methods>
+  <sounds>
+  </sounds>
+</object>

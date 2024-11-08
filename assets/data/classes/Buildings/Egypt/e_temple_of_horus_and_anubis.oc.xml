@@ -1,0 +1,31 @@
+<object parent="base_arena" type="cpp_buildingclass" class_name="e_temple_of_horus_and_anubis">
+	<attributes>
+		<attribute name="singularName" value="temple of horus and anubis"/>
+		<attribute name="race" value="egypt"/>
+		<attribute name="selectionRadius" value="165"/>
+		<attribute name="editor_tree" value="buildings/egyptian_stronghold"/>
+		<attribute name="ent_path" value="buildings/egypt/templeofhorusandanubis/etempleofhorusandanubis.oe.xml"/>
+		<attribute name="grid_path" value="buildings/egypt/templeofhorusandanubis/etempleofhorusandanubis_grid.xml"/>
+	</attributes>
+	<methods>
+    </methods>
+    <commands>
+		<command id="train_ESwordsman" associatedMethod="train" bottombarPriority="1">
+            <params>
+                <param name="className" type="string" value="r_legionary" />  
+            </params>
+			<displayedName>Train swordsman</displayedName>
+			<description>Train a swordsman.</description>
+			<goldCost>100</goldCost>
+			<populationCost>1</populationCost>
+			<delay>2</delay>
+			<hotKey>S</hotKey>
+			<type>training</type>
+			<bottomBarIcon>game/match/bottombar/icons/train_eswordsman</bottomBarIcon>
+			<topBarIcon>game/match/topbar/icons/trainings/train_eswordsman</topBarIcon>
+		</command>
+	</commands>
+	<sounds>
+		<sound name="select" path="sounds/eTempleSelect.ogg"/>
+	</sounds>
+</object>

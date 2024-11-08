@@ -1,0 +1,6 @@
+<gObjectScript id="building_repair" autoExecute="0" associableToCmd="1" needTarget="0">
+    <!-- Parameters that a command must provide -->
+    <!-- Only makes sense if associableToCmd is equal to 1 -->
+    <requiredCommandParameters>
+    </requiredCommandParameters>
+</gObjectScript>

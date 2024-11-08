@@ -1,0 +1,241 @@
+<!--=======================
+  CENTURION
+  [2019] - [2022] Rattlesmake
+  All Rights Reserved.
+========================-->
+
+<!-- Scripts are stored in Menu.py --> 
+
+<menuPages>
+    
+    <!-- MAIN MENU -->
+
+    <menuPage name="mainmenu">
+        <iframeArray>
+            <iframe id="0" skin="emptyIframeMenu" title="w_main_menu" position="x=0; y=_height_" size="w=_width_; h=_height_;" isOpened="true" canBeMoved="false" canBeClosed="false" isEmpty="true">
+                <buttonArray>
+                    <button id="0" stringName="w_game_close" xOffset="-50-_width_ * 20 / 100" yOffset="100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="mainmenu_iframe0_btn0_click" />
+                    <button id="1" stringName="w_match" xOffset="-50-_width_ * 20 / 100" yOffset="_height_/2+60+4*_height_ * 6 / 100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="mainmenu_iframe0_btn1_click" />
+                    <button id="2" stringName="g_load_game" xOffset="-50-_width_ * 20 / 100" yOffset="_height_/2+45+3*_height_ * 6 / 100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="mainmenu_iframe0_btn2_click" />
+                    <button id="3" stringName="w_editor" xOffset="-50-_width_ * 20 / 100" yOffset="_height_/2+30+2*_height_ * 6 / 100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="mainmenu_iframe0_btn3_click" />
+                    <button id="4" stringName="w_mds" xOffset="-50-_width_ * 20 / 100" yOffset="_height_/2+15+_height_ * 6 / 100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="mainmenu_iframe0_btn4_click" />
+                    <button id="5" stringName="w_options" xOffset="-50-_width_ * 20 / 100" yOffset="_height_/2" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="mainmenu_iframe0_btn5_click" />
+                </buttonArray>
+                <imageArray>
+                    <image image_name="menu/background" xOffset="0" yOffset="0" type="background"/>
+                </imageArray>
+            </iframe>
+        </iframeArray>
+    </menuPage>
+
+    <!-- MATCH -->
+
+    <menuPage name="match">
+        <iframeArray>
+            <iframe id="0" skin="emptyIframeMenu" title="w_match_empty" position="x=0; y=_height_" size="w=_width_; h=_height_;" isOpened="true" canBeMoved="false" canBeMinimized="false" canBeClosed="false" isEmpty="true">
+                <buttonArray>
+                    <button id="0" stringName="m_settings" xOffset="-50-_width_ * 20 / 100" yOffset="100+30+2*_height_ * 6 / 100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="match_iframe0_btn0_click" />
+                    <button id="1" stringName="m_start_button" xOffset="-50-_width_ * 20 / 100" yOffset="100+15+_height_ * 6 / 100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="match_iframe0_btn1_click" />
+                    <button id="2" stringName="m_exit_button" xOffset="-50-_width_ * 20 / 100" yOffset="100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="match_iframe0_btn2_click" />
+                </buttonArray>
+                <imageArray>
+                    <image image_name="menu/background" xOffset="0" yOffset="0" type="background"/>
+                </imageArray>
+            </iframe>
+            <iframe id="1" skin="mechanicalGrey" title="w_match" position="x=25; y=_height_-20;" size="w=800; h=500;" isOpened="true" canBeMoved="false" canBeMinimized="false" canBeClosed="false" icon="ICON_MATCH">
+                <openingScript fun="match_iframe1_opening"/>
+                <runtimeScript fun="match_iframe1_runtime" />
+                <textInputArray>
+                    <textInput id="0" xOffset="100" yOffset="450" width="120" placeholder="player_1" blockSpecials="false"/>
+                    <textInput id="1" xOffset="100" yOffset="400" width="120" placeholder="player_2" blockSpecials="false"/>
+                    <textInput id="2" xOffset="100" yOffset="350" width="120" placeholder="player_3" blockSpecials="false"/>
+                    <textInput id="3" xOffset="100" yOffset="300" width="120" placeholder="player_4" blockSpecials="false"/>
+                    <textInput id="4" xOffset="100" yOffset="250" width="120" placeholder="player_5" blockSpecials="false"/>
+                    <textInput id="5" xOffset="100" yOffset="200" width="120" placeholder="player_6" blockSpecials="false"/>
+                    <textInput id="6" xOffset="100" yOffset="150" width="120" placeholder="player_7" blockSpecials="false"/>
+                    <textInput id="7" xOffset="100" yOffset="100" width="120" placeholder="player_8" blockSpecials="false"/>
+                </textInputArray>
+                <comboBoxArray>
+                    <!-- Race comboboxes -->
+                    <comboBox id="0" xOffset="240" yOffset="450" width="100" height="50"/>
+                    <comboBox id="1" xOffset="240" yOffset="400" width="100" height="50"/>
+                    <comboBox id="2" xOffset="240" yOffset="350" width="100" height="50"/>
+                    <comboBox id="3" xOffset="240" yOffset="300" width="100" height="50"/>
+                    <comboBox id="4" xOffset="240" yOffset="250" width="100" height="50"/>
+                    <comboBox id="5" xOffset="240" yOffset="200" width="100" height="50"/>
+                    <comboBox id="6" xOffset="240" yOffset="150" width="100" height="50"/>
+                    <comboBox id="7" xOffset="240" yOffset="100" width="100" height="50" />
+
+                    <!-- Player or AI difficulty -->
+                    <comboBox id="8" xOffset="360" yOffset="450" width="150" height="50"/>
+                    <comboBox id="9" xOffset="360" yOffset="400" width="150" height="50"/>
+                    <comboBox id="10" xOffset="360" yOffset="350" width="150" height="50"/>
+                    <comboBox id="11" xOffset="360" yOffset="300" width="150" height="50"/>
+                    <comboBox id="12" xOffset="360" yOffset="250" width="150" height="50"/>
+                    <comboBox id="13" xOffset="360" yOffset="200" width="150" height="50"/>
+                    <comboBox id="14" xOffset="360" yOffset="150" width="150" height="50"/>
+                    <comboBox id="15" xOffset="360" yOffset="100" width="150" height="50"/>
+
+                    <!-- Players team -->
+                    <comboBox id="16" xOffset="530" yOffset="450" width="50" height="50"/>
+                    <comboBox id="17" xOffset="530" yOffset="400" width="50" height="50"/>
+                    <comboBox id="18" xOffset="530" yOffset="350" width="50" height="50"/>
+                    <comboBox id="19" xOffset="530" yOffset="300" width="50" height="50"/>
+                    <comboBox id="20" xOffset="530" yOffset="250" width="50" height="50"/>
+                    <comboBox id="21" xOffset="530" yOffset="200" width="50" height="50"/>
+                    <comboBox id="22" xOffset="530" yOffset="150" width="50" height="50"/>
+                    <comboBox id="23" xOffset="530" yOffset="100" width="50" height="50"/>
+
+                    <!-- Player bonuses -->
+                    <comboBox id="24" xOffset="600" yOffset="450" width="100" height="50"/>
+                    <comboBox id="25" xOffset="600" yOffset="400" width="100" height="50"/>
+                    <comboBox id="26" xOffset="600" yOffset="350" width="100" height="50"/>
+                    <comboBox id="27" xOffset="600" yOffset="300" width="100" height="50"/>
+                    <comboBox id="28" xOffset="600" yOffset="250" width="100" height="50"/>
+                    <comboBox id="29" xOffset="600" yOffset="200" width="100" height="50"/>
+                    <comboBox id="30" xOffset="600" yOffset="150" width="100" height="50"/>
+                    <comboBox id="31" xOffset="600" yOffset="100" width="100" height="50"/>
+                </comboBoxArray>
+                <colorPickerArray>
+                    <colorPicker id="0" xOffset="60" yOffset="450" />
+                    <colorPicker id="1" xOffset="60" yOffset="400" />
+                    <colorPicker id="2" xOffset="60" yOffset="350" />
+                    <colorPicker id="3" xOffset="60" yOffset="300" />
+                    <colorPicker id="4" xOffset="60" yOffset="250" />
+                    <colorPicker id="5" xOffset="60" yOffset="200" />
+                    <colorPicker id="6" xOffset="60" yOffset="150" />
+                    <colorPicker id="7" xOffset="60" yOffset="100" />
+                </colorPickerArray>
+                <checkBoxArray>
+                    <checkBox id="0" stringName="##1" xOffset="20" yOffset="450" onclick="match_iframe1_chkbox0_click" />
+                    <checkBox id="1" stringName="##2" xOffset="20" yOffset="400" onclick="match_iframe1_chkbox1_click" />
+                    <checkBox id="2" stringName="##3" xOffset="20" yOffset="350" onclick="match_iframe1_chkbox2_click" />
+                    <checkBox id="3" stringName="##4" xOffset="20" yOffset="300" onclick="match_iframe1_chkbox3_click" />
+                    <checkBox id="4" stringName="##5" xOffset="20" yOffset="250" onclick="match_iframe1_chkbox4_click" />
+                    <checkBox id="5" stringName="##6" xOffset="20" yOffset="200" onclick="match_iframe1_chkbox5_click" />
+                    <checkBox id="6" stringName="##7" xOffset="20" yOffset="150" onclick="match_iframe1_chkbox6_click" />
+                    <checkBox id="7" stringName="##8" xOffset="20" yOffset="100" onclick="match_iframe1_chkbox7_click" />
+                </checkBoxArray>
+            </iframe>
+            <iframe id="2" skin="mechanicalGrey" title="w_summary" position="x=850; y=_height_-20;" size="w = _width_ - 875; h=450;" isOpened="true" canBeMoved="false" canBeMinimized="false" canBeClosed="false" icon="ICON_EMPTY_FRAME">
+                <!-- Iframe con testo riepilogativo. Riempirlo quando possibile con le voci della personalizzazione della partita -->
+            </iframe>
+        </iframeArray>
+    </menuPage>
+    
+    <!-- MATCH CUSTOMIZING -->
+
+    <menuPage name="match_customizing">
+        <iframeArray>
+            <iframe id="0" skin="emptyIframeMenu" title="w_main_menu" position="x=0; y=_height_" size="w=_width_; h=_height_;" isOpened="true" canBeMoved="false" canBeClosed="false" isEmpty="true">
+				<buttonArray>
+                    <button id="0" stringName="w_apply" xOffset="-50-_width_ * 20 / 100" yOffset="100+15+_height_ * 6 / 100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="matchcust_iframe0_btn0_click" />
+                    <button id="2" stringName="w_cancel" xOffset="-50-_width_ * 20 / 100" yOffset="100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="matchcust_iframe0_btn1_click" />
+                </buttonArray>
+                <imageArray>
+                    <image image_name="menu/background" xOffset="0" yOffset="0" type="background"/>
+                </imageArray>
+            </iframe>
+
+	<!-- GLOBAL MATCH CONFIGURATION IFRAME; it is needed just to have a bigger border to contain the following iframes -->
+            <iframe id="1" skin="mechanicalGrey" title="w_match_configuration" position="x = (_width_ - w) / 2; y = _height_ / 1.25;" size="w = _width_ / 1.25 + 20; h = _height_ / 2;" isOpened="true" canBeMoved="false" canBeMinimized="false" canBeClosed="false" interactable="false" icon="ICON_WRENCH">
+				<openingScript fun="matchcust_iframe1_opening"/>
+			</iframe>
+			<iframe id="2" skin="mechanicalGrey" title="w_general_configuration" position="x = 0; y = 0;" size="w = 0; h = 0;" isOpened="true" canBeMoved="false" canBeMinimized="false" canBeClosed="false" icon="ICON_EMPTY_FRAME">
+                <checkBoxArray>
+					<checkBox id="0" stringName="w_explored" xOffset="280" yOffset="h - 115"/>
+					<checkBox id="1" stringName="w_fog_of_war" xOffset="280" yOffset="h - 155"/>
+					<checkBox id="2" stringName="w_share_support" xOffset="280" yOffset="h - 195"/>
+					<checkBox id="3" stringName="w_share_control" xOffset="280" yOffset="h - 235"/>
+                </checkBoxArray>
+                <comboBoxArray>
+                    <comboBox id="0" stringName="w_map" xOffset="20" yOffset="h - 35" width="100" height="50"/>
+                    <comboBox id="1" stringName="w_match_rule" xOffset="20" yOffset="h - 75" width="100" height="50"/>
+                    <comboBox id="2" stringName="w_score_limit" xOffset="305" yOffset="h - 75" width="100" height="50"/>
+					<comboBox id="3" stringName="w_settlements_population" xOffset="20" yOffset="h - 115" width="85" height="50"/>
+					<comboBox id="4" stringName="w_settlements_resources" xOffset="20" yOffset="h - 155" width="85" height="50"/>
+					<comboBox id="5" stringName="w_season" xOffset="20" yOffset="h - 195" width="125" height="50"/>
+					<comboBox id="6" stringName="w_game_speed" xOffset="20" yOffset="h - 235" width="125" height="50"/>
+                </comboBoxArray>
+            </iframe>
+			<iframe id="3" skin="mechanicalGrey" title="w_map_configuration" position="x = 0; y = 0;" size="w = 0; h = 0;" isOpened="true" canBeMoved="false" canBeMinimized="false" canBeClosed="false" icon="ICON_EMPTY_FRAME">
+				<openingScript fun="matchcust_iframe3_opening"/>
+				<comboBoxArray>
+                    <comboBox id="0" stringName="w_map_size" xOffset="20" yOffset="h - 40" width="85" height="50" />
+					<comboBox id="1" stringName="w_terrain_type" xOffset="360" yOffset="h - 40" width="100" height="50"/>
+                </comboBoxArray>
+            </iframe>
+			<iframe id="4" skin="mechanicalGrey" title="w_map_restrictions" position="x = 0; y = 0;" size="w = 0; h = 0;" isOpened="true" canBeMoved="false" canBeMinimized="false" canBeClosed="false" icon="ICON_EMPTY_FRAME">
+				<checkBoxArray>
+					<checkBox id="0" stringName="w_caves" xOffset="20" yOffset="h - 40" />
+					<checkBox id="1" stringName="w_sacrificial_altars" xOffset="20" yOffset="h - 80" />
+					<checkBox id="2" stringName="w_ruins" xOffset="20" yOffset="h - 120" />
+					<checkBox id="3" stringName="w_neutral_outposts" xOffset="175" yOffset="h - 40" />
+					<checkBox id="4" stringName="w_neutral_villages" xOffset="175" yOffset="h - 80" />
+					<checkBox id="5" stringName="w_neutral_settlements" xOffset="175" yOffset="h - 120" />
+					<checkBox id="6" stringName="w_animals" xOffset="340" yOffset="h - 40" />
+				</checkBoxArray>
+            </iframe>
+        </iframeArray>
+    </menuPage>
+
+	<!-- LOAD GAME -->
+
+    <menuPage name="load_game">
+        <iframeArray>
+            <iframe id="0" skin="emptyIframeMenu" title="w_main_menu" position="x=0; y=_height_" size="w=_width_; h=_height_;" isOpened="true" canBeMoved="false" canBeClosed="false" isEmpty="true">
+                <imageArray>
+                    <image image_name="menu/background" xOffset="0" yOffset="0" type="background"/>
+                </imageArray>
+            </iframe>
+            <iframe id="1" skin="mechanicalGrey" title="g_load_game" position="x=w/4; y=h+h/4;" size="w=_width_/1.5; h=_height_/1.5;" isOpened="true" canBeMoved="false" canBeClosed="false" icon="ICON_LOAD">
+                <openingScript fun="loadgame_iframe1_opening"/>
+				<textListArray>
+					<textList id="0" xOffset="30" yOffset="h - 90" width="w / 2 + 20" height="h - 100" onclick="loadgame_iframe1_txtlst0"/>
+				</textListArray>
+                <comboBoxArray>
+                    <comboBox id="0" stringName="w_game_mode" xOffset="30" yOffset="h - 40" width="150" height="50"/>
+                </comboBoxArray>
+				<imageArray>
+					<image image_name="menu/background" xOffset="w - w/2.75 - 20" yOffset="h - h/2.75 - 40" width="w/2.75" height="h/2.75" type=""/>
+                </imageArray>
+				<textArray>
+					<text id="0" stringName="" xOffset="w - w/2.75 - 20" yOffset="225"/> <!-- Game time -->
+					<text id="1" stringName="" xOffset="w - w/2.75 - 20" yOffset="200"/> <!-- Difficulty -->
+					<text id="2" stringName="" xOffset="w - w/2.75 - 20" yOffset="175"/> <!-- Players number -->
+				</textArray>
+				<buttonArray>
+                    <button id="0" stringName="w_load" xOffset="w - _width_ * 0.2 - 10" yOffset="150" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="loadgame_iframe1_btn0_click"/>
+                    <button id="1" stringName="w_delete" xOffset="w - _width_ * 0.2 - 10" yOffset="100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="loadgame_iframe1_btn1_click"/>
+                    <button id="2" stringName="w_cancel" xOffset="w - _width_ * 0.2 - 10" yOffset="50" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="loadgame_iframe1_btn2_click"/>
+                </buttonArray>
+            </iframe>
+        </iframeArray>
+    </menuPage>
+	
+	<!-- OPTIONS -->
+
+    <menuPage name="options">
+        <iframeArray>
+            <iframe id="0" skin="emptyIframeMenu" title="w_main_menu" position="x=0; y=_height_" size="w=_width_; h=_height_;" isOpened="true" canBeMoved="false" canBeClosed="false" isEmpty="true">
+                <buttonArray>
+                    <button id="0" stringName="w_apply" xOffset="-50-_width_ * 20 / 100" yOffset="100+30+2*_height_ * 6 / 100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="options_iframe0_btn0_click"/>
+                    <button id="1" stringName="w_options_save" xOffset="-50-_width_ * 20 / 100" yOffset="100+15+_height_ * 6 / 100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="options_iframe0_btn1_click"/>
+                    <button id="2" stringName="w_cancel" xOffset="-50-_width_ * 20 / 100" yOffset="100" width="_width_ * 20 / 100" height="_height_ * 6 / 100" onclick="options_iframe0_btn2_click"/>
+                </buttonArray>
+                <imageArray>
+                    <image image_name="menu/background" xOffset="0" yOffset="0" type="background"/>
+                </imageArray>
+            </iframe>
+            <iframe id="1" skin="mechanicalGrey" title="w_options" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=500; h=385;" isOpened="true" canBeMoved="false" canBeClosed="false" icon="ICON_WRENCH">
+                <openingScript fun="options_iframe1_opening" />
+                <comboBoxArray>
+                    <comboBox id="0" stringName="w_language" xOffset="30" yOffset="280" width="100" height="50"/>
+                </comboBoxArray>
+                <sliderArray>
+                    <slider id="0" xOffset="30" yOffset="180" width="100" height="5" minValue="0" maxValue="100" startingValue="50"/>
+                </sliderArray>
+            </iframe>
+        </iframeArray>
+    </menuPage>
+</menuPages>

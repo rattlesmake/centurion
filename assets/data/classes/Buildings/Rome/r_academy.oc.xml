@@ -1,0 +1,46 @@
+<object parent="base_arena" type="cpp_buildingclass" class_name="r_academy">
+	<attributes>
+		<attribute name="singularName" value="roman academy"/>
+		<attribute name="race" value="rome"/>
+		<attribute name="selectionRadius" value="360"/>
+		<attribute name="editor_tree" value="buildings/roman_stronghold"/>
+		<attribute name="ent_path" value="buildings/rome/academy/racademy.oe.xml"/>
+		<attribute name="grid_path" value="buildings/rome/academy/racademy_grid.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/racademy"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/rAcademySelect.ogg"/>
+	</sounds>
+    <commands>
+		<command id="train_h_hero" associatedMethod="train" bottombarPriority="1">
+            <params>
+                <param name="className" type="string" value="h_hero" />  
+            </params>
+			<displayedName>Train greek hero</displayedName>
+			<description>Train a new greek hero.</description>
+			<goldCost>80</goldCost>
+			<populationCost>1</populationCost>
+			<delay>2</delay>
+			<hotKey>H</hotKey>
+			<type>training</type>
+			<bottomBarIcon>game/match/bottombar/icons/train_eswordsman</bottomBarIcon>
+			<topBarIcon>game/match/topbar/icons/trainings/train_eswordsman</topBarIcon>
+		</command>
+		<command id="research_Pongo" associatedMethod="research" bottombarPriority="1">
+            <params>
+            </params>
+			<displayedName>Research Pongo</displayedName>
+			<description>Research a Pongo.</description>
+			<goldCost>1000</goldCost>
+			<foodCost>500</foodCost>
+			<populationCost>10</populationCost>
+			<delay>20</delay>
+			<hotKey>P</hotKey>
+			<type>technology</type>
+			<bottomBarIcon>game/match/bottombar/icons/enter</bottomBarIcon>
+			<topBarIcon>game/match/bottombar/icons/enter</topBarIcon>
+		</command>
+	</commands>
+</object>

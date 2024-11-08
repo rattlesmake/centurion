@@ -1,0 +1,20 @@
+<object parent="melee" type="cpp_unitclass" class_name="r_wagon">
+	<attributes>
+		<attribute name="singularName" value="Roman wagon"/>
+		<attribute name="pluralName" value="Roman wagons"/>
+		<attribute name="editor_tree" value="units/roman"/>
+		<attribute name="speed" value="60"/>
+		<attribute name="ent_path" value="units/r_wagon/r_wagon.oe.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/r_wagon"/>
+		<attribute name="formationPriority" value="2"/>
+		<attribute name="damageType" value="slash"/>		
+		<attribute name="minAttack" value="20"/>
+		<attribute name="maxAttack" value="50"/>
+		<attribute name="armorPierce" value="5"/>
+		<attribute name="armorSlash" value="0"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+	</sounds>
+</object>

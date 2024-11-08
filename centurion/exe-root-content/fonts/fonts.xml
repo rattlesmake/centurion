@@ -1,0 +1,12 @@
+<fonts>
+	<font name="inconsolata_16" source="inconsolata.ttf" size="16" />
+	<font name="icons_15" source="icons_fontawesome.ttf" size="15" />
+	<font name="tahoma_11" source="tahoma.ttf" size="11" />
+	<font name="tahoma_11_bold" source="tahomabd.ttf" size="11" />
+	<font name="tahoma_12" source="tahoma.ttf" size="12" />
+	<font name="tahoma_13" source="tahoma.ttf" size="13" />
+	<font name="tahoma_13_bold" source="tahomabd.ttf" size="13" />
+	<font name="tahoma_15" source="tahoma.ttf" size="15" />
+	<font name="tahoma_15_bold" source="tahomabd.ttf" size="15" />
+	<font name="tahoma_16_bold" source="tahomabd.ttf" size="16" />
+</fonts>

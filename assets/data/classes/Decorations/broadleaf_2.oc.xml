@@ -1,0 +1,7 @@
+<object parent="Trees" type="cpp_decorationclass" class_name="broadleaf_2">
+	<attributes>
+		<attribute name="editor_tree" value="decorations/vegetation/trees/broadleaves"/>
+		<attribute name="ent_path" value="decorations/vegetation/trees/broadleaves/broadleaf_2.oe.xml"/>
+		<attribute name="grid_path" value="decorations/vegetation/trees/broadleaves/broadleaf_2_grid.xml"/>
+	</attributes>
+</object>

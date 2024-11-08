@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entity class_name="r_wagon" type="cpp_unitclass" directions="16" origin_offset_x="0" origin_offset_y="38" zip_file="sprites_extra.zip">
+    <hitbox width="60" height="90"/>
+    <attributes>
+    </attributes>
+    <points>
+    </points>
+    <images>
+		<!-- idle -->
+		<image id="0"  file="units/rwagon/idle"/>
+        <image id="1"  file="units/rwagon/idle-mask"/>
+        <image id="2"  file="units/rwagon/idle-shadow"/>
+		<!-- walk -->
+		<image id="3"  file="units/rwagon/walk"/>
+        <image id="4"  file="units/rwagon/walk-mask"/>
+        <image id="5"  file="units/rwagon/walk-shadow"/>
+		<!-- death -->
+        <image id="6"  file="units/rwagon/death"/>
+        <image id="7"  file="units/rwagon/death-mask"/>
+        <image id="8"  file="units/rwagon/death-shadow"/>
+		<!-- decay -->
+        <image id="9"  file="units/rwagon/death"/>
+        <image id="10"  file="units/rwagon/death-mask"/>
+        <image id="11"  file="units/rwagon/death-shadow"/>
+    </images>
+	<states>
+		<state name="default">
+			<animations>
+				<animation name="idle" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="0" mask_image="1"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="2"/>					
+				</animation>
+				<animation name="walk" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="3" mask_image="4"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="5"/>	
+				</animation>
+				<animation name="die" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="6" mask_image="7"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="8"/>					
+				</animation>
+				<animation name="decay" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="9" mask_image="10"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="11"/>					
+				</animation>
+			</animations>
+		</state>
+	</states>  
+</entity>

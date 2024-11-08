@@ -1,0 +1,20 @@
+<object parent="melee" type="cpp_unitclass" class_name="r_princeps">
+	<attributes>
+		<attribute name="singularName" value="princeps"/>
+		<attribute name="pluralName" value="principes"/>
+		<attribute name="editor_tree" value="units/roman"/>
+		<attribute name="speed" value="60"/>
+		<attribute name="ent_path" value="units/r_princeps/r_princeps.oe.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/r_princeps"/>
+		<attribute name="formationPriority" value="2"/>
+		<attribute name="damageType" value="slash"/>		
+		<attribute name="minAttack" value="20"/>
+		<attribute name="maxAttack" value="50"/>
+		<attribute name="armorPierce" value="5"/>
+		<attribute name="armorSlash" value="0"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+	</sounds>
+</object>

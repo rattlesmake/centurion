@@ -1,0 +1,9 @@
+<music>
+    <environments>
+        <environment name="menu">
+            <playlist>
+                <song>menu/menu.ogg</song>
+            </playlist>
+        </environment>
+    </environments>
+</music>

@@ -1,0 +1,15 @@
+Per la fazione dei predoni sarà impiegato il giocatore 13, 14 o 15 in mappa casuale.
+I predoni avranno due compiti fondamentali:
+- Razzie dei Villaggi;
+- Riconquista degli accampamenti dei predoni persi;
+
+Per quanto riguarda il primo punto, a intervalli di tempo casuali, essi usciranno dal proprio accampamento e andranno a fare razzie nei villaggi dei giocatori della mappa. Il comportamento che opteranno, di volta in volta, è deciso casualmente dal gioco e si articola tra:
+- Semplice conquista (rarissima, tipo un 10%);
+- Conquista e razzia dei viveri (più comune, 55%);
+- Conquista, razzia e distruzione (il restante 35%);
+Qualora due o più gruppi dovessero ritrovarsi nello stesso villaggio, non succede nient'altro: i gruppi continueranno ad eseguire l'azione che hanno scelto tra le precedenti alternative, rafforzando semplicemente la propria presenza sul posto.
+
+Per quanto riguarda il secondo punto, a intervalli di tempo casuali, i predoni usciranno e si dirigeranno (anche con le maniere cattive) verso gli accampamenti che precedentemente appartenevano alla loro fazione e che sono stati conquistati dai giocatori, per riconquistarli.
+L'IA che controlla il gruppo verifica se, una volta che quest'ultimo è uscito dall'accampamento in cui si trova, nelle vicinanze, ci siano delle forze nemiche e valuta se sia il caso di battere in ritirata (tornando al proprio accampamento) oppure di proseguire, eliminando anche i bersagli.
+
+Infine, ogni accampamento di predoni, a intervalli di tempo casuali, produrrà costantemente un determinato quantitativo casuale di tutte le risorse, sia che esso appartenga alla fazione dei predoni, sia che esso sia in mano al giocatore: questo farà sì che tale accampamento diventi un punto nevralgico e di fondamentale importanza nelle partite in strategia o in PVP.

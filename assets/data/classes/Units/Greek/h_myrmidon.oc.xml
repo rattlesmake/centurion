@@ -1,0 +1,21 @@
+<object parent="ranged" type="cpp_unitclass" class_name="h_myrmidon">
+	<attributes>
+		<attribute name="singularName" value="myrmidon"/>
+		<attribute name="pluralName" value="myrmidons"/>
+		<attribute name="editor_tree" value="units/greek"/>
+		<attribute name="speed" value="80"/>
+		<attribute name="sight" value="2000"/>
+		<attribute name="ent_path" value="units/h_myrmidon/h_myrmidon.oe.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/h_myrmidon"/>
+		<attribute name="formationPriority" value="1"/>
+		<attribute name="damageType" value="pierce"/>		
+		<attribute name="minAttack" value="10"/>
+		<attribute name="maxAttack" value="30"/>
+		<attribute name="armorPierce" value="10"/>
+		<attribute name="armorSlash" value="5"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+	</sounds>
+</object>

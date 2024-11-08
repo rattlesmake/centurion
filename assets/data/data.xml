@@ -1,0 +1,29 @@
+<!-- TEMPORARY -->
+
+<data>
+    <playerColorArray>
+        <playerColor id="0" r="0" g="0" b="0"/>
+        <playerColor id="1" r="255" g="23" b="23"/>
+        <playerColor id="2" r="255" g="255" b="0"/>
+        <playerColor id="3" r="0" g="255" b="0"/>
+        <playerColor id="4" r="0" g="232" b="232"/>
+        <playerColor id="5" r="237" g="160" b="255"/>
+        <playerColor id="6" r="182" g="230" b="134"/>
+        <playerColor id="7" r="174" g="0" b="0"/>
+        <playerColor id="8" r="249" g="155" b="32"/>
+        <playerColor id="9" r="16" g="155" b="18"/>
+        <playerColor id="10" r="0" g="0" b="248"/>
+        <playerColor id="11" r="196" g="13" b="198"/>
+        <playerColor id="12" r="159" g="154" b="0"/>
+    </playerColorArray>
+    <raceArray>
+        <race name="rome" zone="mediterranean" food_transport_class="Chariot">
+            <displacement name="Stronghold1_Rome" for="stronghold" />
+            <displacement name="Village1_Rome" for="village" />
+        </race>
+        <race name="egypt" zone="desertic" food_transport_class="Camel" >
+            <displacement name="Stronghold1_Egypt" for="stronghold" />
+            <displacement name="Village1_Rome" for="village" />
+        </race>
+    </raceArray>
+</data>

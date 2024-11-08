@@ -1,0 +1,16 @@
+<object parent="base_townhall" type="cpp_buildingclass" class_name="e_townhall">
+	<attributes>
+		<attribute name="singularName" value="egyptian townhall"/>
+		<attribute name="race" value="egypt"/>
+		<attribute name="selectionRadius" value="170"/>
+		<attribute name="editor_tree" value="buildings/egyptian_stronghold"/>
+		<attribute name="ent_path" value="buildings/egypt/townhall/etownhall.oe.xml"/>
+		<attribute name="grid_path" value="buildings/egypt/townhall/etownhall_grid.xml"/>
+	</attributes>
+	<methods>
+		<!--<method name="feedAllies" script="buildingFeedAllies.Lua"/>-->
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/eTownhallSelect.ogg"/>
+	</sounds>
+</object>

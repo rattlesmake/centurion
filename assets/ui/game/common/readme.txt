@@ -1,0 +1,1 @@
+The current folder must be used to put resources that can be used both for editor and match (to avoid duplicates)

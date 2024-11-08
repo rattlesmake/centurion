@@ -1,0 +1,15 @@
+Centurion
+Rattlesmake [2019] - [2022]
+
+The files "grid.xml" contain the information about the object collision.
+They provide x and y values, which indicate the number of rows and columns of the terrain grid matrix they occupy.
+
+The grid matrix is a has 0 or 1 values and each cell covers 32x32 pixels of the game map.
+
+If the map is 30720x20480 pixels, the grid matrix is 920x640 (because there is a margin of 2*640 on each side of the map.)
+
+The object grid is stored in the XML with hexadecimal characters, in order to represent 4 binary values
+with just one character and save bytes. 
+
+For this, to get an optimal result, the grid.png images should have height and width multiples of 128
+because 128 = 32 (cell grid size) * 4 (number of binary characters).

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="military" type="cpp_noclass" class_name="soldier">
+	<attributes>
+	</attributes>
+	<methods>
+		<method name="attach" scriptID="unit_attach" />
+		<method name="detach" scriptID="unit_detach" />
+	</methods>
+	<sounds>
+	</sounds>
+	<commands>
+		<command id="attach" associatedMethod="attach" bottombarPriority="1">
+            <params>
+            </params>
+			<displayedName>Attach</displayedName>
+			<description>Attach</description>
+			<hotKey>H</hotKey>
+			<bottomBarIcon>game/match/bottombar/icons/attach</bottomBarIcon>
+		</command>
+		<command id="detach" associatedMethod="detach" bottombarPriority="2">
+            <params>
+            </params>
+			<displayedName>Detach</displayedName>
+			<description>Detach</description>
+			<hotKey>D</hotKey>
+			<bottomBarIcon>game/match/bottombar/icons/detach</bottomBarIcon>
+		</command>
+	</commands>
+    <defaultCommands>
+        <defaultCommand target="hero">
+            <cmd name="attach" />
+        </defaultCommand>
+    </defaultCommands>
+</object>

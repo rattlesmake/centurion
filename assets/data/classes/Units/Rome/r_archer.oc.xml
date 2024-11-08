@@ -1,0 +1,21 @@
+<object parent="ranged" type="cpp_unitclass" class_name="r_archer">
+	<attributes>
+		<attribute name="singularName" value="saggitarius"/>
+		<attribute name="pluralName" value="saggitarii"/>
+		<attribute name="editor_tree" value="units/roman"/>
+		<attribute name="speed" value="60"/>
+		<attribute name="sight" value="2000"/>
+		<attribute name="ent_path" value="units/r_archer/r_archer.oe.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/RPrinceps"/>
+		<attribute name="formationPriority" value="2"/>
+		<attribute name="damageType" value="pierce"/>		
+		<attribute name="minAttack" value="20"/>
+		<attribute name="maxAttack" value="50"/>
+		<attribute name="armorPierce" value="5"/>
+		<attribute name="armorSlash" value="0"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+	</sounds>
+</object>

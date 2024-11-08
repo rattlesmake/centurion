@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="Decoration" type="cpp_noclass" class_name="trees">
+  <attributes>
+    <attribute name="canBeClonedInEditor" value="false"/>
+  </attributes>
+</object>

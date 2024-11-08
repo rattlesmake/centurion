@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entity class_name="r_princeps" type="cpp_unitclass" directions="16" origin_offset_x="0" origin_offset_y="38" zip_file="sprites_extra.zip">
+    <hitbox width="80" height="80"/>
+    <attributes>
+    </attributes>
+    <points>
+    </points>
+    <images>
+		<!-- idle -->
+		<image id="0"  file="units/rhero/idle"/>
+        <image id="1"  file="units/rhero/idle-mask"/>
+        <image id="2"  file="units/rhero/idle-shadow"/>
+		<!-- walk -->
+		<image id="3"  file="units/rhero/walk"/>
+        <image id="4"  file="units/rhero/walk-mask"/>
+        <image id="5"  file="units/rhero/walk-shadow"/>
+		<!-- engage -->
+		<image id="6"  file="units/rhero/engage"/>
+        <image id="7"  file="units/rhero/engage-mask"/>
+        <image id="8"  file="units/rhero/engage-shadow"/>
+		<!-- fight -->
+		<image id="9"  file="units/rhero/fight"/>
+        <image id="10"  file="units/rhero/fight-mask"/>
+        <image id="11"  file="units/rhero/fight-shadow"/>
+		<!-- capture -->
+		<image id="12"  file="units/rhero/capture"/>
+        <image id="13"  file="units/rhero/capture-mask"/>
+        <image id="14"  file="units/rhero/capture-shadow"/>
+		<!-- death -->
+        <image id="15"  file="units/rhero/death"/>
+        <image id="16"  file="units/rhero/death-mask"/>
+        <image id="17"  file="units/rhero/death-shadow"/>
+    </images>
+	<states>
+		<state name="default">
+			<animations>
+				<animation name="idle" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="0" mask_image="1"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="2"/>					
+				</animation>
+				<animation name="walk" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="3" mask_image="4"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="5"/>	
+				</animation>
+				<animation name="engage" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="6" mask_image="7"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="8"/>		
+				</animation>
+				<animation name="fight" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="9" mask_image="10"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="11"/>				
+				</animation>
+				<animation name="capture" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="12" mask_image="13"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="14"/>				
+				</animation>
+				<animation name="die" frames="24">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="15" mask_image="16"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="17"/>					
+				</animation>
+			</animations>
+		</state>
+	</states>  
+</entity>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="" type="cpp_abstractclass" class_name="object">
+	<attributes>
+        <attribute name="alwaysVisibleInGameMinimap" value="true"/> <!-- Fishes can't be seen in game minimap -->
+		<attribute name="isWaterObject" value="false"/>
+		<attribute name="race" value="rome"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+	</sounds>
+</object>

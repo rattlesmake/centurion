@@ -1,0 +1,17 @@
+<object parent="base_village" type="cpp_buildingclass" class_name="r_village">
+	<attributes>
+		<attribute name="singularName" value="roman village hall"/>
+		<attribute name="race" value="rome"/>
+		<attribute name="selectionRadius" value="170"/>
+		<attribute name="editor_tree" value="buildings/roman_village"/>
+		<attribute name="ent_path" value="buildings/rome/village/rvillage.oe.xml"/>
+		<attribute name="grid_path" value="buildings/rome/village/rvillage_grid.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/RVillage"/>
+	</attributes>
+	<methods>
+		<!--<method name="feedAllies" script="buildingFeedAllies.Lua"/>-->
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/rTownhallSelect.ogg"/>
+	</sounds>
+</object>

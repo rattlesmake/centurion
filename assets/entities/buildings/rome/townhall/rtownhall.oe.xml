@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entity class_name="r_townhall" type="cpp_building" directions="1" zip_file="sprites_extra.zip">
+	<hitbox width="940" height="875"/>
+	<attributes>
+	</attributes>
+	<points>
+	</points>
+	<images>
+		<image id="0" file="buildings/rome/townhall/rtownhall" />
+		<image id="1" file="buildings/rome/townhall/rtownhall-mask" />
+		<image id="2" file="buildings/rome/townhall/rtownhall-shadow" />
+	</images>
+	<states>
+		<state name="default">
+			<animations>
+				<animation name="idle" frames="1">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="0" mask_image="1"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="2" />
+				</animation>
+			</animations>
+		</state>
+	</states>
+</entity>

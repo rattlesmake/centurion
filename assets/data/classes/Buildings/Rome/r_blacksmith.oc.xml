@@ -1,0 +1,16 @@
+<object parent="base_blacksmith" type="cpp_buildingclass" class_name="r_blacksmith">
+	<attributes>
+		<attribute name="singularName" value="roman blacksmith"/>
+		<attribute name="race" value="rome"/>
+		<attribute name="selectionRadius" value="255"/>
+		<attribute name="editor_tree" value="buildings/roman_stronghold"/>
+		<attribute name="ent_path" value="buildings/rome/blacksmith/rblacksmith.oe.xml"/>
+		<attribute name="grid_path" value="buildings/rome/blacksmith/rblacksmith_grid.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/rblacksmith"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/rBlacksmithSelect.ogg"/>
+	</sounds>
+</object>

@@ -1,0 +1,15 @@
+<object parent="base_tavern" type="cpp_buildingclass" class_name="e_tavern">
+	<attributes>
+		<attribute name="singularName" value="egyptian tavern"/>
+		<attribute name="race" value="egypt"/>
+		<attribute name="selectionRadius" value="190"/>
+		<attribute name="editor_tree" value="buildings/egyptian_stronghold"/>
+		<attribute name="ent_path" value="buildings/egypt/tavern/etavern.oe.xml"/>
+		<attribute name="grid_path" value="buildings/egypt/tavern/etavern_grid.xml"/>
+	</attributes>
+	<methods> 
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/eTavernSelect.ogg"/>
+	</sounds>
+</object>

@@ -1,0 +1,7 @@
+<object parent="Decoration" type="cpp_decorationclass" class_name="egyptian_fountain">
+	<attributes>
+		<attribute name="editor_tree" value="decorations/monumental/egyptian"/>
+		<attribute name="ent_path" value="decorations/monumental/egyptian_fountain.oe.xml"/>
+		<attribute name="grid_path" value=""/>
+	</attributes>
+</object>

@@ -1,0 +1,13 @@
+<loadingScreen>
+	<iframeArray>
+		<iframe id="0" skin="emptyIframeMenu" title="w_loading" position="x=0; y=Engine.GetWindowHeight();" size="w=Engine.GetWindowWidth(); h=Engine.GetWindowHeight();" isOpened="true" canBeClosed="false" isEmpty="true">
+            <textArray>
+                <text id="0" stringName="" align="right" xOffset="w - 80" yOffset="50"/> <!-- Loading element string -->
+                <text id="1" stringName="" align="center" xOffset="w / 2" yOffset="30"/> <!-- Random game advice string-->
+            </textArray>
+			<spinnerArray>
+                <spinner id="0" radius="15" thickness="4" xOffset="w - 60" yOffset="60"/>
+            </spinnerArray>
+		</iframe>
+	</iframeArray>
+</loadingScreen>

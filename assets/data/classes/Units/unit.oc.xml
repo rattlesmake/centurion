@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="playable" type="cpp_abstractclass" class_name="unit">
+	<attributes>
+		<attribute name="singularName" value="unit"/>
+		<attribute name="pluralName" value="units"/>
+        <attribute name="sight" value="900"/>
+        
+        <attribute name="armorPierce" value="10"/>
+		<attribute name="armorSlash" value="10"/>
+        <attribute name="canBeDamagedByGhost" value="true"/>
+		<attribute name="canBeInvisible" value="true"/> <!-- Fishes can't be hided by mages -->
+        <attribute name="damageType" value="slash"/>
+        <attribute name="dualWeilding" value="false"/>
+        <attribute name="freedom" value="false"/>        <!-- Se l'unità può essere assegnata o meno a un eroe -->
+        <attribute name="formationPriority" value="1"/> <!-- Ordine con il quale l'unita' viene disposta in formazione. Maggiore e' il valore e piu' sarà lontana rispetto all'eroe (disposta in prima linea). -->
+        <attribute name="healingRate" value="10"/>
+		<attribute name="healingSpeedRate" value="1"/>
+        <attribute name="maxFood" value="20"/>
+		<attribute name="maxHealth" value="200"/>
+		<attribute name="minAttack" value="10"/>
+		<attribute name="maxAttack" value="30"/>
+        <attribute name="range" value="50"/>
+		<attribute name="speed" value="50"/>
+		<attribute name="zOffset" value="0"/> <!-- For flying unit -->
+	</attributes>
+	<methods>
+		<method name="enter" scriptID="unit_enter" />
+		<method name="idle" scriptID="unit_idle" />
+		<method name="move" scriptID="unit_move" />
+        
+        <!-- methods having a script not associable to any command -->
+        <method name="on_die" scriptID="unit_dying" />
+        <method name="on_kill" scriptID="unit_killing" />
+	</methods>
+	<sounds>
+	</sounds>
+	<commands>
+		<command id="move" associatedMethod="move" bottombarPriority="1">
+            <params>
+            </params>
+			<displayedName>Move</displayedName>
+			<description>Starts to move following a path towards a selected point.</description>
+			<hotKey>M</hotKey>
+			<bottomBarIcon>game/match/bottombar/icons/move</bottomBarIcon>
+		</command>
+		<command id="enter" needTarget="1" associatedMethod="enter" bottombarPriority="1">
+            <params>
+            </params>
+			<displayedName>Enter</displayedName>
+			<description>Starts to move following a path towards a selected building to stay inside of it.</description>
+			<hotKey>E</hotKey>
+			<bottomBarIcon>game/match/bottombar/icons/enter</bottomBarIcon>
+		</command>
+	</commands>
+	<excludeInheritedCommands>
+	</excludeInheritedCommands>
+    <defaultCommands>
+        <defaultCommand target="null">
+            <cmd name="move" />
+        </defaultCommand>
+        <defaultCommand target="building">
+            <cmd name="enter" />
+        </defaultCommand>
+    </defaultCommands>
+	<values>
+		<value name="level" />
+		<value name="health" />
+		<value name="stamina" />
+		<value name="speed" />
+		<value name="food" />
+		<value name="sight" />
+	</values>
+</object>

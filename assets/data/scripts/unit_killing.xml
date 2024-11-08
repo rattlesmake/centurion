@@ -1,0 +1,6 @@
+<gObjectScript id="unit_killing" autoExecute="0" associableToCmd="0" needTarget="0">
+    <!-- Parameters that a command must provide -->
+    <!-- Only makes sense if associableToCmd is equal to 1 -->
+    <requiredCommandParameters>
+    </requiredCommandParameters>
+</gObjectScript>

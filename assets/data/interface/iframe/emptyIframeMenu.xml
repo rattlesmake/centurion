@@ -1,0 +1,20 @@
+﻿<iframe name="emptyIframeMenu">
+	<text>
+		<font name="tahoma_15" />
+		<textColor r="255" g="255" b="255" a="255"/>
+	</text>
+  	<button>
+		<textColor r="255" g="255" b="255" a="255"/>
+		<font name="tahoma_15_bold" />
+		<image name="common/buttons/button_1" hover="common/buttons/button_1_hover" pressed="common/buttons/button_1_pressed"/>
+	</button>
+	<progressBar>
+		<textColor r="0" g="0" b="0" a="255"/>
+		<font name="tahoma_15"/>
+		<barColor r="255" g="0" b="0" a="255"/>
+		<background r="0" g="255" b="0" a="255"/>
+	</progressBar>
+	<spinner>
+		<color r="255" g="247" b="214" a="255"/>
+	</spinner>
+</iframe>

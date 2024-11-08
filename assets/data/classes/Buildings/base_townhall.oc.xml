@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="stronghold" type="cpp_noclass" class_name="base_townhall">
+  <attributes>
+    <attribute name="singularName" value="townhall"/>
+    <attribute name="isCentralBuilding" value="true"/>
+    <attribute name="clickable_in_minimap" value="true"/>
+    <attribute name="canProduceGold" value="true"/>
+	<attribute name="maxUnits" value="10000"/>
+  </attributes>
+  <methods>
+  </methods>
+  <sounds>
+  </sounds>
+</object>

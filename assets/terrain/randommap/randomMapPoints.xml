@@ -1,0 +1,9 @@
+<RandomMapPoints> <!-- Used in Displacement maps -->
+	<Point name="MountainRange" r="255" g="0" b="0" />
+	<Point name="Stronghold" r="255" g="255" b="0" />
+	<Point name="Village" r="255" g="130" b="40" />
+	<Point name="GenericSlot" r="0" g="255" b="255" />
+	<Point name="Sea" r="0" g="100" b="255" />
+	<Point name="DeepSea1" r="0" g="50" b="255" />
+	<Point name="DeepSea2" r="0" g="0" b="255" />
+</RandomMapPoints>

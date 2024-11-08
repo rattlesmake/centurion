@@ -1,0 +1,60 @@
+<object parent="base_barracks" type="cpp_buildingclass" class_name="e_barracks">
+	<attributes>
+		<attribute name="singularName" value="egyptian barracks"/>
+		<attribute name="race" value="egypt"/>
+		<attribute name="selectionRadius" value="190"/>
+		<attribute name="editor_tree" value="buildings/egyptian_stronghold"/>
+		<attribute name="ent_path" value="buildings/egypt/barracks/ebarracks.oe.xml"/>
+		<attribute name="grid_path" value="buildings/egypt/barracks/ebarracks_grid.xml"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/eBarracksSelect.ogg"/>
+	</sounds>
+	<commands>
+		<command id="train_r_legionary" associatedMethod="train" bottombarPriority="1">
+            <params>
+                <param name="className" type="string" value="r_legionary" />  
+            </params>
+			<displayedName>Train legionary</displayedName>
+			<description>Train a new legionary.</description>
+			<goldCost>80</goldCost>
+			<populationCost>1</populationCost>
+			<delay>2</delay>
+			<hotKey>S</hotKey>
+			<type>training</type>
+			<bottomBarIcon>game/match/bottombar/icons/train_eswordsman</bottomBarIcon>
+			<topBarIcon>game/match/topbar/icons/trainings/train_eswordsman</topBarIcon>
+		</command>
+		<command id="train_h_myrmidon" associatedMethod="train" bottombarPriority="2">
+            <params>
+                <param name="className" type="string" value="h_myrmidon" />  
+            </params>
+			<displayedName>Train myrmidon</displayedName>
+			<description>Train a new myrmidon.</description>
+			<goldCost>60</goldCost>
+			<populationCost>2</populationCost>
+			<foodCost>10</foodCost>
+			<delay>3</delay>
+			<hotKey>A</hotKey>
+			<type>training</type>
+			<bottomBarIcon>game/match/bottombar/icons/train_earcher</bottomBarIcon>
+			<topBarIcon>game/match/topbar/icons/trainings/train_earcher</topBarIcon>
+		</command>
+		<command id="research_Pongo" associatedMethod="research" bottombarPriority="1">
+            <params>
+            </params>
+			<displayedName>Research Pongo</displayedName>
+			<description>Research a Pongo.</description>
+			<goldCost>1000</goldCost>
+			<foodCost>500</foodCost>
+			<populationCost>10</populationCost>
+			<delay>20</delay>
+			<hotKey>P</hotKey>
+			<type>technology</type>
+			<bottomBarIcon>game/match/bottombar/icons/enter</bottomBarIcon>
+			<topBarIcon>game/match/bottombar/icons/enter</topBarIcon>
+		</command>
+	</commands>
+</object>

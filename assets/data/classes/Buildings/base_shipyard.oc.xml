@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="habitable" type="cpp_noclass" class_name="base_shipyard">
+  <attributes>
+    <attribute name="singularName" value="shipyard"/>
+    <attribute name="isCentralBuilding" value="true"/>
+    <attribute name="clickable_in_minimap" value="true"/>
+  </attributes>
+  <methods>
+  </methods>
+  <sounds>
+  </sounds>
+</object>
+
+<!-- Il parent non è Building ma Habitable perché Gaetano vuole rendere "vivibile" i porti -->

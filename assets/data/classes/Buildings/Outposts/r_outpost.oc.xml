@@ -1,0 +1,14 @@
+<object parent="outpost" type="cpp_buildingclass" class_name="r_outpost">
+	<attributes>
+		<attribute name="singularName" value="roman outpost"/>
+		<attribute name="race" value="rome"/>
+		<attribute name="selectionRadius" value="500"/>
+		<attribute name="editor_tree" value="buildings/outposts"/>
+		<attribute name="ent_path" value="buildings/outposts/r_outpost.oe.xml"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/outpostSelect.ogg"/>
+	</sounds>
+</object>

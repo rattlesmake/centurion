@@ -1,0 +1,7 @@
+<object parent="Decoration" type="cpp_decorationclass" class_name="panoply_1">
+	<attributes>
+		<attribute name="editor_tree" value="decorations/camp"/>
+		<attribute name="ent_path" value="decorations/camp/panoply_1.oe.xml"/>
+		<attribute name="grid_path" value=""/>
+	</attributes>
+</object>

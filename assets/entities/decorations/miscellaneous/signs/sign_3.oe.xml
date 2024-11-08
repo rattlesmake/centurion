@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entity class_name="sign_3" type="cpp_decorationclass" directions="1" zip_file="sprites_extra.zip">
+	<hitbox width="90" height="140"/>
+	<attributes>
+	</attributes>
+	<points>
+	</points>
+	<images>
+		<image id="0" file="decorations/miscellaneous/signs/sign_3"/>
+		<image id="1" file="decorations/miscellaneous/signs/sign_3-shadow"/>
+	</images>
+	<states>
+		<state name="default">
+			<animations>
+				<animation name="idle" frames="1">
+					<layers>
+						<layer id="0" x="0" y="0" z="0" image="0"/>
+					</layers>
+					<shadow x="0" y="0" z="0" image="1"/>
+				</animation>
+			</animations>
+		</state>
+	</states>
+</entity>

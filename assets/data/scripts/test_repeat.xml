@@ -1,0 +1,16 @@
+<!--method name="test_repeat" repeat="true" executionFrequency="30">
+  <engineParams>
+	<param type="GObject" name="this" />
+  </engineParams>
+  <condition />
+  <head fun="test_repeat_head" />
+  <body fun="test_repeat_body" />
+  <foot fun="test_repeat_foot" />
+</method-->
+
+<gObjectScript id="test_repeat" autoExecute="1" associableToCmd="0" needTarget="0">
+    <!-- Parameters that a command must provide -->
+    <!-- Only makes sense if associableToCmd is equal to 1 -->
+    <requiredCommandParameters>
+    </requiredCommandParameters>
+</gObjectScript>

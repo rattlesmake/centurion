@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="Object" type="cpp_abstractclass" class_name="decoration">
+  <attributes>
+    <attribute name="race" value="None"/>
+  </attributes>
+</object>

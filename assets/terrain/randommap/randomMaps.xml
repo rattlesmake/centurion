@@ -1,0 +1,15 @@
+<RandomMaps>
+    <Sizes>
+        <Size name="small" />
+        <Size name="medium" />
+        <Size name="big" />
+    </Sizes>
+    <Types>
+        <Type name="continental" />
+        <Type name="mediterranean" />
+        <Type name="mountainous" />
+        <Type name="archipelago" />
+        <Type name="isle" />
+        <Type name="rivers" />
+    </Types>
+</RandomMaps>

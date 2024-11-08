@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="building" type="cpp_noclass" class_name="outpost">
+  <attributes>
+    <attribute name="singularName" value="outpost"/>
+    <attribute name="isCentralBuilding" value="true"/>
+    <attribute name="clickable_in_minimap" value="true"/>
+  </attributes>
+  <methods>
+  </methods>
+  <sounds>
+  </sounds>
+</object>

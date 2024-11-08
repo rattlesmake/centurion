@@ -1,0 +1,83 @@
+<areas>
+	<!-- x and y values always refer to center origin -->
+	<area shape='rectangle' name='DecorationsAreaMediterranean_1' x='16288' y='17965' width='2121' height='1601'>
+		<object class='broadleaf_1' xOffset='-79' yOffset='313' />
+		<object class='broadleaf_1' xOffset='342' yOffset='192' />
+		<object class='broadleaf_1' xOffset='724' yOffset='352' />
+	</area>
+	<area shape='rectangle' name='DecorationsAreaMediterranean_2' x='16311' y='15943' width='1561' height='975'>
+		<object class='broadleaf_1' xOffset='-269' yOffset='152' />
+		<object class='broadleaf_2' xOffset='217' yOffset='75' />
+	</area>
+	<area shape='rectangle' name='DecorationsAreaDesertic_1' x='18880' y='17968' width='1983' height='1613'>
+		<object class='palm_1' xOffset='-224' yOffset='-13' />
+		<object class='palm_1' xOffset='158' yOffset='-153' />
+	</area>
+	<area shape='rectangle' name='DecorationsAreaDesertic_2' x='18866' y='15799' width='2041' height='1795'>
+		<object class='jasmim_manga' xOffset='-329' yOffset='201' />
+		<object class='jasmim_manga' xOffset='1' yOffset='82' />
+		<object class='jasmim_manga' xOffset='-321' yOffset='-140' />
+	</area>
+	<area shape='rectangle' name='DecorationsAreaMediterranean_3' x='16243' y='14059' width='1948' height='1411'>
+		<object class='broadleaf_1' xOffset='-624' yOffset='457' />
+		<object class='broadleaf_1' xOffset='-316' yOffset='607' />
+		<object class='broadleaf_1' xOffset='-572' yOffset='-181' />
+		<object class='broadleaf_1' xOffset='-267' yOffset='-398' />
+		<object class='broadleaf_1' xOffset='650' yOffset='354' />
+		<object class='broadleaf_2' xOffset='48' yOffset='204' />
+		<object class='broadleaf_2' xOffset='433' yOffset='-85' />
+	</area>
+	<area shape='rectangle' name='DecorationsAreaMediterranean_4' x='16171' y='12421' width='1764' height='1217'>
+		<object class='broadleaf_1' xOffset='-583' yOffset='389' />
+		<object class='broadleaf_1' xOffset='-629' yOffset='-120' />
+		<object class='broadleaf_1' xOffset='401' yOffset='200' />
+		<object class='broadleaf_1' xOffset='608' yOffset='-74' />
+		<object class='broadleaf_2' xOffset='-110' yOffset='-270' />
+	</area>
+	<area shape='rectangle' name='DecorationsAreaMediterranean_5' x='16211' y='10615' width='1821' height='1540'>
+		<object class='broadleaf_1' xOffset='-457' yOffset='158' />
+		<object class='broadleaf_1' xOffset='-158' yOffset='321' />
+		<object class='broadleaf_1' xOffset='653' yOffset='181' />
+		<object class='broadleaf_1' xOffset='346' yOffset='-418' />
+		<object class='broadleaf_2' xOffset='-147' yOffset='-227' />
+	</area>
+	<area shape='rectangle' name='DecorationsAreaMediterranean_6' x='16290' y='9062' width='1272' height='912'>
+		<object class='fence_1' xOffset='-557' yOffset='19' />
+		<object class='fence_2' xOffset='-473' yOffset='-152' />
+		<object class='fence_2' xOffset='-305' yOffset='-269' />
+		<object class='fence_3' xOffset='263' yOffset='-337' />
+		<object class='fence_4' xOffset='479' yOffset='-265' />
+		<object class='fence_4' xOffset='-468' yOffset='195' />
+		<object class='fence_3' xOffset='35' yOffset='358' />
+		<object class='fence_3' xOffset='281' yOffset='363' />
+		<object class='fence_2' xOffset='492' yOffset='319' />
+		<object class='camp_tent' xOffset='137' yOffset='216' />
+		<object class='camp_tent' xOffset='367' yOffset='78' />
+		<object class='campfire' xOffset='-11' yOffset='-15' />
+		<object class='hay_bale' xOffset='-318' yOffset='57' />
+		<object class='wooden_tower' xOffset='-150' yOffset='273' />
+		<object class='wooden_tower' xOffset='-125' yOffset='-175' />
+		<object class='camp_tent' xOffset='309' yOffset='-162' />
+	</area>
+	<area shape='rectangle' name='Stronghold1_Rome' x='2492' y='17719' width='2753' height='1952'>
+		<object class='r_townhall' xOffset='57' yOffset='-49' />
+		<object class='r_academy' xOffset='747' yOffset='268' />
+		<object class='r_barracks' xOffset='-713' yOffset='222' />
+		<object class='r_blacksmith' xOffset='627' yOffset='-436' />
+		<object class='r_market' xOffset='-525' yOffset='-488' />
+		<object class='r_temple' xOffset='68' yOffset='612' />
+	</area>
+	<area shape='rectangle' name='Stronghold1_Egypt' x='2811' y='14031' width='2269' height='1923'>
+		<object class='e_townhall' xOffset='-14' yOffset='-16' />
+		<object class='e_blacksmith' xOffset='783' yOffset='-166' />
+		<object class='e_osiris_temple' xOffset='466' yOffset='428' />
+		<object class='e_barracks' xOffset='-767' yOffset='-170' />
+		<object class='e_temple_of_horus_and_anubis' xOffset='-463' yOffset='500' />
+		<object class='e_tavern' xOffset='11' yOffset='-662' />
+	</area>
+	<area shape='rectangle' name='Village1_Rome' x='7791' y='17717' width='2433' height='1340'>
+		<object class='r_village' xOffset='213' yOffset='-228' />
+		<object class='r_house1' xOffset='-653' yOffset='-108' />
+		<object class='r_house2' xOffset='451' yOffset='313' />
+	</area>
+</areas>

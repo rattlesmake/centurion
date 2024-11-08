@@ -1,0 +1,17 @@
+<object parent="base_townhall" type="cpp_buildingclass" class_name="r_townhall">
+	<attributes>
+		<attribute name="singularName" value="roman townhall"/>
+		<attribute name="race" value="rome"/>
+		<attribute name="selectionRadius" value="170"/>
+		<attribute name="editor_tree" value="buildings/roman_stronghold"/>
+		<attribute name="ent_path" value="buildings/rome/townhall/rtownhall.oe.xml"/>
+		<attribute name="grid_path" value="buildings/rome/townhall/rtownhall_grid.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/rtownhall"/>
+	</attributes>
+	<methods>
+		<!--<method name="feedAllies" script="buildingFeedAllies.Lua"/>-->
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/rTownhallSelect.ogg"/>
+	</sounds>
+</object>

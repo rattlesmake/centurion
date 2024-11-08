@@ -1,0 +1,7 @@
+<object parent="Decoration" type="cpp_decorationclass" class_name="roman_column">
+	<attributes>
+		<attribute name="editor_tree" value="decorations/monumental/roman"/>
+		<attribute name="ent_path" value="decorations/monumental/roman_column.oe.xml"/>
+		<attribute name="grid_path" value=""/>
+	</attributes>
+</object>

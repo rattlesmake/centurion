@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="stronghold" type="cpp_abstractclass" class_name="base_gate">
+  <attributes>
+    <attribute name="singularName" value="gate"/>
+  </attributes>
+  <methods>
+  </methods>
+  <sounds>
+  </sounds>
+</object>

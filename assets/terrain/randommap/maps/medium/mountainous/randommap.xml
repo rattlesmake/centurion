@@ -1,0 +1,19 @@
+<RandomMapData>
+	<HeightMaps maxHeight="255">
+		<HeightMap path="heightmaps\heightmap1.png" />
+		<HeightMap path="heightmaps\heightmap2.png" />
+		<HeightMap path="heightmaps\heightmap3.png" />
+		<HeightMap path="heightmaps\heightmap4.png" />
+	</HeightMaps>
+	
+	<Displacements>
+		<Displacement path="displacements\displacement1.png" />
+		<!--<Displacement path="displacements\displacement2.png" />
+		<Displacement path="displacements\displacement3.png" />
+		<Displacement path="displacements\displacement4.png" />-->
+	</Displacements>
+	
+	<Outposts>
+		<Outpost class="r_outpost" minFrequency="5" maxFrequency="10" />
+	</Outposts>			
+</RandomMapData>

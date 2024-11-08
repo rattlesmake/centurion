@@ -1,0 +1,14 @@
+<terrainInfoArray>
+    <terrainInfo name="small" isDefault="false">
+        <sizeX>24</sizeX>
+        <sizeY>16</sizeY>
+    </terrainInfo>
+    <terrainInfo name="medium" isDefault="true">
+        <sizeX>48</sizeX>
+        <sizeY>32</sizeY>
+    </terrainInfo>
+    <terrainInfo name="big" isDefault="false">
+        <sizeX>96</sizeX>
+        <sizeY>64</sizeY>
+    </terrainInfo>
+</terrainInfoArray>

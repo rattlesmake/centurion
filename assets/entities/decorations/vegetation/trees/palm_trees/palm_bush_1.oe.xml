@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entity class_name="palm_bush_1" type="cpp_decorationclass" directions="1" zip_file="sprites_extra.zip">
+	<hitbox width="550" height="550"/>
+	<attributes>
+	</attributes>
+	<points>
+	</points>
+	<images>
+		<image id="0" file="decorations/trees/palm_trees/palm_bush_1" reverse="false" frames="1"/>
+		<!--<image id="1" file="decorations/trees/palm_trees/palm_bush_1_shadow" reverse="false" frames="1"/>-->
+	</images>
+	<animations>
+		<animation id="0" name="Idle" speedMultiplier="1">
+			<layers>
+				<layer id="0" image="0" x="0" y="0" z="100" drawmode="normal"/>
+				<!--<layer id="1" image="1" x="0" y="0" z="0" drawmode="shadow" />-->
+			</layers>
+			<frames>
+				<frame id="0" milliseconds="50"/>
+			</frames>
+		</animation>
+	</animations>
+</entity>

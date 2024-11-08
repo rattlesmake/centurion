@@ -1,0 +1,46 @@
+<object parent="base_barracks" type="cpp_buildingclass" class_name="r_barracks">
+	<attributes>
+		<attribute name="singularName" value="roman barracks"/>
+		<attribute name="race" value="rome"/>
+		<attribute name="selectionRadius" value="245"/>
+		<attribute name="editor_tree" value="buildings/roman_stronghold"/>
+		<attribute name="ent_path" value="buildings/rome/barracks/rbarracks.oe.xml"/>
+		<attribute name="grid_path" value="buildings/rome/barracks/rbarracks_grid.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/rbarracks"/>
+	</attributes>
+	<methods>  
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/rBarracksSelect.ogg"/>
+	</sounds>
+    <commands>
+		<command id="train_r_legionary" associatedMethod="train" bottombarPriority="1">
+            <params>
+                <param name="className" type="string" value="r_legionary" />  
+            </params>
+			<displayedName>Train legionary</displayedName>
+			<description>Train a new legionary.</description>
+			<goldCost>80</goldCost>
+			<populationCost>1</populationCost>
+			<delay>2</delay>
+			<hotKey>H</hotKey>
+			<type>training</type>
+			<bottomBarIcon>game/match/bottombar/icons/train_eswordsman</bottomBarIcon>
+			<topBarIcon>game/match/topbar/icons/trainings/train_eswordsman</topBarIcon>
+		</command>
+		<command id="train_r_archer" associatedMethod="train" bottombarPriority="1">
+            <params>
+                <param name="className" type="string" value="r_archer" />  
+            </params>
+			<displayedName>Train Saggitarius</displayedName>
+			<description>Train a new saggitarius.</description>
+			<goldCost>80</goldCost>
+			<populationCost>1</populationCost>
+			<delay>2</delay>
+			<hotKey>S</hotKey>
+			<type>training</type>
+			<bottomBarIcon>game/match/bottombar/icons/train_eswordsman</bottomBarIcon>
+			<topBarIcon>game/match/topbar/icons/trainings/train_eswordsman</topBarIcon>
+		</command>
+	</commands>
+</object>

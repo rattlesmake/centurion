@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="playable" type="cpp_abstractclass" class_name="building">
+    <attributes>
+        <attribute name="singularName" value="building"/>   
+        <attribute name="canAutoRepair" value="true"/>
+        <attribute name="canProduceFood" value="true"/>
+        <attribute name="canProduceGold" value="true"/>
+        <attribute name="isCentralBuilding" value="false"/>
+        <attribute name="loyaltyFearHealthPercent" value="0"/>  <!-- Nuova idea. Se la salute di un edificio è inferiore al numero espresso in value l'edificio perderà la lealtà più velocemente (ad esempio un villaggio che, attaccato, si sente indifeso) -->
+        <attribute name="repairRate" value="0"/> 
+        <attribute name="maxHealth" value="5000"/>
+        <attribute name="maxUnits" value="0"/>
+    </attributes>
+    <methods>
+        <method name="repair" scriptID="building_repair" />
+    </methods>
+    <commands>
+		<command id="building_repair" associatedMethod="repair" bottombarPriority="1">
+            <params>
+            </params>
+			<displayedName>Repair</displayedName>
+			<description>Repair the damaged building.</description>
+			<goldCost>150</goldCost>
+			<foodCost>0</foodCost>
+			<populationCost>0</populationCost>
+			<delay>0</delay>
+			<hotKey>R</hotKey>
+			<type></type>
+			<bottomBarIcon>game/match/bottombar/icons/repair</bottomBarIcon>
+			<topBarIcon>game/match/topbar/icons/trainings/train_eswordsman</topBarIcon>
+		</command>
+    </commands>
+    <sounds>
+    </sounds>
+    <values>
+        <value name="loyalty" />
+        <value name="gold_building" />
+        <value name="food_building" />
+        <value name="population" />
+        <value name="health" />
+    </values>
+</object>

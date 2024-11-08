@@ -1,0 +1,84 @@
+<matchUi bottomBarHeight="65" topBarHeight="78">
+
+	<shortcuts>
+        <shortcut iframe_to_open="GameMenu" execute_fun="">
+            <key name="KEY_ESCAPE" />
+        </shortcut>
+    </shortcuts>
+
+    <!-- Iframes -->
+
+    <iframeArray>
+        
+	    <!-- OVERLAY -->
+        
+        <iframe id="EmptyIframe" skin="emptyIframeMenu" title="MaUI_Overlay" position="x = 0; y = 0" size="w = 0; h = 0;" isOpened="false" canBeClosed="false" isEmpty="true">
+	    </iframe>
+
+        <!-- TOP BAR -->
+
+        <iframe id="TopBar" skin="emptyIframeMenu" title="MaUI_Topbar" position="x=0; y=_height_" size="w=_width_; h=78;" isOpened="true" canBeClosed="false" isEmpty="true">
+            
+            <imageArray>
+                <!-- Topbar Background - It's provided a default image (topbar-Rome) but it will be update according to the civilization of the player -->
+                <image id="0" image_name="game/match/topbar/topbar-Rome" width="w" height="h" xOffset="0" yOffset="0" type="repeat-x" background="true"/>
+                <!-- Selected object's icon -->
+                <image id="1" image_name="" width="60" height="h" xOffset="0" yOffset="0" type=""/>
+            </imageArray>
+
+            <textArray>
+                <!-- displayed name -->
+                <text id="1" stringName="" xOffset="75" yOffset="h - 1" />
+            </textArray>
+        </iframe>
+		
+        <!-- BOTTOM BAR -->
+        
+        <iframe id="BottomBar" skin="emptyIframeMenu" title="MaUI_BottomBar" position="x=0; y=65" size="w=_width_; h=65;" isOpened="true" canBeClosed="false" isEmpty="true">       
+            <imageArray>
+                <image id="0" image_name="game/match/bottombar/bottombar" width="w" height="h" xOffset="0" yOffset="0" type="repeat-x" background="true"/>
+            </imageArray>
+            <buttonArray width="h" height="h">
+				<!-- Buttons in which display commands -->
+                <!-- They must be 14!! -->
+                <button id="0" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="1" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="2" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="3" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="4" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="5" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="6" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="7" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="8" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="9" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="10" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="11" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="12" image_name="game/match/bottombar/icons/genericButton" ></button>
+                <button id="13" image_name="game/match/bottombar/icons/genericButton" ></button>
+            </buttonArray>
+        </iframe>
+
+        <!-- GAME MENU -->
+
+        <iframe id="GameMenu" skin="mechanicalGrey" title="g_pause_menu" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=300; h=_height_*0.7;" isOpened="false" icon="ICON_SERVER" canBeMoved="false">			
+			<buttonArray>
+                <button id="0" stringName="g_pause_menu_close" xOffset="102" yOffset="60" onclick="gamemenu_close"/>
+                <button id="1" stringName="g_game_quit" xOffset="102" yOffset="180" onclick="match_quit"/>
+                <button id="2" stringName="w_options" xOffset="102" yOffset="220" onclick=""/>
+                <button id="3" stringName="g_save_game" xOffset="102" yOffset="260" onclick="match_save"/>
+                <button id="4" stringName="g_load_game" xOffset="102" yOffset="300" onclick="match_load"/>
+            </buttonArray>
+        </iframe>
+    </iframeArray>
+    
+    <commands>
+    <!-- Bottombar commands section - (Commands displayed when no object is selected) -->
+    <command id="game_menu" associatedMethod="" bottombarPriority="0">
+        <params></params>
+        <displayedName>Open game menu</displayedName>
+        <description>It opens the game menu.</description>
+        <iframeToOpen>GameMenu</iframeToOpen>
+        <bottomBarIcon>game/match/bottombar/icons/game_menu</bottomBarIcon>
+    </command>
+</commands>
+</matchUi>

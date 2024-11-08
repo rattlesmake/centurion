@@ -1,0 +1,13 @@
+1) Il tool mod crea un file di testo dentro ogni archivio (progetto) in cui salva l'elenco delle mod. Se tale file non esiste, quando si fa File/Apri il tool mostra un messaggio in cui dice che l'archivio non è un archivio valido
+2) Quando si sta scrivendo una cosa nella casella parent e poi si clicca fuori (quindi if leftClickID != parentBox.id) viene calcolato l'eventuale errore di scrittura (battitura o classe inesistente)
+3) Quando il tool si avvia, così come avviene su Visual Studio, compare la lista degli ultimi progetti aperti (progetti recenti)
+4) Il file di testo che contiene le mod, specificherà il percorso completo. Se quindi il file è una classe, si troverà nella cartella classes; se invece è uno script si troverà nella cartella script. Il risultato dovrebbe essere una cosa del genere:
+classes/rtownhall
+scripts/unitAttack
+5) Nel menù visualizza ci saranno:
+	a) la possibilità di visualizzare/nascondere la finestra dell'albero delle classi del gioco;
+	b) la possibilità di visualizzare/nascondere la finestra "esplora progetto" che contiene, in stile visual studio tutti i files contenuti all'interno dello zip. In tale finestra è possibile cliccare su un elemento per aprirlo: se il file attualmente in uso è stato modificato, verrà chiesto di salvare prima dell'operazione.
+	c) la possibilità di visualizzare la finestra per modificare le proprietà del file .zip; tale finestra non sarà richiamabile per i file con la firma Rattlesmake
+6) Nel menù File ci sarà anche il comando "Importa" che permette di selezionare un archivio zip attraverso esplora risorse: non appena viene scelto il file zip, il tool verifica la presenza di mds.txt al suo interno, che garantisce che quell'archivio sia legittimamente idoneo al modding di Centurion. Comparirà la lista dei files disponibili (e la corrispettiva categoria di appartenenza) e l'utente sceglierà uno di essi e cliccherà su "Scegli": con questa operazione l'elemento selezionato viene copiato nel progetto attualmente aperto e viene aggiornato mds.txt.
+7) Nel menù File ci sarà anche il comando "Esporta" che permette di selezionare un archivio zip attraverso esplora risorse: non appena viene scelto il file zip, il tool verifica la presenza di mds.txt al suo interno, che garantisce che quell'archivio sia legittimamente idoneo al modding di Centurion. L'utente cliccherà su "Esporta": con questa operazione l'elemento attualmente in uso viene copiato nel progetto selezionato e ne viene aggiornato il file mds.txt.
+8) Il file data.zip, e con esso anche tutti gli archivi simili, avrà un file mds.txt leggermente ritoccato, ossia nella prima riga possiede una parola chiave che ne impedisce l'apertura (può essere soltanto letto in fase di import).

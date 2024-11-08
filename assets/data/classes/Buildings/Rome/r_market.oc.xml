@@ -1,0 +1,16 @@
+<object parent="base_tavern" type="cpp_buildingclass" class_name="r_market">
+	<attributes>
+		<attribute name="singularName" value="roman market"/>
+		<attribute name="race" value="rome"/>
+		<attribute name="selectionRadius" value="190"/>
+		<attribute name="editor_tree" value="buildings/roman_stronghold"/>
+		<attribute name="ent_path" value="buildings/rome/market/rmarket.oe.xml"/>
+		<attribute name="grid_path" value="buildings/rome/market/rmarket_grid.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/rmarket"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/rMarketSelect.ogg"/>
+	</sounds>
+</object>

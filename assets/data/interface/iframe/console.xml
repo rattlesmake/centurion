@@ -1,0 +1,15 @@
+﻿<iframe name="console">
+	<top_left image_name="common/iframe/console/topleft" repeat="none"/>
+	<top_right image_name="common/iframe/console/topright" repeat="none"/>
+	<bottom_right image_name="common/iframe/console/bottomright" repeat="none"/>
+	<bottom_left image_name="common/iframe/console/bottomleft" repeat="none"/>
+	<top image_name="common/iframe/console/top" repeat="x"/>
+	<right image_name="common/iframe/console/right" repeat="y"/>
+	<bottom image_name="common/iframe/console/bottom" repeat="x"/>
+	<left image_name="common/iframe/console/left" repeat="y"/>
+	<background image_name="common/iframe/console/back" repeat="none"/>
+	<textInput>
+		<font name="tahoma_bold_13"/>
+		<textColor r="255" g="255" b="255" a="255"/>
+	</textInput>
+</iframe>

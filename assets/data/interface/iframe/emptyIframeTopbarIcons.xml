@@ -1,0 +1,11 @@
+﻿<iframe name="emptyIframeTopBarIcons">
+	<text>
+		<font name="tahoma_15"/>
+		<textColor r="255" g="255" b="255" a="255"/>
+	</text>
+  	<button>
+		<textColor r="255" g="255" b="255" a="255"/>
+		<font name="tahoma_15_bold"/>
+		<image name="common/buttons/button_1" hover="common/buttons/button_1_hover" pressed="common/buttons/button_1_pressed"/>
+	</button>
+</iframe>

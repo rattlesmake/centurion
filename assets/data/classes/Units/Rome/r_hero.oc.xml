@@ -1,0 +1,11 @@
+<object parent="hero" type="cpp_heroclass" class_name="r_hero">
+	<attributes>
+		<attribute name="editor_tree" value="units/roman"/>
+		<attribute name="ent_path" value="units/r_hero/r_hero.oe.xml"/>
+		<attribute name="iconName" value="game/match/topbar/icons/classes/EHero"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+	</sounds>
+</object>

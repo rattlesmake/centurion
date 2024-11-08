@@ -1,0 +1,7 @@
+<object parent="Decoration" type="cpp_decorationclass" class_name="rock_3">
+	<attributes>
+		<attribute name="editor_tree" value="decorations/rocks"/>
+		<attribute name="ent_path" value="decorations/rocks/rock_3.oe.xml"/>
+		<attribute name="grid_path" value=""/>
+	</attributes>
+</object>

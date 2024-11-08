@@ -1,0 +1,15 @@
+<object parent="base_blacksmith" type="cpp_buildingclass" class_name="e_blacksmith">
+	<attributes>
+		<attribute name="singularName" value="egyptian blacksmith"/>
+		<attribute name="race" value="egypt"/>
+		<attribute name="selectionRadius" value="255"/>
+		<attribute name="editor_tree" value="buildings/egyptian_stronghold"/>
+		<attribute name="ent_path" value="buildings/egypt/blacksmith/eblacksmith.oe.xml"/>
+		<attribute name="grid_path" value="buildings/egypt/blacksmith/eblacksmith_grid.xml"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+		<sound name="select" path="sounds/eBlacksmithSelect.ogg"/>
+	</sounds>
+</object>

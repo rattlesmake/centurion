@@ -1,0 +1,6 @@
+<gObjectScript id="unit_conquer" autoExecute="0" associableToCmd="1" needTarget="1">
+    <!-- Parameters that a command must provide -->
+    <!-- Only makes sense if associableToCmd is equal to 1 -->
+    <requiredCommandParameters>
+    </requiredCommandParameters>
+</gObjectScript>

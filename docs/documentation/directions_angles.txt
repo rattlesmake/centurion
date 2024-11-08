@@ -1,0 +1,12 @@
+enum class Directions
+{
+	right = 0,
+	top = 90,
+	left = 180,
+	bottom = 270,
+
+	top_right = 45,
+	top_left = 135,
+	bottom_left = 225,
+	bottom_right = 315
+};

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<object parent="soldier" type="cpp_noclass" class_name="ranged">
+	<attributes>
+		<attribute name="range" value="1500"/>
+	</attributes>
+	<methods>
+	</methods>
+	<sounds>
+	</sounds>
+    <values>
+		<value name="range" />
+	</values>
+    <defaultCommands>
+        <defaultCommand target="building">
+            <cmd name="enter" />
+            <cmd name="attack" />
+        </defaultCommand>
+    </defaultCommands>
+</object>

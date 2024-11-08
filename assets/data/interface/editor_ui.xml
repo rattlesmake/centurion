@@ -1,0 +1,1401 @@
+<!-- 
+ CENTURION
+ [2019] - [2022] Rattlesmake
+ All Rights Reserved.
+-->
+
+<!-- Scripts are stored in Editor_ui.py -->
+
+<editorUi>
+
+    <shortcuts>
+        <shortcut iframe_to_open="__tree__" execute_fun="">
+            <key name="KEY_LEFT_CONTROL" />
+            <key name="KEY_A" />
+        </shortcut>
+    </shortcuts>
+
+    <!-- ============================================================= -->
+    <!-- ============================================================= -->
+    <!-- ============================================================= -->
+
+
+    <!-- EDITOR MENU -->
+
+    <!-- 
+   Editor MenuBar documentation:
+ 
+   An example of menuItem, type "command":
+ 
+   <menuItem type="command" name="name" shortcut="" condition="" onclick="" onclick_open="" />
+   
+   N.B. the "condition" function will always be validated, if not empty. if "onclick_open" is not empty, "onclick" won't be executed.
+   the "onclick_open" attribute aims to reduce the number of python functions, if the only task is to open an iframe. 
+ 
+   An example of menuItem, type "menu":
+ 
+   <menuItem type="menu" name="WORD_New" shortcut="" condition="" >
+    <menuItemArray>   
+     list of menuItems -> you can potentially generate infinite sub-menus!!  
+    </menuItemArray>
+   </menuItem>
+   -->
+
+    <menuBar>
+        <menuItemArray>
+
+            <!-- EDITOR MENU BAR-->
+
+            <menuItem type="menu" name="w_editor" condition="edmenu_editormenu_condition">
+                <menuItemArray>
+
+                    <!-- open "new adventure" iframe -->
+                    <menuItem type="command" name="e_editor_new_adventure" shortcut="" icon="ICON_NOTE" onclick_open="newAdv" />
+
+                    <!-- open "open adventure" iframe -->
+                    <menuItem type="command" name="e_editor_open_adventure" shortcut="" icon="ICON_PORTFOLIO_OPENED" onclick_open="openAdv" />
+
+                    <!-- open "delete adventure" iframe -->
+                    <menuItem type="command" name="e_editor_delete_adventure" shortcut="" icon="ICON_TRASH" onclick_open="deleteAdv" />
+
+                    <!-- save adventure directly -->
+                    <menuItem type="command" name="w_save" shortcut="" icon="ICON_FLOPPY" condition="is_adventure_edited" onclick="edmenu_saveadv_click" />
+
+                    <!-- open "save as adventure" iframe -->
+                    <menuItem type="command" name="w_save_as" shortcut="" icon="ICON_EMPTY_FRAME" condition="is_adventure_opened" onclick_open="SaveasAdv" />
+
+                    <!-- open "save copy adventure" iframe -->
+                    <menuItem type="command" name="w_save_copy" shortcut="" icon="ICON_EMPTY_FRAME" condition="is_adventure_opened" onclick_open="SaveCopyAdv" />
+
+                    <!-- quit from editor -->
+                    <menuItem type="command" name="w_exit" shortcut="" icon="ICON_EXIT" onclick="edmenu_quit_click" />
+
+                </menuItemArray>
+            </menuItem>
+
+            <!-- ADVENTURE MENU BAR -->
+
+            <menuItem type="menu" name="w_adventure" condition="edmenu_adventuremenu_condition">
+                <menuItemArray>
+                    <menuItem type="menu" name="w_scenario" shortcut="" icon="ICON_EMPTY_FRAME">
+                        <menuItemArray>
+
+                            <!-- open "new scenario" iframe -->
+                            <menuItem type="command" name="e_adventure_new_scenario" shortcut="" icon="ICON_NOTE" onclick_open="newScenario" />
+
+                            <!-- open "open scenario" iframe -->
+                            <menuItem type="command" name="e_adventure_open_scenario" shortcut="" icon="ICON_PORTFOLIO_OPENED" onclick_open="openScenario" />
+
+                            <!-- open "delete scenario" iframe -->
+                            <menuItem type="command" name="e_adventure_delete_scenario" shortcut="" icon="ICON_TRASH" onclick_open="deleteScenario" />
+
+                            <!-- open "import scenario" iframe -->
+                            <menuItem type="command" name="e_adventure_import_scenario" shortcut="" icon="ICON_DOWNLOAD" onclick_open="importScenario" />
+
+                            <!-- open "export scenario" iframe -->
+                            <menuItem type="command" name="e_adventure_export_scenario" shortcut="" icon="ICON_UPLOAD" onclick_open="exportScenario" />
+
+                            <!-- TODO open "scenario properties" iframe -->
+                            <menuItem type="command" name="e_adventure_scenario_properties" shortcut="" icon="ICON_EMPTY_FRAME" onclick_open="" />
+
+                            <menuItem type="menu" name="e_adventure_scenario_screenplay" shortcut="" icon="ICON_EMPTY_FRAME">
+                                <menuItemArray>
+
+                                    <!-- TODO open "scenario scripts" iframe -->
+                                    <menuItem type="command" name="e_adventure_scenario_scripts" shortcut="" icon="ICON_PENCIL" onclick_open="" />
+
+                                    <!-- TODO open "scenario objectives" iframe -->
+                                    <menuItem type="command" name="e_adventure_scenario_objectives" shortcut="" icon="ICON_TEXT" onclick_open="" />
+
+                                    <!-- TODO open "scenario conversations" iframe -->
+                                    <menuItem type="command" name="e_adventure_scenario_conversations" shortcut="" icon="ICON_BALLOON" onclick_open="" />
+
+                                </menuItemArray>
+                            </menuItem>
+                        </menuItemArray>
+                    </menuItem>
+                    <menuItem type="menu" name="e_adventure_screenplay" shortcut="" icon="ICON_EMPTY_FRAME">
+                        <menuItemArray>
+
+                            <!-- open "adventure scripts" iframe -->
+                            <menuItem type="command" name="e_text_adventure_scripts" shortcut="" icon="ICON_PENCIL" onclick_open="advScripts" />
+
+                            <!-- open "adventure objectives" iframe -->
+                            <menuItem type="command" name="e_text_adventure_objectives" shortcut="" icon="ICON_TEXT" onclick_open="advObjectives" />
+
+                            <!-- open "adventure conversations" iframe -->
+                            <menuItem type="command" name="e_text_adventure_conversations" shortcut="" icon="ICON_BALLOON" onclick_open="advConversations" />
+
+                        </menuItemArray>
+                    </menuItem>
+
+                    <!-- open "adventure properties" iframe -->
+                    <menuItem type="command" name="e_adventure_properties" shortcut="" icon="ICON_EMPTY_FRAME" onclick_open="advProperties" />
+
+                    <!-- open "players properties" iframe -->
+                    <menuItem type="command" name="e_adventure_players_properties" shortcut="" icon="ICON_PLAYERS" onclick_open="playersProperties" />
+
+                </menuItemArray>
+            </menuItem>
+
+            <!-- TOOLS MENU BAR -->
+
+            <menuItem type="menu" name="e_tools" condition="edmenu_toolsmenu_condition">
+                <menuItemArray>
+
+                    <!-- run adventure -->
+                    <menuItem type="command" name="e_tools_run" shortcut="" icon="ICON_EMPTY_FRAME" onclick="edmenu_runadventure_click" />
+
+                    <!-- open "object properties" iframe -->
+                    <menuItem type="command" name="e_tools_object_properties" shortcut="" icon="ICON_COG" condition="edmenu_objprops_condition" onclick="edmenu_objprops_click" />
+
+                    <!-- open "add object" iframe (not contained here: __tree__ is the tree key for c++) -->
+                    <menuItem type="command" name="e_tools_add_object" shortcut="CTRL+A" icon="ICON_TREE" onclick_open="__tree__" />
+
+                    <!-- open "manage areas" iframe -->
+                    <menuItem type="command" name="e_tools_areas" shortcut="" icon="" onclick_open="manageAreas" />
+
+                    <!-- open "terrain brush" iframe -->
+                    <menuItem type="command" name="e_tools_terrain_brush" shortcut="" icon="ICON_PALETTE" onclick_open="terrainBrush" />
+
+                    <!-- open "random scenario" iframe -->
+                    <menuItem type="command" name="e_tools_generate_random_scenario" shortcut="" icon="ICON_CUBES" onclick_open="randomScenario" />
+
+                </menuItemArray>
+            </menuItem>
+			
+			<!-- DEBUG MENU BAR -->
+
+			<menuItem type="menu" name="w_debug" condition="">
+                <menuItemArray>
+
+                    <!-- toggle grid -->
+                    <menuItem type="command" name="e_debug_toggle_grid" shortcut="" icon="ICON_EMPTY_FRAME" onclick="edmenu_togglegrid" />
+					
+					<!-- toggle hitboxes -->
+                    <menuItem type="command" name="e_debug_toggle_hitboxes" shortcut="" icon="ICON_EMPTY_FRAME" onclick="edmenu_togglehitboxes" />
+					
+					<!-- toggle wireframe -->
+                    <menuItem type="command" name="e_debug_toggle_wireframe" shortcut="" icon="ICON_EMPTY_FRAME" onclick="edmenu_togglewireframe" />
+					
+					<!-- toggle sea -->
+                    <menuItem type="command" name="e_debug_toggle_sea" shortcut="" icon="ICON_EMPTY_FRAME" onclick="edmenu_togglesea" />
+					
+					<!-- toggle clouds -->
+                    <menuItem type="command" name="e_debug_toggle_clouds" shortcut="" icon="ICON_EMPTY_FRAME" onclick="edmenu_toggleclouds" />
+
+                    <!-- toggle tracing debugging -->
+                    <menuItem type="command" name="e_debug_toggle_tracing" shortcut="" icon="ICON_EMPTY_FRAME" onclick="edmenu_toggletracingdebugging" />
+					
+					<!-- toggle draw objects without noise -->
+                    <menuItem type="command" name="e_debug_toggle_drawing_noise" shortcut="" icon="ICON_EMPTY_FRAME" onclick="edmenu_toggledrawingnoise" />
+					
+                </menuItemArray>
+            </menuItem>
+
+        </menuItemArray>
+    </menuBar>
+
+    <!-- ============================================================= -->
+    <!-- ============================================================= -->
+    <!-- ============================================================= -->
+
+    <!-- EDITOR WINDOWS -->
+
+    <iframeArray>
+
+        <!-- OVERLAY TEXT EMPTY WINDOW -->
+
+        <iframe id="empty" skin="emptyIframeMenu" title="EdUI_EmptyIframe" position="x=0; y=_height_" size="w=_width_; h=_height_;" isOpened="true" isEmpty="true">
+            <runtimeScript fun="edwin_empty_runtime"/>
+            <textArray>
+                <text id="0" stringName="" xOffset="20" yOffset="h - 10" />
+                <text id="1" stringName="" xOffset="20" yOffset="h - 25" />
+                <text id="2" stringName="" xOffset="20" yOffset="h - 40" />
+                <text id="3" stringName="" xOffset="20" yOffset="h - 55" />
+                <text id="4" stringName="" xOffset="20" yOffset="h - 70" />
+                <text id="5" stringName="" xOffset="20" yOffset="h - 85" />
+                <text id="6" stringName="" xOffset="20" yOffset="h - 100" />
+            </textArray>
+        </iframe>
+       
+       
+		<!-- ADD OBJECT WINDOW -->
+		<!-- __tree__ is hard-coded in c++ so don't change it!! -->
+		<iframe id="__tree__" skin="egyptianSand" isOpened="false" isEditorTree="true">
+            <!-- it must be empty -->
+        </iframe>
+       
+        <!-- NEW ADVENTURE WINDOW -->
+
+        <iframe id="newAdv" skin="egyptianSand" title="e_text_create_adventure" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=400; h=150;" isOpened="false" icon="ICON_NOTE">
+            <openingScript fun="edwin_newadv_opening"/>
+            <runtimeScript fun="edwin_newadv_runtime"/>
+            <textInputArray>
+                <textInput id="0" xOffset="20" yOffset="80" width="200" placeholder="e_text_default_name" ascii="true"/>
+            </textInputArray>
+            <textArray>
+                <text id="0" stringName="e_text_new_name" xOffset="20" yOffset="100"/>
+            </textArray>
+            <buttonArray>
+                <button id="0" stringName="w_create" xOffset="300" yOffset="40" isEnabled="false" onclick="edwin_newadv_button0" />
+                <button id="1" stringName="w_cancel" xOffset="210" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "OPEN ADVENTURE" WINDOW -->
+
+        <iframe id="openAdv" skin="egyptianSand" title="e_text_open_adventure" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=350; h=330;" isOpened="false" icon="ICON_PORTFOLIO_OPENED">
+            <openingScript fun="edwin_openadv_opening"/>
+            <textListArray>
+                <textList id="0" xOffset="20" yOffset="280" width="310" height="200" separator="true" onclick="edwin_openadv_txtlst0" />
+            </textListArray>
+            <buttonArray>
+                <button id="0" stringName="w_open" xOffset="250" yOffset="40" isEnabled="false" onclick="edwin_openadv_button0" />
+                <button id="1" stringName="w_close" xOffset="160" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "DELETE ADVENTURE" WINDOW -->
+
+        <iframe id="deleteAdv" skin="egyptianSand" title="e_text_delete_adventure" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=350; h=330;" isOpened="false" icon="ICON_TRASH">
+            <openingScript fun="edwin_deleteadv_opening"/>
+            <textListArray>
+                <textList id="0" xOffset="20" yOffset="280" width="310" height="200" separator="true" onclick="edwin_deleteadv_txtlst0"/>
+            </textListArray>
+            <buttonArray>
+                <button id="0" stringName="w_delete" xOffset="250" yOffset="40" isEnabled="false" onclick="edwin_deleteadv_button0" />
+                <button id="1" stringName="w_cancel" xOffset="160" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "SAVE ADVENTURE AS" WINDOW -->
+
+        <iframe id="SaveasAdv" skin="egyptianSand" title="w_save_as" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=400; h=150;" isOpened="false" icon="">
+            <openingScript fun="edwin_saveadvas_opening" />
+            <runtimeScript fun="edwin_saveadvas_runtime"/>
+            <textInputArray>
+                <textInput id="0" xOffset="20" yOffset="80" width="200" placeholder="e_text_default_name" ascii="true"/>
+            </textInputArray>
+            <textArray>
+                <text id="0" stringName="e_text_new_name" xOffset="20" yOffset="100"/>
+            </textArray>
+            <buttonArray>
+                <button id="0" stringName="w_save" xOffset="300" yOffset="40" onclick="edwin_saveadvas_button0" />
+                <button id="1" stringName="w_cancel" xOffset="210" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "SAVE ADVENTURE COPY" WINDOW -->
+
+        <iframe id="SaveCopyAdv" skin="egyptianSand" title="w_save_copy" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=400; h=150;" isOpened="false" icon="">
+            <openingScript fun="edwin_saveadvcopy_opening" />
+            <runtimeScript fun="edwin_saveadvcopy_runtime"/>
+            <textInputArray>
+                <textInput id="0" xOffset="20" yOffset="80" width="200" placeholder="e_text_default_name" ascii="true"/>
+            </textInputArray>
+			<textArray>
+                <text id="0" stringName="e_text_new_name" xOffset="20" yOffset="100"/>
+            </textArray>
+            <buttonArray>
+                <button id="0" stringName="w_save" xOffset="300" yOffset="40" onclick="edwin_saveadvcopy_button0" />
+                <button id="1" stringName="w_cancel" xOffset="210" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- ADVENTURE MENU BAR -->
+        <!-- "NEW SCENARIO" WINDOW -->
+
+        <iframe id="newScenario" skin="egyptianSand" title="e_text_create_scenario" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=400; h=150;" isOpened="false" icon="">
+            <openingScript fun="edwin_newscnr_opening" />
+            <runtimeScript fun="edwin_newscrn_runtime"/>
+            <textInputArray>
+                <textInput id="0" xOffset="20" yOffset="80" width="200" placeholder="e_text_default_name" ascii="true"/>
+            </textInputArray>
+            <textArray>
+                <text id="0" stringName="e_text_new_name" xOffset="20" yOffset="100"/>
+            </textArray>
+            <buttonArray>
+                <button id="0" stringName="w_create" xOffset="300" yOffset="40" isEnabled="false" onclick="edwin_newscrn_button0" />
+                <button id="1" stringName="w_cancel" xOffset="210" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "OPEN SCENARIO" WINDOW -->
+
+        <iframe id="openScenario" skin="egyptianSand" title="e_text_open_scenario" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=350; h=330;" isOpened="false" icon="">
+            <openingScript fun="edwin_openscnr_opening"/>
+            <textListArray>
+                <textList id="0" xOffset="20" yOffset="280" width="310" height="200" separator="true" onclick="edwin_openscnr_txtlst0" />
+            </textListArray>
+            <buttonArray>
+                <button id="0" stringName="w_open" xOffset="250" yOffset="40" isEnabled="false" onclick="edwin_openscnr_button0" />
+                <button id="1" stringName="w_close" xOffset="160" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "DELETE SCENARIO" WINDOW -->
+
+        <iframe id="deleteScenario" skin="egyptianSand" title="e_text_delete_scenario" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=350; h=330;" isOpened="false" icon="ICON_TRASH">
+            <openingScript fun="edwin_deletescnr_opening"/>
+            <textListArray>
+                <textList id="0" xOffset="20" yOffset="280" width="310" height="200" separator="true" onclick="edwin_deletescnr_txtlst0" />
+            </textListArray>
+            <buttonArray>
+                <button id="0" stringName="w_delete" xOffset="250" yOffset="40" isEnabled="false" onclick="edwin_deletescnr_button0" />
+                <button id="1" stringName="w_cancel" xOffset="160" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- TODO "IMPORT SCENARIO" WINDOW -->
+
+        <iframe id="importScenario" skin="egyptianSand" title="e_text_import_scenario" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=350; h=330;" isOpened="false" icon="ICON_DOWNLOAD">
+            <openingScript fun=""/>
+            <textListArray>
+                <textList id="0" xOffset="20" yOffset="280" width="310" height="200" icon="ICON_FOLDER" onclick="" />
+            </textListArray>
+            <buttonArray>
+                <button id="0" stringName="w_open" xOffset="250" yOffset="40" isEnabled="false" onclick="" />
+                <button id="1" stringName="w_cancel" xOffset="160" yOffset="40" onclick="close_iframe"/>
+                <button id="2" stringName="w_import" xOffset="20" yOffset="40" isEnabled="false" icon="ICON_DOWNLOAD" onclick="" />
+            </buttonArray>
+        </iframe>
+
+        <!-- TODO "EXPORT SCENARIO" WINDOW -->
+
+        <iframe id="exportScenario" skin="egyptianSand" title="e_text_export_scenario" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=350; h=330;" isOpened="false" icon="ICON_UPLOAD">
+            <openingScript fun=""/>
+            <textArray>
+                <text id="0" stringName="e_text_current_scenario" xOffset="20" yOffset="75" />
+                <text id="1" stringName="e_text_default_name" xOffset="118" yOffset="75" />
+            </textArray>
+            <textListArray>
+                <textList id="0" xOffset="20" yOffset="280" width="310" height="200" icon="ICON_FOLDER" onclick="" />
+            </textListArray>
+            <buttonArray>
+                <button id="0" stringName="w_open" xOffset="250" yOffset="40" isEnabled="false" onclick="" />
+                <button id="1" stringName="w_cancel" xOffset="160" yOffset="40" onclick="close_iframe"/>
+                <button id="2" stringName="w_export" xOffset="20" yOffset="40" icon="ICON_UPLOAD" onclick="" />
+            </buttonArray>
+        </iframe>
+
+        <!-- "ADVENTURE SCRIPTS" WINDOW -->
+
+        <iframe id="advScripts" skin="egyptianSand" title="e_text_adventure_scripts" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=700; h=500;" isOpened="false" icon="ICON_PENCIL">
+            <openingScript fun="edwin_advscripts_opening" />
+            <tabArray>
+                <tab id="0" title="e_text_script_parameters">
+                </tab>
+                <tab id="1" title="e_text_script_conditions">
+                    <openingScript fun="edwin_advscripts_tab1_opening"/>
+					<runtimeScript fun="edwin_advscripts_tab1_runtime"/>
+                    <textArray>
+                        <text id="0" stringName="" xOffset="24" yOffset="68"/>
+                        <text id="1" stringName="" xOffset="454" yOffset="68"/>
+                    </textArray>
+                    <imageArray>
+                        <image id="0" image_name="common/iframe/egyptianSand/status" xOffset="10" yOffset="45" width="420" height="30" type=""/>
+                        <image id="1" image_name="common/iframe/egyptianSand/status" xOffset="440" yOffset="45" width="90" height="30" type=""/>
+                    </imageArray>
+                    <textInputMultilineArray>
+                        <textInputMultiline id="0" xOffset="10" yOffset="450" width="520" height="370" placeholder=""/>
+                    </textInputMultilineArray>
+                    <buttonArray>
+                        <button id="0" stringName="w_compile" xOffset="100" yOffset="40" onclick="edwin_advscripts_tab1_button0" />
+                    </buttonArray>
+                </tab>
+                <tab id="2" title="e_text_script_body">
+                    <openingScript fun="edwin_advscripts_tab2_opening"/>
+					<runtimeScript fun="edwin_advscripts_tab2_runtime"/>
+                    <textArray>
+                        <text id="0" stringName="" xOffset="24" yOffset="68"/>
+                        <text id="1" stringName="" xOffset="454" yOffset="68"/>
+                    </textArray>
+                    <imageArray>
+                        <image id="0" image_name="common/iframe/egyptianSand/status" xOffset="10" yOffset="45" width="420" height="30" type=""/>
+                        <image id="1" image_name="common/iframe/egyptianSand/status" xOffset="440" yOffset="45" width="90" height="30" type=""/>
+                    </imageArray>
+                    <textInputMultilineArray>
+                        <textInputMultiline id="0" xOffset="10" yOffset="450" width="520" height="370" placeholder=""/>
+                    </textInputMultilineArray>
+                    <buttonArray>
+                        <button id="0" stringName="w_compile" xOffset="100" yOffset="40" onclick="edwin_advscripts_tab2_button0" />
+                    </buttonArray>
+                </tab>
+            </tabArray>
+            <textListArray>
+                <textList id="0" xOffset="540" yOffset="450" width="150" height="400" onclick="" />
+            </textListArray>
+            <buttonArray>
+                <button id="0" stringName="w_new" xOffset="10" yOffset="40" onclick="" />
+                <button id="1" stringName="w_close" xOffset="600" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "ADVENTURE OBJECTIVES" WINDOW -->
+
+        <iframe id="advObjectives" skin="egyptianSand" title="e_text_adventure_objectives" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=530; h=400;" isOpened="false" icon="ICON_TEXT">
+            <openingScript fun="edwin_advobjectives_opening"/>
+            <runtimeScript fun="edwin_advobjectives_runtime"/>
+            <closingScript fun="edwin_advobjectives_closing" />
+            <textArray>
+                <text id="0" stringName="e_text_objective_id" xOffset="10" yOffset="348" />
+                <text id="1" stringName="e_text_objective_title" xOffset="10" yOffset="308" />
+                <text id="2" stringName="e_text_objective_description" xOffset="10" yOffset="268" />
+                <text id="3" stringName="" xOffset="10" yOffset="375" />
+            </textArray>
+            <textInputArray>
+                <textInput id="0" xOffset="60" yOffset="350" width="120" placeholder="" onclick="edwin_advobjectives_txtInpt0" />
+                <textInput id="1" xOffset="60" yOffset="310" width="120" placeholder="" onclick="edwin_advobjectives_txtInpt1" />
+            </textInputArray>
+            <textInputMultilineArray>
+                <textInputMultiline id="0" xOffset="10" yOffset="240" width="300" height="130" placeholder="" onclick="edwin_advobjectives_txtInptMlt0" />
+            </textInputMultilineArray>
+            <comboBoxArray>
+                <comboBox id="0" stringName="e_text_objective_scenario_name" xOffset="200" yOffset="350" width="100" height="50" onclick="edwin_advobjectives_cmbbx0" />
+                <comboBox id="1" stringName="e_text_objective_icon" xOffset="200" yOffset="310" width="100" height="50" onclick="edwin_advobjectives_cmbbx1" />
+            </comboBoxArray>
+            <checkBoxArray>
+                <checkBox id="0" stringName="e_text_objective_minimap" xOffset="10" yOffset="90" onclick="edwin_advobjectives_chckbx0" />
+            </checkBoxArray>
+            <textListArray>
+                <textList id="0" xOffset="370" yOffset="350" width="150" height="300" onclick="edwin_advobjectives_txtlst0" />
+            </textListArray>
+            <buttonArray>
+                <button id="0" stringName="w_new" xOffset="10" yOffset="40" onclick="edwin_advobjectives_button0" />
+                <button id="1" stringName="w_delete" xOffset="100" yOffset="40" onclick="edwin_advobjectives_button1" />
+                <button id="2" stringName="w_close" xOffset="435" yOffset="40" onclick="close_iframe"/>
+                <button id="3" stringName="w_collocate" xOffset="200" yOffset="97">
+                    <onclickScript>
+                    </onclickScript>
+                </button>
+            </buttonArray>
+        </iframe>
+
+        <!-- "ADVENTURE CONVERSATIONS" WINDOW -->
+
+        <iframe id="advConversations" skin="egyptianSand" title="e_text_adventure_conversations" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=700; h=500;" isOpened="false" icon="ICON_BALLOON">
+            <openingScript>
+                local _scriptsList = GetAllAdventureScripts()
+                this:DisableButtonById(1)
+                this:UpdateTextListById(0, _scriptsList)
+                this:ResetTextInputMultilineById(0)
+            </openingScript>
+            <tabArray>
+                <tab id="0" title="e_text_phrases">
+                    <openingScript>
+                        thisTab = this:GetTabById(0)
+                        local _phrases = StrList()
+                        _phrases:Add("[1]\n\tAHorseman: Oh shit! Here we go again!")
+                        _phrases:Add("[2]\n\tGHero: Are you CJ from San Andreas or something?")
+                        _phrases:Add("[3]\n\tAHorseman: Yes, i am. How did you discover that?")
+                        thisTab:UpdateTextListById(0, _phrases)
+                    </openingScript>
+                    <textListArray>
+                        <textList id="0" xOffset="10" yOffset="450" width="500" height="325" separator="true">
+                            <onclickScript>
+                            </onclickScript>
+                        </textList>
+                    </textListArray>
+                    <buttonArray>
+                        <button id="0" stringName="e_text_new_phrase" xOffset="10" yOffset="110">
+                            <onclickScript>
+                            </onclickScript>
+                        </button>
+                        <button id="1" stringName="e_text_delete_phrase" xOffset="130" yOffset="110">
+                            <onclickScript>
+                            </onclickScript>
+                        </button>
+                        <button id="2" stringName="w_close" xOffset="320" yOffset="110">
+                            <onclickScript>
+                            </onclickScript>
+                        </button>
+                    </buttonArray>
+                </tab>
+                <tab id="1" title="e_text_phrase_properties">
+                    <openingScript>
+                        local thisTab = this:GetTabById(1)
+                        local _followups = StrList()
+                        _followups:Add("Successiva")
+                        _followups:Add("Conclusione")
+                        _followups:Add("Scelta")
+
+                        thisTab:UpdateComboBoxById(0, _followups, "")
+                    </openingScript>
+                    <textArray>
+                        <text id="0" stringName="e_text_phrase_id" xOffset="10" yOffset="438" />
+                        <text id="1" stringName="e_text_phrase_actor" xOffset="10" yOffset="398" />
+                        <text id="2" stringName="e_text_phrase_choosing" xOffset="10" yOffset="358" />
+                        <text id="3" stringName="e_text_phrase_text" xOffset="10" yOffset="318" />
+                        <text id="4" stringName="e_text_next_phrases" xOffset="210" yOffset="118" />
+                        <text id="5" stringName="e_text_audio_file" xOffset="10" yOffset="78" />
+                    </textArray>
+                    <textInputArray>
+                        <textInput id="0" xOffset="120" yOffset="440" width="120" placeholder=""/>
+                        <textInput id="1" xOffset="120" yOffset="400" width="120" placeholder=""/>
+                        <textInput id="2" xOffset="120" yOffset="360" width="240" placeholder=""/>
+                        <textInput id="3" xOffset="310" yOffset="120" width="180" placeholder=""/>
+                        <textInput id="4" xOffset="100" yOffset="80" width="200" placeholder=""/>
+                    </textInputArray>
+                    <textInputMultilineArray>
+                        <textInputMultiline id="0" xOffset="8" yOffset="290" width="520" height="150" placeholder=""/>
+                    </textInputMultilineArray>
+                    <buttonArray>
+                        <button id="0" stringName="e_text_previous_phrase" xOffset="400" yOffset="440">
+                            <onclickScript>
+                            </onclickScript>
+                        </button>
+                        <button id="1" stringName="e_text_next_phrase" xOffset="400" yOffset="400">
+                            <onclickScript>
+                            </onclickScript>
+                        </button>
+                    </buttonArray>
+                    <comboBoxArray>
+                        <comboBox id="0" stringName="e_text_continuation" xOffset="10" yOffset="120" width="100" height="50"/>
+                    </comboBoxArray>
+                </tab>
+                <tab id="2" title="e_text_phrase_script">
+                    <textArray>
+                        <text id="0" stringName="e_text_phrase_condition" xOffset="10" yOffset="440" />
+                        <text id="1" stringName="e_text_phrase_body" xOffset="10" yOffset="290" />
+                        <text id="2" stringName="e_text_phrase_comment" xOffset="10" yOffset="140" />
+                    </textArray>
+                    <textInputMultilineArray>
+                        <textInputMultiline id="0" xOffset="8" yOffset="420" width="520" height="120" placeholder=""/>
+                        <textInputMultiline id="1" xOffset="8" yOffset="270" width="520" height="120" placeholder=""/>
+                        <textInputMultiline id="2" xOffset="8" yOffset="120" width="520" height="70" placeholder=""/>
+                    </textInputMultilineArray>
+                </tab>
+            </tabArray>
+            <textListArray>
+                <textList id="0" xOffset="540" yOffset="450" width="150" height="400">
+                    <onclickScript>
+                        --THIS SCRIPT MUST BE FIXED ACCORDINGLY TO THE NEW ZIP SYSTEM
+                        local bodyTab = this:GetTabById(2)
+                        _advPath = Editor.GetZipFilePath()
+                        _scriptsFolder = _advPath .. "/scripts/"
+                        _scriptPath = _scriptsFolder .. this:GetTextListSelectedById(0)
+                        bodyTab:SetTextInputMultilineTextById(0, ReadFile(_scriptPath))
+                    </onclickScript>
+                </textList>
+            </textListArray>
+            <buttonArray>
+                <button id="0" stringName="w_new" xOffset="10" yOffset="40">
+                    <onclickScript>
+                    </onclickScript>
+                </button>
+                <button id="1" stringName="w_delete" xOffset="100" yOffset="40">
+                    <onclickScript>
+                    </onclickScript>
+                </button>
+                <button id="2" stringName="w_close" xOffset="600" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "ADVENTURE PROPERTIES" WINDOW -->
+
+        <iframe id="advProperties" skin="mechanicalGrey" title="e_text_adventure_properties" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=500; h=385;" isOpened="false" icon="">
+            <openingScript fun="edwin_advprops_opening"/>
+            <tabArray>
+                <tab id="0" title="e_text_general_properties">
+                    <textInputArray>
+                        <textInput id="0" xOffset="80" yOffset="300" width="120" placeholder=""/>
+                        <textInput id="1" xOffset="80" yOffset="260" width="120" placeholder=""/>
+                    </textInputArray>
+                    <textInputMultilineArray>
+                        <textInputMultiline id="0" xOffset="30" yOffset="190" width="300" height="130" placeholder=""/>
+                    </textInputMultilineArray>
+                    <comboBoxArray>
+                        <comboBox id="0" stringName="w_starting_scenario" xOffset="380" yOffset="300" width="100" height="50"/>
+                        <comboBox id="1" stringName="w_game_mode" xOffset="380" yOffset="260" width="100" height="50"/>
+                    </comboBoxArray>
+                    <textArray>
+                        <text id="0" stringName="w_adventure_name" xOffset="30" yOffset="298"/>
+                        <text id="1" stringName="w_adventure_author" xOffset="30" yOffset="258"/>
+                        <text id="2" stringName="w_adventure_description" xOffset="30" yOffset="218"/>
+                    </textArray>
+                </tab>
+                <tab id="1" title="e_text_adventure_map">
+                    <imageArray>
+                        <image id="0" image_name="game/editor/no_picture" width="360" height="240" xOffset="72" yOffset="70" />
+                    </imageArray>
+                    <buttonArray>
+                        <button id="1" stringName="w_upload" xOffset="30" yOffset="40" icon="ICON_UPLOAD"/>
+                    </buttonArray>
+                </tab>
+            </tabArray>
+            <buttonArray>
+                <button id="0" stringName="w_apply" xOffset="400" yOffset="40" onclick="edwin_advprops_button0" />
+                <button id="1" stringName="w_cancel" xOffset="310" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "PLAYERS PROPERTIES" WINDOW -->
+
+        <iframe id="playersProperties" skin="mechanicalGrey" title="e_text_players_properties" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=500; h=600;" isOpened="false" icon="ICON_PLAYERS">
+            <openingScript fun="edwin_plyrsprops_opening"/>
+            <tabArray>
+                <tab id="0" title="e_text_players_properties">
+                    <colorPickerArray>
+                        <colorPicker id="0" xOffset="30" yOffset="535" r="255" g="23" b="23"/>
+                        <colorPicker id="1" xOffset="30" yOffset="505" r="255" g="255" b="0"/>
+                        <colorPicker id="2" xOffset="30" yOffset="475" r="0" g="255" b="0"/>
+                        <colorPicker id="3" xOffset="30" yOffset="445" r="0" g="232" b="232"/>
+                        <colorPicker id="4" xOffset="30" yOffset="415" r="237" g="160" b="255"/>
+                        <colorPicker id="5" xOffset="30" yOffset="385" r="182" g="230" b="134"/>
+                        <colorPicker id="6" xOffset="30" yOffset="355" r="174" g="0" b="0"/>
+                        <colorPicker id="7" xOffset="30" yOffset="325" r="249" g="155" b="32"/>
+                        <colorPicker id="8" xOffset="30" yOffset="295" r="16" g="155" b="18"/>
+                        <colorPicker id="9" xOffset="30" yOffset="265" r="0" g="0" b="248"/>
+                        <colorPicker id="10" xOffset="30" yOffset="235" r="196" g="13" b="198"/>
+                        <colorPicker id="11" xOffset="30" yOffset="205" r="159" g="154" b="0"/>
+                        <colorPicker id="12" xOffset="30" yOffset="175" r="0" g="0" b="0"/>
+                        <colorPicker id="13" xOffset="30" yOffset="145" r="0" g="0" b="0"/>
+                        <colorPicker id="14" xOffset="30" yOffset="115" r="0" g="0" b="0"/>
+                        <colorPicker id="15" xOffset="30" yOffset="85" r="0" g="0" b="0"/>
+                    </colorPickerArray>
+                    <textInputArray>
+                        <textInput id="0" xOffset="70" yOffset="535" width="125" placeholder="player_1"/>
+                        <textInput id="1" xOffset="70" yOffset="505" width="125" placeholder="player_2"/>
+                        <textInput id="2" xOffset="70" yOffset="475" width="125" placeholder="player_3"/>
+                        <textInput id="3" xOffset="70" yOffset="445" width="125" placeholder="player_4"/>
+                        <textInput id="4" xOffset="70" yOffset="415" width="125" placeholder="player_5"/>
+                        <textInput id="5" xOffset="70" yOffset="385" width="125" placeholder="player_6"/>
+                        <textInput id="6" xOffset="70" yOffset="355" width="125" placeholder="player_7"/>
+                        <textInput id="7" xOffset="70" yOffset="325" width="125" placeholder="player_8"/>
+                        <textInput id="8" xOffset="70" yOffset="295" width="125" placeholder="player_9"/>
+                        <textInput id="9" xOffset="70" yOffset="265" width="125" placeholder="player_10"/>
+                        <textInput id="10" xOffset="70" yOffset="235" width="125" placeholder="player_11"/>
+                        <textInput id="11" xOffset="70" yOffset="205" width="125" placeholder="player_12"/>
+                        <textInput id="12" xOffset="70" yOffset="175" width="125" placeholder="player_13"/>
+                        <textInput id="13" xOffset="70" yOffset="145" width="125" placeholder="player_14"/>
+                        <textInput id="14" xOffset="70" yOffset="115" width="125" placeholder="player_15"/>
+                        <textInput id="15" xOffset="70" yOffset="85" width="125" placeholder="player_16"/>
+                    </textInputArray>
+                    <comboBoxArray>
+                        <!-- Race comboboxes -->
+                        <comboBox id="0" xOffset="200" yOffset="535" width="100" height="50"/>
+                        <comboBox id="1" xOffset="200" yOffset="505" width="100" height="50"/>
+                        <comboBox id="2" xOffset="200" yOffset="475" width="100" height="50"/>
+                        <comboBox id="3" xOffset="200" yOffset="445" width="100" height="50"/>
+                        <comboBox id="4" xOffset="200" yOffset="415" width="100" height="50"/>
+                        <comboBox id="5" xOffset="200" yOffset="385" width="100" height="50"/>
+                        <comboBox id="6" xOffset="200" yOffset="355" width="100" height="50"/>
+                        <comboBox id="7" xOffset="200" yOffset="325" width="100" height="50"/>
+                        <comboBox id="8" xOffset="200" yOffset="295" width="100" height="50"/>
+                        <comboBox id="9" xOffset="200" yOffset="265" width="100" height="50"/>
+                        <comboBox id="10" xOffset="200" yOffset="235" width="100" height="50"/>
+                        <comboBox id="11" xOffset="200" yOffset="205" width="100" height="50"/>
+                        <comboBox id="12" xOffset="200" yOffset="175" width="100" height="50"/>
+                        <comboBox id="13" xOffset="200" yOffset="145" width="100" height="50"/>
+                        <comboBox id="14" xOffset="200" yOffset="115" width="100" height="50"/>
+                        <comboBox id="15" xOffset="200" yOffset="85" width="100" height="50"/>
+
+                        <!-- Player or AI difficulty -->
+                        <comboBox id="16" xOffset="320" yOffset="535" width="125" height="50"/>
+                        <comboBox id="17" xOffset="320" yOffset="505" width="125" height="50"/>
+                        <comboBox id="18" xOffset="320" yOffset="475" width="125" height="50"/>
+                        <comboBox id="19" xOffset="320" yOffset="445" width="125" height="50"/>
+                        <comboBox id="20" xOffset="320" yOffset="415" width="125" height="50"/>
+                        <comboBox id="21" xOffset="320" yOffset="385" width="125" height="50"/>
+                        <comboBox id="22" xOffset="320" yOffset="355" width="125" height="50"/>
+                        <comboBox id="23" xOffset="320" yOffset="325" width="125" height="50"/>
+                        <comboBox id="24" xOffset="320" yOffset="295" width="125" height="50"/>
+                        <comboBox id="25" xOffset="320" yOffset="265" width="125" height="50"/>
+                        <comboBox id="26" xOffset="320" yOffset="235" width="125" height="50"/>
+                        <comboBox id="27" xOffset="320" yOffset="205" width="125" height="50"/>
+                        <comboBox id="28" xOffset="320" yOffset="175" width="125" height="50"/>
+                        <comboBox id="29" xOffset="320" yOffset="145" width="125" height="50"/>
+                        <comboBox id="30" xOffset="320" yOffset="115" width="125" height="50"/>
+                        <comboBox id="31" xOffset="320" yOffset="85" width="125" height="50"/>
+                    </comboBoxArray>
+                </tab>
+                <tab id="1" title="e_text_players_diplomacy">
+                    <comboBoxArray>
+                        <comboBox id="0" stringName="w_player" xOffset="30" yOffset="535" width="125" height="50" onclick="edwin_plyrsprops_tab1_cmbbx0"/>
+                    </comboBoxArray>
+                    <textArray>
+                        <text id="0" stringName="player_2" xOffset="100" yOffset="502"/>
+                        <text id="1" stringName="player_3" xOffset="100" yOffset="472"/>
+                        <text id="2" stringName="player_4" xOffset="100" yOffset="442"/>
+                        <text id="3" stringName="player_5" xOffset="100" yOffset="412"/>
+                        <text id="4" stringName="player_6" xOffset="100" yOffset="382"/>
+                        <text id="5" stringName="player_7" xOffset="100" yOffset="352"/>
+                        <text id="6" stringName="player_8" xOffset="100" yOffset="322"/>
+                        <text id="7" stringName="player_9" xOffset="100" yOffset="292"/>
+                        <text id="8" stringName="player_10" xOffset="100" yOffset="262"/>
+                        <text id="9" stringName="player_11" xOffset="100" yOffset="232"/>
+                        <text id="10" stringName="player_12" xOffset="100" yOffset="202"/>
+                        <text id="11" stringName="player_13" xOffset="100" yOffset="172"/>
+                        <text id="12" stringName="player_14" xOffset="100" yOffset="142"/>
+                        <text id="13" stringName="player_15" xOffset="100" yOffset="112"/>
+                        <text id="14" stringName="player_16" xOffset="100" yOffset="82"/>
+                    </textArray>
+                </tab>
+            </tabArray>
+            <buttonArray>
+                <button id="0" stringName="w_apply" xOffset="400" yOffset="40" onclick="edwin_plyrsprops_button0"/>
+                <button id="1" stringName="w_cancel" xOffset="310" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- TOOLS MENU BAR -->
+        <!-- "OBJECT PROPERTIES" WINDOW -->
+		
+		<!-- The following properties iframes are hard-coded in c++. DO NOT CHANGE THEM!! -->
+		
+		<iframe id="__unitProps__" skin="egyptianSand" title="e_text_object_properties" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=550; h=400;" isOpened="false" icon="ICON_COG">
+            <openingScript fun="edwin_unitProps_opening"/>
+            <tabArray>
+				<tab id="0" title="e_text_general">
+					<textArray>
+						<text id="0" stringName="" xOffset="25" yOffset="328"/>
+						<text id="1" stringName="e_text_id_name" xOffset="20" yOffset="258"/>
+						<text id="2" stringName="e_text_displayed_name" xOffset="20" yOffset="228"/>
+					</textArray>
+					 <imageArray>
+                        <image id="0" image_name="common/iframe/egyptianSand/status" xOffset="10" yOffset="305" width="520" height="30" type=""/>
+                    </imageArray>
+					<textInputArray>
+						<textInput id="0" xOffset="140" yOffset="260" width="390" placeholder="" ascii="true"/>
+						<textInput id="1" xOffset="140" yOffset="230" width="390" placeholder=""/>
+					</textInputArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_find_position" xOffset="420" yOffset="170" onclick=""/>
+					</buttonArray>
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_belongs_to" xOffset="20" yOffset="290" width="150" height="50"/>
+					</comboBoxArray>
+				</tab>
+				<tab id="1" title="e_text_characteristics">
+					<checkBoxArray>
+						<checkBox id="0" stringName="w_invisible" xOffset="260" yOffset="330"/>
+						<checkBox id="1" stringName="w_messenger_status" xOffset="260" yOffset="300"/>
+						<checkBox id="2" stringName="w_party_member" xOffset="260" yOffset="270"/>
+						<checkBox id="3" stringName="w_no_ia" xOffset="260" yOffset="240"/>
+						<checkBox id="4" stringName="w_no_feed" xOffset="260" yOffset="210"/>
+						<checkBox id="5" stringName="w_is_free" xOffset="420" yOffset="330"/>
+					</checkBoxArray>
+					<!-- I valori di default di attacco minimo, attacco massimo, difesa tagliente, difesa perforante e velocità vanno letti dalla classe-->
+					<inputIntArray>
+                        <inputInt id="0" stringName="w_perc_health" xOffset="20" yOffset="330" width="80" height="50" defaultValue="100" minValue="1" maxValue="100"/>
+                        <inputInt id="1" stringName="w_stamina" xOffset="20" yOffset="300" width="80" height="50" defaultValue="10" minValue="1" maxValue="999"/>
+                        <inputInt id="2" stringName="w_level" xOffset="20" yOffset="270" width="80" height="50" defaultValue="1" minValue="1" maxValue="1000"/>
+                        <inputInt id="3" stringName="w_min_attack" xOffset="20" yOffset="240" width="80" height="50" defaultValue="20" minValue="1" maxValue="65535"/>
+                        <inputInt id="4" stringName="w_max_attack" xOffset="20" yOffset="210" width="80" height="50" defaultValue="20" minValue="1" maxValue="65535"/>
+                        <inputInt id="5" stringName="w_slash-defence" xOffset="20" yOffset="180" width="80" height="50" defaultValue="10" minValue="0" maxValue="65535"/>
+                        <inputInt id="6" stringName="w_pierce-defence" xOffset="20" yOffset="150" width="80" height="50" defaultValue="10" minValue="0" maxValue="65535"/>
+                        <inputInt id="7" stringName="w_speed" xOffset="20" yOffset="120" width="80" height="50" defaultValue="60" minValue="1" maxValue="999"/>
+                    </inputIntArray>
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_passive1" xOffset="260" yOffset="180" width="150" height="50"/>
+						<comboBox id="1" stringName="e_text_passive2" xOffset="260" yOffset="150" width="150" height="50"/>
+						<comboBox id="2" stringName="e_text_passive3" xOffset="260" yOffset="120" width="150" height="50"/>
+					</comboBoxArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_default_properties" xOffset="120" yOffset="80" onclick="edwin_unitProps_tab1_button0"/>
+					</buttonArray>
+				</tab>
+				<tab id="2" title="w_groups">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_existent_groups" xOffset="10" yOffset="330" width="150" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_member_of_groups" xOffset="10" yOffset="290" />
+					</textArray>
+					<textListArray>
+						<textList id="0" xOffset="10" yOffset="270" width="240" height="210" />
+					</textListArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_add_to_group" xOffset="280" yOffset="330" onclick=""/>
+						<button id="1" stringName="e_text_add_group" xOffset="280" yOffset="270" onclick=""/>
+						<button id="2" stringName="e_text_remove_group" xOffset="280" yOffset="230" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="3" title="e_text_interface_icon">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_available_icons" xOffset="20" yOffset="330" width="300" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_result" xOffset="185" yOffset="200" />
+					</textArray>
+					<imageArray>
+                        <image id="0" image_name="game/editor/no_picture" xOffset="240" yOffset="120" width="80" height="140"/>
+                    </imageArray>
+				</tab>
+				<tab id="4" title="w_inventory">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_object1" xOffset="30" yOffset="330" width="200" height="50"/>
+                        <comboBox id="1" stringName="e_text_object2" xOffset="30" yOffset="290" width="200" height="50"/>
+						<comboBox id="2" stringName="e_text_object3" xOffset="30" yOffset="250" width="200" height="50"/>
+                        <comboBox id="3" stringName="e_text_object4" xOffset="30" yOffset="210" width="200" height="50"/>
+					</comboBoxArray>
+				</tab>
+            </tabArray>
+			<buttonArray>
+				<button id="0" stringName="w_apply" xOffset="365" yOffset="40" onclick="edwin_unitProps_button0"/>
+				<button id="1" stringName="w_cancel" xOffset="455" yOffset="40" onclick="close_iframe"/>
+			</buttonArray>
+        </iframe>
+		
+        <iframe id="__heroProps__" skin="egyptianSand" title="e_text_object_properties" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=550; h=400;" isOpened="false" icon="ICON_COG">
+            <openingScript fun="edwin_heroProps_opening"/>
+            <tabArray>
+				<tab id="0" title="e_text_general">
+					<textArray>
+						<text id="0" stringName="" xOffset="25" yOffset="328"/>
+						<text id="1" stringName="e_text_id_name" xOffset="20" yOffset="258"/>
+						<text id="2" stringName="e_text_displayed_name" xOffset="20" yOffset="228"/>
+					</textArray>
+					 <imageArray>
+                        <image id="0" image_name="common/iframe/egyptianSand/status" xOffset="10" yOffset="305" width="520" height="30" type=""/>
+                    </imageArray>
+					<textInputArray>
+						<textInput id="0" xOffset="140" yOffset="260" width="390" placeholder="" ascii="true"/>
+						<textInput id="1" xOffset="140" yOffset="230" width="390" placeholder=""/>
+					</textInputArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_find_position" xOffset="420" yOffset="170" onclick=""/>
+					</buttonArray>
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_belongs_to" xOffset="20" yOffset="290" width="150" height="50"/>
+					</comboBoxArray>
+				</tab>
+				<tab id="1" title="e_text_characteristics">
+					<checkBoxArray>
+						<checkBox id="0" stringName="w_invisible" xOffset="255" yOffset="330"/>
+						<checkBox id="1" stringName="w_messenger_status" xOffset="255" yOffset="300"/>
+						<checkBox id="2" stringName="w_party_member" xOffset="255" yOffset="270"/>
+						<checkBox id="3" stringName="w_no_ia" xOffset="255" yOffset="240"/>
+						<checkBox id="4" stringName="w_no_feed" xOffset="350" yOffset="330"/>
+					</checkBoxArray>
+					<!-- I valori di default di attacco minimo, attacco massimo, difesa tagliente, difesa perforante e velocità vanno letti dalla classe-->
+					<inputIntArray>
+                        <inputInt id="0" stringName="w_perc_health" xOffset="20" yOffset="330" width="80" height="50" defaultValue="100" minValue="1" maxValue="100"/>
+                        <inputInt id="1" stringName="w_stamina" xOffset="20" yOffset="300" width="80" height="50" defaultValue="10" minValue="1" maxValue="999"/>
+                        <inputInt id="2" stringName="w_level" xOffset="20" yOffset="270" width="80" height="50" defaultValue="1" minValue="1" maxValue="1000"/>
+                        <inputInt id="3" stringName="w_min_attack" xOffset="20" yOffset="240" width="80" height="50" defaultValue="20" minValue="1" maxValue="65535"/>
+                        <inputInt id="4" stringName="w_max_attack" xOffset="20" yOffset="210" width="80" height="50" defaultValue="20" minValue="1" maxValue="65535"/>
+                        <inputInt id="5" stringName="w_slash-defence" xOffset="20" yOffset="180" width="80" height="50" defaultValue="10" minValue="0" maxValue="65535"/>
+                        <inputInt id="6" stringName="w_pierce-defence" xOffset="20" yOffset="150" width="80" height="50" defaultValue="10" minValue="0" maxValue="65535"/>
+                        <inputInt id="7" stringName="w_speed" xOffset="20" yOffset="120" width="80" height="50" defaultValue="60" minValue="1" maxValue="999"/>
+                    </inputIntArray>
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_heroic_ability1" xOffset="255" yOffset="210" width="150" height="50"/>
+						<comboBox id="1" stringName="e_text_heroic_ability2" xOffset="255" yOffset="180" width="150" height="50"/>
+						<comboBox id="2" stringName="e_text_heroic_ability3" xOffset="255" yOffset="150" width="150" height="50"/>
+						<comboBox id="3" stringName="e_text_heroic_ability4" xOffset="255" yOffset="120" width="150" height="50"/>
+						<comboBox id="4" stringName="e_text_heroic_ability5" xOffset="255" yOffset="90" width="150" height="50"/>
+					</comboBoxArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_default_properties" xOffset="120" yOffset="80" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="2" title="w_groups">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_existent_groups" xOffset="10" yOffset="330" width="150" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_member_of_groups" xOffset="10" yOffset="290" />
+					</textArray>
+					<textListArray>
+						<textList id="0" xOffset="10" yOffset="270" width="240" height="210" />
+					</textListArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_add_to_group" xOffset="280" yOffset="330" onclick=""/>
+						<button id="1" stringName="e_text_add_group" xOffset="280" yOffset="270" onclick=""/>
+						<button id="2" stringName="e_text_remove_group" xOffset="280" yOffset="230" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="3" title="e_text_interface_icon">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_available_icons" xOffset="20" yOffset="330" width="300" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_result" xOffset="185" yOffset="200" />
+					</textArray>
+					<imageArray>
+                        <image id="0" image_name="game/editor/no_picture" xOffset="240" yOffset="120" width="80" height="140"/>
+                    </imageArray>
+				</tab>
+				<tab id="4" title="w_inventory">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_object1" xOffset="30" yOffset="330" width="200" height="50"/>
+                        <comboBox id="1" stringName="e_text_object2" xOffset="30" yOffset="290" width="200" height="50"/>
+						<comboBox id="2" stringName="e_text_object3" xOffset="30" yOffset="250" width="200" height="50"/>
+                        <comboBox id="3" stringName="e_text_object4" xOffset="30" yOffset="210" width="200" height="50"/>
+					</comboBoxArray>
+				</tab>
+            </tabArray>
+			<buttonArray>
+				<button id="0" stringName="w_apply" xOffset="365" yOffset="40" onclick="edwin_heroProps_button0"/>
+				<button id="1" stringName="w_cancel" xOffset="455" yOffset="40" onclick="close_iframe"/>
+			</buttonArray>
+        </iframe>
+
+		<iframe id="__druidProps__" skin="egyptianSand" title="e_text_object_properties" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=550; h=400;" isOpened="false" icon="ICON_COG">
+            <openingScript fun="edwin_druidProps_opening"/>
+            <tabArray>
+				<tab id="0" title="e_text_general">
+					<textArray>
+						<text id="0" stringName="" xOffset="25" yOffset="328"/>
+						<text id="1" stringName="e_text_id_name" xOffset="20" yOffset="258"/>
+						<text id="2" stringName="e_text_displayed_name" xOffset="20" yOffset="228"/>
+					</textArray>
+					 <imageArray>
+                        <image id="0" image_name="common/iframe/egyptianSand/status" xOffset="10" yOffset="305" width="520" height="30" type=""/>
+                    </imageArray>
+					<textInputArray>
+						<textInput id="0" xOffset="140" yOffset="260" width="390" placeholder="" ascii="true"/>
+						<textInput id="1" xOffset="140" yOffset="230" width="390" placeholder=""/>
+					</textInputArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_find_position" xOffset="420" yOffset="170" onclick=""/>
+					</buttonArray>
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_belongs_to" xOffset="20" yOffset="290" width="150" height="50"/>
+					</comboBoxArray>
+				</tab>
+				<tab id="1" title="e_text_characteristics">
+					<checkBoxArray>
+						<checkBox id="0" stringName="w_invisible" xOffset="260" yOffset="330"/>
+						<checkBox id="1" stringName="w_messenger_status" xOffset="260" yOffset="300"/>
+						<checkBox id="2" stringName="w_party_member" xOffset="260" yOffset="270"/>
+						<checkBox id="3" stringName="w_no_ia" xOffset="260" yOffset="240"/>
+						<checkBox id="4" stringName="w_no_feed" xOffset="260" yOffset="210"/>
+						<checkBox id="5" stringName="w_is_free" xOffset="260" yOffset="180"/>
+					</checkBoxArray>
+					<!-- I valori di default di attacco minimo, attacco massimo, difesa tagliente, difesa perforante e velocità vanno letti dalla classe-->
+					<inputIntArray>
+                        <inputInt id="0" stringName="w_perc_health" xOffset="20" yOffset="330" width="80" height="50" defaultValue="100" minValue="1" maxValue="100"/>
+                        <inputInt id="1" stringName="w_mana" xOffset="20" yOffset="300" width="80" height="50" defaultValue="10" minValue="1" maxValue="999"/>
+                        <inputInt id="2" stringName="w_level" xOffset="20" yOffset="270" width="80" height="50" defaultValue="1" minValue="1" maxValue="1000"/>
+                        <inputInt id="3" stringName="w_slash-defence" xOffset="20" yOffset="240" width="80" height="50" defaultValue="10" minValue="0" maxValue="65535"/>
+                        <inputInt id="4" stringName="w_pierce-defence" xOffset="20" yOffset="210" width="80" height="50" defaultValue="10" minValue="0" maxValue="65535"/>
+                        <inputInt id="5" stringName="w_speed" xOffset="20" yOffset="180" width="80" height="50" defaultValue="60" minValue="1" maxValue="999"/>
+                    </inputIntArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_default_properties" xOffset="120" yOffset="80" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="2" title="w_groups">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_existent_groups" xOffset="10" yOffset="330" width="150" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_member_of_groups" xOffset="10" yOffset="290" />
+					</textArray>
+					<textListArray>
+						<textList id="0" xOffset="10" yOffset="270" width="240" height="210" />
+					</textListArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_add_to_group" xOffset="280" yOffset="330" onclick=""/>
+						<button id="1" stringName="e_text_add_group" xOffset="280" yOffset="270" onclick=""/>
+						<button id="2" stringName="e_text_remove_group" xOffset="280" yOffset="230" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="3" title="w_spells">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_spell1" xOffset="30" yOffset="330" width="200" height="50"/>
+                        <comboBox id="1" stringName="e_text_spell2" xOffset="30" yOffset="290" width="200" height="50"/>
+						<comboBox id="2" stringName="e_text_spell3" xOffset="30" yOffset="250" width="200" height="50"/>
+                        <comboBox id="3" stringName="e_text_spell4" xOffset="30" yOffset="210" width="200" height="50"/>
+                        <comboBox id="4" stringName="e_text_spell5" xOffset="30" yOffset="170" width="200" height="50"/>
+					</comboBoxArray>
+				</tab>
+				<tab id="4" title="e_text_interface_icon">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_available_icons" xOffset="20" yOffset="330" width="300" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_result" xOffset="185" yOffset="200" />
+					</textArray>
+					<imageArray>
+                        <image id="0" image_name="game/editor/no_picture" xOffset="240" yOffset="120" width="80" height="140"/>
+                    </imageArray>
+				</tab>
+				<tab id="5" title="w_inventory">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_object1" xOffset="30" yOffset="330" width="200" height="50"/>
+                        <comboBox id="1" stringName="e_text_object2" xOffset="30" yOffset="290" width="200" height="50"/>
+						<comboBox id="2" stringName="e_text_object3" xOffset="30" yOffset="250" width="200" height="50"/>
+                        <comboBox id="3" stringName="e_text_object4" xOffset="30" yOffset="210" width="200" height="50"/>
+					</comboBoxArray>
+				</tab>
+            </tabArray>
+			<buttonArray>
+				<button id="0" stringName="w_apply" xOffset="365" yOffset="40" onclick="edwin_druidProps_button0"/>
+				<button id="1" stringName="w_cancel" xOffset="455" yOffset="40" onclick="close_iframe"/>
+			</buttonArray>
+        </iframe>
+		
+		<iframe id="__wagonProps__" skin="egyptianSand" title="e_text_object_properties" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=550; h=400;" isOpened="false" icon="ICON_COG">
+            <openingScript fun="edwin_wagonProps_opening"/>
+            <tabArray>
+				<tab id="0" title="e_text_general">
+					<textArray>
+						<text id="0" stringName="" xOffset="25" yOffset="328"/> <!-- NOME CLASSE: 'CCC' Posizione: X (000) Y (000) -->
+						<text id="1" stringName="e_text_id_name" xOffset="20" yOffset="258"/>
+						<text id="2" stringName="e_text_displayed_name" xOffset="20" yOffset="228"/>
+					</textArray>
+					 <imageArray>
+                        <image id="0" image_name="common/iframe/egyptianSand/status" xOffset="10" yOffset="305" width="520" height="30" type=""/>
+                    </imageArray>
+					<textInputArray>
+						<textInput id="0" xOffset="140" yOffset="260" width="390" placeholder="" ascii="true"/>
+						<textInput id="1" xOffset="140" yOffset="230" width="390" placeholder=""/>
+					</textInputArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_find_position" xOffset="420" yOffset="170" onclick=""/>
+					</buttonArray>
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_belongs_to" xOffset="20" yOffset="290" width="150" height="50"/>
+					</comboBoxArray>
+				</tab>
+				<tab id="1" title="e_text_characteristics">
+					<textArray>
+						<text id="0" stringName="e_text_carried_resources" xOffset="210" yOffset="205"/>
+					</textArray>
+					<checkBoxArray>
+						<checkBox id="0" stringName="w_invisible" xOffset="260" yOffset="330"/>
+						<checkBox id="1" stringName="w_messenger_status" xOffset="260" yOffset="300"/>
+						<checkBox id="2" stringName="w_party_member" xOffset="260" yOffset="270"/>
+						<checkBox id="3" stringName="w_no_ia" xOffset="260" yOffset="240"/>
+					</checkBoxArray>
+					<!-- I valori di default di attacco minimo, attacco massimo, difesa tagliente, difesa perforante e velocità vanno letti dalla classe-->
+					<inputIntArray>
+                        <inputInt id="0" stringName="w_perc_health" xOffset="20" yOffset="330" width="80" height="50" defaultValue="100" minValue="1" maxValue="100"/>
+                        <inputInt id="1" stringName="w_slash-defence" xOffset="20" yOffset="300" width="80" height="50" defaultValue="10" minValue="0" maxValue="65535"/>
+                        <inputInt id="2" stringName="w_pierce-defence" xOffset="20" yOffset="270" width="80" height="50" defaultValue="10" minValue="0" maxValue="65535"/>
+                        <inputInt id="3" stringName="w_speed" xOffset="20" yOffset="240" width="80" height="50" defaultValue="60" minValue="1" maxValue="999"/>
+                        <inputInt id="4" stringName="w_amount" xOffset="190" yOffset="150" width="100" height="50" defaultValue="0" minValue="0" maxValue="10000"/>
+                    </inputIntArray>
+					<multipleChoiceArray>
+						<multipleChoice id="0" xOffset="210" yOffset="180" alignment="horizontal">
+							<option>w_gold</option>
+							<option>w_food</option>
+						</multipleChoice>
+					</multipleChoiceArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_default_properties" xOffset="120" yOffset="80" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="2" title="w_groups">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_existent_groups" xOffset="10" yOffset="330" width="150" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_member_of_groups" xOffset="10" yOffset="290" />
+					</textArray>
+					<textListArray>
+						<textList id="0" xOffset="10" yOffset="270" width="240" height="210" />
+					</textListArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_add_to_group" xOffset="280" yOffset="330" onclick=""/>
+						<button id="1" stringName="e_text_add_group" xOffset="280" yOffset="270" onclick=""/>
+						<button id="2" stringName="e_text_remove_group" xOffset="280" yOffset="230" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="3" title="e_text_interface_icon">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_available_icons" xOffset="20" yOffset="330" width="300" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_result" xOffset="185" yOffset="200" />
+					</textArray>
+					<imageArray>
+                        <image id="0" image_name="game/editor/no_picture" xOffset="240" yOffset="120" width="80" height="140"/>
+                    </imageArray>
+				</tab>
+            </tabArray>
+			<buttonArray>
+				<button id="0" stringName="w_apply" xOffset="365" yOffset="40" onclick="edwin_wagonProps_button0"/>
+				<button id="1" stringName="w_cancel" xOffset="455" yOffset="40" onclick="close_iframe"/>
+			</buttonArray>
+        </iframe>
+
+		<iframe id="__buildingProps__" skin="egyptianSand" title="e_text_object_properties" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=550; h=400;" isOpened="false" icon="ICON_COG">
+            <openingScript fun="edwin_buildingProps_opening"/>
+            <tabArray>
+				<tab id="0" title="e_text_general">
+					<textArray>
+						<text id="0" stringName="" xOffset="25" yOffset="328"/>
+						<text id="1" stringName="e_text_id_name" xOffset="20" yOffset="258"/>
+						<text id="2" stringName="e_text_displayed_name" xOffset="20" yOffset="228"/>
+					</textArray>
+					 <imageArray>
+                        <image id="0" image_name="common/iframe/egyptianSand/status" xOffset="10" yOffset="305" width="520" height="30" type=""/>
+                    </imageArray>
+					<textInputArray>
+						<textInput id="0" xOffset="140" yOffset="260" width="390" placeholder="" ascii="true"/>
+						<textInput id="1" xOffset="140" yOffset="230" width="390" placeholder=""/>
+					</textInputArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_find_position" xOffset="420" yOffset="170" onclick=""/>
+					</buttonArray>
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_belongs_to" xOffset="20" yOffset="290" width="150" height="50"/>
+					</comboBoxArray>
+				</tab>
+				<tab id="1" title="e_text_characteristics">
+					<textArray>
+						<text id="0" stringName="e_text_settlement" xOffset="20" yOffset="328"/>
+					</textArray>
+					<textInputArray>
+						<textInput id="0" xOffset="160" yOffset="330" width="370" placeholder="" ascii="true"/>
+					</textInputArray>
+					<inputIntArray>
+                        <inputInt id="0" stringName="w_gold" xOffset="20" yOffset="300" width="120" height="50" defaultValue="5000" minValue="0" maxValue="999999"/>
+                        <inputInt id="1" stringName="w_food" xOffset="20" yOffset="270" width="120" height="50" defaultValue="1000" minValue="0" maxValue="999999"/>
+                        <inputInt id="2" stringName="w_population" xOffset="20" yOffset="240" width="100" height="50" defaultValue="60" minValue="0" maxValue="65535"/>
+                        <inputInt id="3" stringName="w_max_population" xOffset="20" yOffset="210" width="100" height="50" defaultValue="100" minValue="0" maxValue="65535"/>
+                    </inputIntArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_default_properties" xOffset="120" yOffset="80" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="2" title="e_text_interface_icon">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_available_icons" xOffset="20" yOffset="330" width="300" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_result" xOffset="185" yOffset="200" />
+					</textArray>
+					<imageArray>
+                        <image id="0" image_name="game/editor/no_picture" xOffset="240" yOffset="120" width="80" height="140"/>
+                    </imageArray>
+				</tab>
+            </tabArray>
+			<buttonArray>
+				<button id="0" stringName="w_apply" xOffset="365" yOffset="40" onclick="edwin_buildingProps_button0"/>
+				<button id="1" stringName="w_cancel" xOffset="455" yOffset="40" onclick="close_iframe"/>
+			</buttonArray>
+        </iframe>
+		
+		<iframe id="__multiProps__" skin="egyptianSand" title="e_text_object_properties" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=550; h=400;" isOpened="false" icon="ICON_COG">
+            <openingScript fun="edwin_multiProps_opening"/>
+            <tabArray>
+				<tab id="0" title="e_text_characteristics">
+					<comboBoxArray>
+						<comboBox id="0" stringName="w_player" xOffset="20" yOffset="240" width="150" height="50"/>
+					</comboBoxArray>
+					<checkBoxArray>
+						<checkBox id="0" stringName="w_invisible" xOffset="260" yOffset="330"/>
+						<checkBox id="1" stringName="w_messenger_status" xOffset="260" yOffset="300"/>
+						<checkBox id="2" stringName="w_party_member" xOffset="260" yOffset="270"/>
+						<checkBox id="3" stringName="w_no_ia" xOffset="260" yOffset="240"/>
+						<checkBox id="4" stringName="w_no_feed" xOffset="260" yOffset="210"/>
+					</checkBoxArray>
+					<!-- I valori di default di attacco minimo, attacco massimo, difesa tagliente, difesa perforante e velocità vanno letti dalla classe-->
+					<!-- I valori di massimi che non sia la percentuale di salute, vanno letti dalle costanti di gioco-->
+					<inputIntArray>
+                        <inputInt id="0" stringName="w_perc_health" xOffset="20" yOffset="330" width="80" height="50" defaultValue="100" minValue="1" maxValue="100"/>
+                        <inputInt id="1" stringName="w_stamina" xOffset="20" yOffset="300" width="80" height="50" defaultValue="10" minValue="1" maxValue="999"/>
+                        <inputInt id="2" stringName="w_level" xOffset="20" yOffset="270" width="80" height="50" defaultValue="1" minValue="1" maxValue="1000"/> <!-- Le unità di rifornimento non hanno livello. Skipparle quando si fa l'Apply -->
+                    </inputIntArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_default_properties" xOffset="120" yOffset="80" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="1" title="w_groups">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_existent_groups" xOffset="10" yOffset="330" width="150" height="50"/>
+					</comboBoxArray>
+					<textArray>
+						<text id="0" stringName="e_text_member_of_groups" xOffset="10" yOffset="290" />
+					</textArray>
+					<textListArray>
+						<textList id="0" xOffset="10" yOffset="270" width="240" height="210" />
+					</textListArray>
+					<buttonArray>
+						<button id="0" stringName="e_text_add_to_group" xOffset="280" yOffset="330" onclick=""/>
+						<button id="1" stringName="e_text_add_group" xOffset="280" yOffset="270" onclick=""/>
+						<button id="2" stringName="e_text_remove_group" xOffset="280" yOffset="230" onclick=""/>
+					</buttonArray>
+				</tab>
+				<tab id="2" title="w_inventory">
+					<comboBoxArray>
+						<comboBox id="0" stringName="e_text_object1" xOffset="30" yOffset="330" width="200" height="50"/>
+                        <comboBox id="1" stringName="e_text_object2" xOffset="30" yOffset="290" width="200" height="50"/>
+						<comboBox id="2" stringName="e_text_object3" xOffset="30" yOffset="250" width="200" height="50"/>
+                        <comboBox id="3" stringName="e_text_object4" xOffset="30" yOffset="210" width="200" height="50"/>
+					</comboBoxArray>
+				</tab>
+            </tabArray>
+			<buttonArray>
+				<button id="0" stringName="w_apply" xOffset="365" yOffset="40" onclick="edwin_multiProps_button0"/>
+				<button id="1" stringName="w_cancel" xOffset="455" yOffset="40" onclick="close_iframe"/>
+			</buttonArray>
+        </iframe>
+
+        <!-- "MANAGE AREAS" WINDOW -->
+
+        <iframe id="manageAreas" skin="egyptianSand" title="e_text_areas" position="x=_width_/2-w/2; y=h;" size="w=500; h=270;" isOpened="false" icon="">
+            <openingScript fun="edwin_mngareas_opening" />
+            <runtimeScript fun="edwin_mngareas_runtime"/>
+            <closingScript fun="edwin_mngareas_closing"/>
+			
+			<tabArray>
+				<!-- EXPLORE AREAS TAB -->
+				<tab id="0" title="w_browse">
+					<textListArray>
+						<textList id="0" xOffset="10" yOffset="220" width="240" height="170" />
+					</textListArray>
+					<buttonArray>
+						<button id="0" stringName="w_delete" xOffset="260" yOffset="100" isEnabled="false" onclick="edwin_mngareas_delete_button" />
+						<button id="1" stringName="w_go_to" xOffset="360" yOffset="100" isEnabled="false" onclick="edwin_mngareas_goto_button" />
+						<button id="2" stringName="w_edit_area" xOffset="260" yOffset="200" isEnabled="false" onclick="edwin_mngareas_edit_button" />
+					</buttonArray>
+				</tab>
+				
+				<!-- NEW AREA TAB -->
+				<tab id="1" title="w_new_area">
+					<textInputArray>
+						<textInput id="0" xOffset="150" yOffset="220" width="120" placeholder="" ascii="true" />
+					</textInputArray>
+					<textArray>
+						<text id="0" stringName="e_text_area_name" xOffset="10" yOffset="218" />
+						<text id="1" stringName="" xOffset="280" yOffset="218" /> <!-- "Name not available" TODO red color? -->
+					</textArray>
+					<buttonArray>
+						<button id="0" stringName="w_new" xOffset="10" yOffset="100" isEnabled="false" onclick="edwin_mngareas_newarea_button" />
+					</buttonArray>
+				</tab>
+			</tabArray>
+			
+			<buttonArray>
+				<button id="0" stringName="w_close" xOffset="400" yOffset="40" onclick="close_iframe"/>
+			</buttonArray>
+			<checkBoxArray>
+				<checkBox id="0" stringName="e_text_activate_area_rendering" xOffset="10" yOffset="30" />
+			</checkBoxArray>
+        </iframe>
+
+        <!-- "TERRAIN BRUSH" WINDOW -->
+
+        <iframe id="terrainBrush" skin="egyptianSand" title="e_text_terrain_brush" position="x=_width_/2-w/2; y=h" size="w=400; h=220;" isOpened="false" icon="ICON_PALETTE">
+            <openingScript fun="edwin_trrnbrsh_opening"/>
+            <tabArray>
+                <tab id="0" title="e_text_texture_brush">
+                    <textListArray>
+                        <textList id="0" xOffset="26" yOffset="166" width="164" height="80" onclick="edwin_trrnbrsh_tab0_txtlst0"/>
+                        <textList id="1" xOffset="206" yOffset="166" width="164" height="80" onclick="edwin_trrnbrsh_tab0_txtlst1"/>
+                    </textListArray>
+                    <inputIntArray>
+                        <inputInt id="0" stringName="e_text_brush_size" xOffset="26" yOffset="70" width="100" height="50" defaultValue="1" minValue="1" maxValue="10"/>
+                    </inputIntArray>
+                    <buttonArray>
+                        <button id="0" stringName="w_select" xOffset="300" yOffset="40" isEnabled="false" onclick="edwin_trrnbrsh_tab0_button0"/>
+                    </buttonArray>
+                </tab>
+                <tab id="1" title="e_text_height_brush">
+                    <inputIntArray>
+                        <inputInt id="0" stringName="e_text_brush_size" xOffset="20" yOffset="130" width="100" height="50" defaultValue="1" minValue="1" maxValue="10"/>
+                        <inputInt id="1" stringName="e_text_brush_strength" xOffset="20" yOffset="100" width="100" height="50" defaultValue="1" minValue="1" maxValue="50"/>
+                    </inputIntArray>
+                    <buttonArray>
+                        <button id="0" stringName="w_select" xOffset="300" yOffset="40" onclick="edwin_trrnbrsh_tab1_button0"/>
+                    </buttonArray>
+                </tab>
+                <tab id="2" title="e_text_sea_brush">
+                    <checkBoxArray>
+                        <checkBox id="0" stringName="e_text_deep_water" xOffset="20" yOffset="130"/>
+                    </checkBoxArray>
+                    <inputIntArray>
+                        <inputInt id="0" stringName="e_text_brush_size" xOffset="20" yOffset="100" width="100" height="50" defaultValue="1" minValue="1" maxValue="10"/>
+                    </inputIntArray>
+                    <buttonArray>
+                        <button id="0" stringName="w_select" xOffset="300" yOffset="40" onclick="edwin_trrnbrsh_tab2_button0"/>
+                    </buttonArray>
+                </tab>
+            </tabArray>
+            <buttonArray>
+                <button id="0" stringName="w_close" xOffset="20" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+
+        <!-- "GENERATE RANDOM SCENARIO" WINDOW -->
+
+        <iframe id="randomScenario" skin="mechanicalGrey" title="e_tools_generate_random_scenario" position="x=_width_/2-w/2; y=_height_/2+h/2;" size="w=500; h=385;" isOpened="false" icon="ICON_CUBES">
+            <openingScript fun="edwin_rndscnr_opening"/>
+            <tabArray>
+                <tab id="0" title="e_text_general_properties">
+                    <openingScript fun="edwin_rndscnr_tab0_opening"/>
+                    <checkBoxArray>
+                        <checkBox id="0" stringName="w_fog_of_war" xOffset="30" yOffset="130" />
+                        <checkBox id="1" stringName="w_explored" xOffset="190" yOffset="130" />
+                    </checkBoxArray>
+                    <inputIntArray>
+                        <inputInt id="0" stringName="w_players_number" xOffset="30" yOffset="180" width="100" height="50" defaultValue="1" minValue="1" maxValue="8"/>
+                    </inputIntArray>
+                    <comboBoxArray>
+                        <comboBox id="0" stringName="w_map_size" xOffset="30" yOffset="280" width="100" height="50"/>
+                        <comboBox id="1" stringName="w_season" xOffset="30" yOffset="230" width="100" height="50"/>
+                    </comboBoxArray>
+                </tab>
+                <tab id="1" title="e_text_scenario_generation_preferences">
+                    <openingScript fun="edwin_rndscnr_tab1_opening"/>
+                    <checkBoxArray>
+                        <checkBox id="0" stringName="w_vegetation" xOffset="30" yOffset="230" />
+                        <checkBox id="1" stringName="w_animals" xOffset="30" yOffset="180" />
+                        <checkBox id="2" stringName="w_decorations" xOffset="30" yOffset="130" />
+                        <checkBox id="3" stringName="w_sacrificial_altars" xOffset="190" yOffset="230" />
+                        <checkBox id="4" stringName="w_caves" xOffset="190" yOffset="180" />
+                        <checkBox id="5" stringName="w_ruins" xOffset="190" yOffset="130" />
+                        <checkBox id="6" stringName="w_neutral_settlements" xOffset="320" yOffset="230" />
+                        <checkBox id="7" stringName="w_teuton_camps" xOffset="320" yOffset="180" />
+                        <checkBox id="8" stringName="w_item_holders" xOffset="320" yOffset="130" />
+                        <checkBox id="9" stringName="w_generation_seed" xOffset="245" yOffset="280" />
+                    </checkBoxArray>
+                    <comboBoxArray>
+                        <comboBox id="0" stringName="w_terrain_type" xOffset="30" yOffset="280" width="100" height="50"/>
+                    </comboBoxArray>
+                    <inputIntArray>
+                        <inputInt id="0" xOffset="380" yOffset="280" width="100" height="50" defaultValue="1" minValue="0" maxValue="999"/>
+                    </inputIntArray>
+                </tab>
+                <tab id="2" title="e_text_players_properties">
+					<openingScript fun="edwin_rndscnr_tab2_opening"/>
+                    <textArray>
+                        <text id="0" stringName="w_players" xOffset="45" yOffset="320" />
+                        <text id="1" stringName="player_1" xOffset="40" yOffset="290" />
+                        <text id="2" stringName="player_2" xOffset="40" yOffset="260" />
+                        <text id="3" stringName="player_3" xOffset="40" yOffset="230" />
+                        <text id="4" stringName="player_4" xOffset="40" yOffset="200" />
+                        <text id="5" stringName="player_5" xOffset="40" yOffset="170" />
+                        <text id="6" stringName="player_6" xOffset="40" yOffset="140" />
+                        <text id="7" stringName="player_7" xOffset="40" yOffset="110" />
+                        <text id="8" stringName="player_8" xOffset="40" yOffset="80" />
+                        <text id="9" stringName="w_races" xOffset="170" yOffset="320" />
+                        <text id="10" stringName="w_ai_controlled" xOffset="260" yOffset="320" />
+                    </textArray>
+                    <comboBoxArray>
+                        <comboBox id="0" xOffset="140" yOffset="292" width="100" height="50"/>
+                        <comboBox id="1" xOffset="140" yOffset="262" width="100" height="50"/>
+                        <comboBox id="2" xOffset="140" yOffset="232" width="100" height="50"/>
+                        <comboBox id="3" xOffset="140" yOffset="202" width="100" height="50"/>
+                        <comboBox id="4" xOffset="140" yOffset="172" width="100" height="50"/>
+                        <comboBox id="5" xOffset="140" yOffset="142" width="100" height="50"/>
+                        <comboBox id="6" xOffset="140" yOffset="112" width="100" height="50"/>
+                        <comboBox id="7" xOffset="140" yOffset="82" width="100" height="50"/>
+                    </comboBoxArray>
+                    <checkBoxArray>
+                        <checkBox id="0" stringName="##1" xOffset="295" yOffset="292" />
+                        <checkBox id="1" stringName="##2" xOffset="295" yOffset="262" />
+                        <checkBox id="2" stringName="##3" xOffset="295" yOffset="232" />
+                        <checkBox id="3" stringName="##4" xOffset="295" yOffset="202" />
+                        <checkBox id="4" stringName="##5" xOffset="295" yOffset="172" />
+                        <checkBox id="5" stringName="##6" xOffset="295" yOffset="142" />
+                        <checkBox id="6" stringName="##7" xOffset="295" yOffset="112" />
+                        <checkBox id="7" stringName="##8" xOffset="295" yOffset="82" />
+                    </checkBoxArray>
+                </tab>
+            </tabArray>
+            <buttonArray>
+                <button id="0" stringName="w_generate" xOffset="400" yOffset="40" onclick="edwin_rndscnr_button0"/>
+                <button id="1" stringName="w_cancel" xOffset="310" yOffset="40" onclick="close_iframe"/>
+            </buttonArray>
+        </iframe>
+    </iframeArray>
+
+</editorUi>

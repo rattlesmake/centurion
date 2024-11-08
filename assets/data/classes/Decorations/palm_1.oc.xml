@@ -1,0 +1,7 @@
+<object parent="Trees" type="cpp_decorationclass" class_name="palm_1">
+	<attributes>
+		<attribute name="editor_tree" value="decorations/vegetation/trees/tropicals/palms"/>
+		<attribute name="ent_path" value="decorations/vegetation/trees/palm_trees/palm_1.oe.xml"/>
+		<attribute name="grid_path" value="decorations/vegetation/trees/palm_trees/palm_1_grid.xml"/>
+	</attributes>
+</object>
