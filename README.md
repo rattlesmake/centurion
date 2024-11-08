@@ -3,7 +3,7 @@
 
 **Centurion** aims to be a real-time strategy (RTS) video game set in Roman times, with 2D isometric graphics and an initial game system strongly inspired by the game Imperivm 3 – The Great Battles of Rome. 
 
-This repository contains the source code and a lot of graphical assets, especially about the Roman civilization, produced by ourselves. We keep them as placeholder during development.
+This repository contains the source code and a lot of graphical assets, especially about the Roman civilization, produced by ourselves. We keep them as placeholders during development.
 
 You can reach us joining [our Discord channel](https://discord.gg/7NCRWd6p9X) 😁
 
