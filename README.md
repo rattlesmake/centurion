@@ -1,6 +1,27 @@
-# Centurion
+![rattlesmake](/rattlesmake.png)
+--------------------
 
-Centurion aims to be a real-time strategy (RTS) video game set in Roman times, with 2D isometric graphics and an initial game system strongly inspired by the game Imperivm 3 – The Great Battles of Rome. The possibility of adding more management-type game modes in the future is not excluded, taking inspiration from milestones such as Caesar 3 and the Age of Empires saga. For each game mode, the possibility of playing online is intended to be implemented. 
+**Centurion** aims to be a real-time strategy (RTS) video game set in Roman times, with 2D isometric graphics and an initial game system strongly inspired by the game Imperivm 3 – The Great Battles of Rome. 
+
+This repository contains the source code and a lot of graphical assets, especially about the Roman civilization, produced by ourselves. We keep them as placeholder during development.
+
+Technical details
+--------------------
+
+| Technology    | Component                                                     |
+| ------------- | ------------------------------------------------------------- |
+| **C++20**     | Engine core                                                   |
+| **Python3**   | Scripting, in-game console                                    |
+| **XML**       | Assets data                                                   |
+| **sqlite**    | Translations                                                  |
+| **pybind**    | Python/C++ Glue code                                          |
+| **imgui**     | Graphical user interface                                      |
+| **CMake**     | Build system                                                  |
+| **OpenGL**    | Rendering, shaders (GLEW + GLFW + GLM)                        | 
+| **OpenAL**    | Audio codec                                                   |
+
+Project history
+---------------
 
 The development of the Centurion project began on July 28, 2019. The code is developed entirely with the C++ programming language and the Microsoft Visual Studio 2019 IDE and is compatible exclusively with the Windows operating system. The C++ standard used is C++20. The engine is based on the OpenGL graphics library, with the help of other libraries such as GLEW (main means of communication with the OpenGL API), GLFW (window creation and device management), GLM (matrix and vector calculation): the installed version of OpenGL is 3.3.0. As for audio and music, it relies on the OpenAL library. 
 
