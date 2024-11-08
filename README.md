@@ -22,8 +22,8 @@ Technical details
 | **OpenGL**    | Rendering, shaders (GLEW + GLFW + GLM)                        | 
 | **OpenAL**    | Audio codec                                                   |
 
-Project history
----------------
+The project
+-----------
 
 The development of the Centurion project began on July 28, 2019. The code is developed entirely with the C++ programming language and the Microsoft Visual Studio 2019 IDE and is compatible exclusively with the Windows operating system. The C++ standard used is C++20. The engine is based on the OpenGL graphics library, with the help of other libraries such as GLEW (main means of communication with the OpenGL API), GLFW (window creation and device management), GLM (matrix and vector calculation): the installed version of OpenGL is 3.3.0. As for audio and music, it relies on the OpenAL library. 
 
