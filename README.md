@@ -5,6 +5,8 @@
 
 This repository contains the source code and a lot of graphical assets, especially about the Roman civilization, produced by ourselves. We keep them as placeholder during development.
 
+You can reach us joining [our Discord channel](https://discord.gg/7NCRWd6p9X) 😁
+
 Technical details
 --------------------
 
